@@ -1,5 +1,3 @@
-import time
-
 import pytest
 from steam2sqlite.navigator import make_requests
 

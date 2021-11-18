@@ -3,7 +3,7 @@ from datetime import date, datetime
 from typing import Optional  # to be removed once Pydantic supports Union operator
 from typing import List
 
-from sqlmodel import Field, Relationship, SQLModel, create_engine, func
+from sqlmodel import Field, Relationship, SQLModel, create_engine
 
 
 class CategorySteamAppLink(SQLModel, table=True):
@@ -67,6 +67,17 @@ class SteamApp(SQLModel, table=True):
     genres: List[Genre] = Relationship(
         back_populates="steam_apps", link_model=GenreSteammAppLink
     )
+
+
+class AppidError(SQLModel, table=True):
+    """Table to store appids to skip"""
+
+    __tablename__ = "appid_error"
+
+    pk: Optional[int] = Field(default=None, primary_key=True)
+    steam_appid: int
+    name: Optional[str] = None
+    reason: Optional[str] = None
 
 
 sqlite_file_name = "database.db"

@@ -1,14 +1,23 @@
 import asyncio
 
-from httpx import AsyncClient, Response
+import httpx
 
 
-async def make_requests(items: list[str]) -> list[Response]:
+async def get_url(client, url):
+    resp = await client.get(url)
+    await asyncio.sleep(1)
+    return resp
+
+
+async def make_requests(urls: list[str]) -> list[httpx.Response]:
     """List of urls to a list of responses using asyncio"""
 
-    async with AsyncClient() as client:
-        responses = await asyncio.gather(
-            *[client.get(item) for item in items]  # , return_exceptions=True
-        )
+    limits = httpx.Limits(max_keepalive_connections=5, max_connections=10)
+    async with httpx.AsyncClient(
+        headers={"accept": "application/json"}, timeout=10, limits=limits
+    ) as client:
+
+        tasks = [get_url(client, url) for url in urls]
+        responses = await asyncio.gather(*tasks)
 
     return responses

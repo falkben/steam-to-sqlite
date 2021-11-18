@@ -2,11 +2,13 @@ from datetime import datetime
 
 from sqlmodel import Session, select
 
-from steam2sqlite.models import Category, Genre, SteamApp
+from steam2sqlite.models import AppidError, Category, Genre, SteamApp
 
 
-class InsertionError(Exception):
-    pass
+class DataParsingError(Exception):
+    def __init__(self, appid: int, reason: str | None = None):
+        self.appid = appid
+        self.reason = reason
 
 
 def get_or_create(session, model, **kwargs):
@@ -50,7 +52,8 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
             if release_date_str:
                 release_date = datetime.strptime(release_date_str, "%b %d, %Y").date()
         except ValueError:
-            raise InsertionError
+            # todo: log this error
+            pass
 
     app_attrs = {
         "steam_appid": data["steam_appid"],
@@ -84,23 +87,31 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
 
 
 def import_single_item(session: Session, item: dict) -> SteamApp | None:
-    # hardcoded app data from api:
-    # https://store.steampowered.com/api/appdetails/?appids=274190
-    # import json
-    # with open("broforce.json") as datafile:
-    #     item = json.load(datafile)
 
     appid = list(item.keys())[0]
     if item[appid]["success"] is False:
         # todo: log the error/appid
         print(f"error encountered with appid {appid}")
-        raise InsertionError
+        raise DataParsingError(int(appid), reason="Response from api: success=False")
 
     data = item[appid]["data"]
     return load_into_db(session, data)
 
 
 def get_appids_from_db(session: Session) -> list[tuple[int, datetime]]:
-    return session.execute(
+    return session.exec(
         select(SteamApp.steam_appid, SteamApp.updated).order_by(SteamApp.updated)
     ).all()
+
+
+def get_error_appids(session: Session) -> list[int]:
+    return session.exec(select(AppidError.steam_appid)).all()
+
+
+def record_appid_error(
+    session, appid: int, name: str | None = None, reason: str | None = None
+):
+    get_or_create(
+        session, AppidError, **{"steam_appid": appid, "name": name, "reason": reason}
+    )
+    session.commit()
