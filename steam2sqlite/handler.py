@@ -56,7 +56,7 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
             pass
 
     app_attrs = {
-        "steam_appid": data["steam_appid"],
+        "appid": data["steam_appid"],
         "type": data["type"],
         "is_free": data.get("is_free"),
         "name": data["name"],
@@ -68,7 +68,7 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
         "release_date": release_date,
     }
     steam_app = session.exec(
-        select(SteamApp).where(SteamApp.steam_appid == data["steam_appid"])
+        select(SteamApp).where(SteamApp.appid == data["steam_appid"])
     ).one_or_none()
     if steam_app:  # update
         for key, value in app_attrs.items():
@@ -100,18 +100,18 @@ def import_single_item(session: Session, item: dict) -> SteamApp | None:
 
 def get_appids_from_db(session: Session) -> list[tuple[int, datetime]]:
     return session.exec(
-        select(SteamApp.steam_appid, SteamApp.updated).order_by(SteamApp.updated)
+        select(SteamApp.appid, SteamApp.updated).order_by(SteamApp.updated)
     ).all()
 
 
 def get_error_appids(session: Session) -> list[int]:
-    return session.exec(select(AppidError.steam_appid)).all()
+    return session.exec(select(AppidError.appid)).all()
 
 
 def record_appid_error(
     session, appid: int, name: str | None = None, reason: str | None = None
 ):
     get_or_create(
-        session, AppidError, **{"steam_appid": appid, "name": name, "reason": reason}
+        session, AppidError, **{"appid": appid, "name": name, "reason": reason}
     )
     session.commit()

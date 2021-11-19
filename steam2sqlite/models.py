@@ -45,13 +45,13 @@ class Genre(SQLModel, table=True):
 class SteamApp(SQLModel, table=True):
     __tablename__ = "steam_app"
     pk: Optional[int] = Field(default=None, primary_key=True)
-    steam_appid: int
+    appid: int = Field(index=True, sa_column_kwargs={"unique": True})
     type: Optional[str] = None
     is_free: Optional[bool] = False
     name: str = Field(index=True)
     controller_support: Optional[str] = None
     metacritic_score: Optional[int] = None
-    metacritic_url: Optional[str] = None
+    metacritic_url: Optional[str] = Field(default=None, index=False)
     recommendations: Optional[int] = None
     achievements_total: Optional[int] = None
     release_date: Optional[date] = None
@@ -75,9 +75,9 @@ class AppidError(SQLModel, table=True):
     __tablename__ = "appid_error"
 
     pk: Optional[int] = Field(default=None, primary_key=True)
-    steam_appid: int
-    name: Optional[str] = None
-    reason: Optional[str] = None
+    appid: int = Field(index=False, sa_column_kwargs={"unique": True})
+    name: Optional[str] = Field(default=None, index=False)
+    reason: Optional[str] = Field(default=None, index=False)
 
 
 sqlite_file_name = "database.db"
