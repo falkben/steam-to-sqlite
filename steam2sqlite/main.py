@@ -4,6 +4,7 @@ import datetime
 import json
 import os
 import time
+from argparse import ArgumentParser
 from collections.abc import Sequence
 
 import httpx
@@ -23,7 +24,7 @@ load_dotenv()
 
 APPIDS_FILE = os.getenv("APPIDS_FILE")
 
-sqlite_file_name = ".private/database.db"
+sqlite_file_name = "database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 
 
@@ -44,6 +45,12 @@ def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+
+    parser = ArgumentParser()
+    parser.add_argument(
+        "-l", "--limit", default=1, help="limit the number of batches to process"
+    )
+    args = parser.parse_args(argv)
 
     uvloop.install()
 
@@ -81,7 +88,9 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         urls_total = (APPID_URL.format(appid) for appid in appids_to_process)
 
-        for urls in utils.grouper(urls_total, BATCH_SIZE, fillvalue=None):
+        for iters, urls in enumerate(
+            utils.grouper(urls_total, BATCH_SIZE, fillvalue=None)
+        ):
 
             apps = get_and_store_app_data(session, steam_appids_names, urls)
 
@@ -90,6 +99,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             utils.delay_by(len(apps_with_achievements))(get_apps_achievements)(
                 session, apps_with_achievements
             )
+
+            # todo: support a time limit instead
+            if args.limit and iters + 1 >= args.limit - 1:
+                break
 
     return 0
 
