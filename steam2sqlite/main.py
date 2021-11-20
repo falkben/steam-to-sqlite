@@ -2,13 +2,16 @@
 
 import datetime
 import json
+import os
+import time
 from collections.abc import Sequence
 
+import httpx
 import uvloop
+from dotenv import load_dotenv
 from sqlmodel import Session, create_engine
 
-import utils
-from steam2sqlite import APPID_URL, BATCH_SIZE
+from steam2sqlite import APPID_URL, APPIDS_URL, BATCH_SIZE, utils
 from steam2sqlite.handler import (
     get_and_store_app_data,
     get_appids_from_db,
@@ -16,15 +19,26 @@ from steam2sqlite.handler import (
     get_error_appids,
 )
 
+load_dotenv()
+
+APPIDS_FILE = os.getenv("APPIDS_FILE")
+
 sqlite_file_name = ".private/database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 
 
-def get_appids_from_steam() -> dict[int, str]:
-    # todo: eventually will be an API call but currently have it locally
-    # https://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json
-    with open(".private/steam_appids.json") as steam_appids_fp:
-        appid_data = json.load(steam_appids_fp)
+def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
+    if local_file:
+        with open(local_file) as steam_appids_fp:
+            appid_data = json.load(steam_appids_fp)
+    else:
+        try:
+            resp = httpx.get(APPIDS_URL)
+            appid_data = resp.json()
+            time.sleep(1)
+        except httpx.HTTPStatusError as e:
+            print(e)
+            raise
 
     return {item["appid"]: item["name"] for item in appid_data["applist"]["apps"]}
 
@@ -35,8 +49,8 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     engine = create_engine(sqlite_url, echo=False)
 
-    # get dict of steam appids: names
-    steam_appids_names = get_appids_from_steam()
+    # From steam api, dict of: {appids: names}
+    steam_appids_names = get_appids_from_steam(APPIDS_FILE)
 
     with Session(engine) as session:
 
