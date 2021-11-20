@@ -20,4 +20,4 @@ async def make_requests(urls: list[str]) -> list[httpx.Response]:
         tasks = [get_url(client, url) for url in urls]
         responses = await asyncio.gather(*tasks)
 
-    return responses
+    return responses  # type: ignore

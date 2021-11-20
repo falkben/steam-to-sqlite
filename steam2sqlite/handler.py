@@ -1,3 +1,4 @@
+import asyncio
 from datetime import datetime
 from typing import List
 
@@ -5,9 +6,9 @@ import httpx
 from pydantic import parse_obj_as
 from sqlmodel import Session, select
 
+from navigator import make_requests
+from steam2sqlite import ACHIEVEMENT_URL, BATCH_SIZE, utils
 from steam2sqlite.models import Achievement, AppidError, Category, Genre, SteamApp
-
-ACHIEVEMENT_URL = "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid={}&format=json"
 
 
 class DataParsingError(Exception):
@@ -27,7 +28,7 @@ def get_or_create(session, model, **kwargs):
         return instance
 
 
-def get_app_achievements(appid: int) -> list[Achievement]:
+def get_app_achievements_from_API(appid: int) -> list[Achievement]:
     url = ACHIEVEMENT_URL.format(appid)
     resp = httpx.get(url, headers={"accept": "application/json"})
     try:
@@ -43,6 +44,23 @@ def get_app_achievements(appid: int) -> list[Achievement]:
     except httpx.HTTPStatusError:
         pass
     return []
+
+
+def get_app_achievements(session: Session, steam_app: SteamApp):
+
+    achievements = []
+    if steam_app.achievements_total > 0:
+        achievements = get_app_achievements_from_API(steam_app.appid)
+    steam_app.achievements = achievements
+
+    session.commit()
+    session.refresh(steam_app)
+
+
+def get_apps_achievements(session: Session, apps: list[SteamApp]) -> None:
+
+    for app in apps:
+        get_app_achievements(session, app)
 
 
 def load_into_db(session: Session, data: dict) -> SteamApp:
@@ -99,13 +117,8 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
     else:  # create
         steam_app = SteamApp(**app_attrs)
 
-    achievements = []
-    if achievements_total > 0:
-        achievements = get_app_achievements(steam_app.appid)
-
     steam_app.categories = categories
     steam_app.genres = genres
-    steam_app.achievements = achievements
 
     session.add(steam_app)
     session.commit()
@@ -123,12 +136,13 @@ def import_single_item(session: Session, item: dict) -> SteamApp | None:
         raise DataParsingError(int(appid), reason="Response from api: success=False")
 
     data = item[appid]["data"]
-    return load_into_db(session, data)
+    app = load_into_db(session, data)
+    return app
 
 
 def get_appids_from_db(session: Session) -> list[tuple[int, datetime]]:
     return session.exec(
-        select(SteamApp.appid, SteamApp.updated).order_by(SteamApp.updated)
+        select(SteamApp.appid, SteamApp.updated).order_by(SteamApp.updated.asc())  # type: ignore
     ).all()
 
 
@@ -143,3 +157,31 @@ def record_appid_error(
         session, AppidError, **{"appid": appid, "name": name, "reason": reason}
     )
     session.commit()
+
+
+# delay by 10 seconds for rate limiting
+@utils.delay_by(BATCH_SIZE)
+def get_and_store_app_data(
+    session: Session, steam_appids_names: dict[int, str], urls: list[str]
+) -> list[SteamApp]:
+
+    responses = asyncio.run(make_requests(urls))
+
+    apps = []
+    for url, resp in zip(urls, responses):
+        try:
+            resp.raise_for_status()
+            item = resp.json()
+            app = import_single_item(session, item)
+            apps.append(app)
+
+        except httpx.HTTPStatusError as e:
+            appid = int(url.split("=")[-1])
+            reason = f"{e}"
+            print(reason)
+            record_appid_error(session, appid, steam_appids_names[appid], reason)
+
+        except DataParsingError as e:
+            record_appid_error(session, e.appid, steam_appids_names[e.appid], e.reason)
+
+    return apps

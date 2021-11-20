@@ -61,7 +61,7 @@ class Genre(SQLModel, table=True):
 
 
 class SteamApp(SQLModel, table=True):
-    __tablename__ = "steam_app"
+    __tablename__ = "steam_app"  # type: ignore
     pk: Optional[int] = Field(default=None, primary_key=True)
     appid: int = Field(index=True, sa_column_kwargs={"unique": True})
     type: Optional[str] = Field(default=None)
@@ -100,7 +100,7 @@ class Achievement(SQLModel, table=True):
 class AppidError(SQLModel, table=True):
     """Table to store appids to skip"""
 
-    __tablename__ = "appid_error"
+    __tablename__ = "appid_error"  # type: ignore
 
     pk: Optional[int] = Field(default=None, primary_key=True)
     appid: int = Field(sa_column_kwargs={"unique": True})
@@ -108,7 +108,7 @@ class AppidError(SQLModel, table=True):
     reason: Optional[str] = Field(default=None)
 
 
-sqlite_file_name = "database.db"
+sqlite_file_name = ".private/database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 
 engine = create_engine(sqlite_url, echo=True)

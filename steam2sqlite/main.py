@@ -1,27 +1,22 @@
 #!/usr/bin/env python3
 
-import asyncio
 import datetime
 import json
 from collections.abc import Sequence
 
 import uvloop
-from httpx import HTTPStatusError
 from sqlmodel import Session, create_engine
 
+import utils
+from steam2sqlite import APPID_URL, BATCH_SIZE
 from steam2sqlite.handler import (
-    DataParsingError,
+    get_and_store_app_data,
     get_appids_from_db,
+    get_apps_achievements,
     get_error_appids,
-    import_single_item,
-    record_appid_error,
 )
-from steam2sqlite.navigator import make_requests
 
-DAILY_API_LIMIT = 100_000
-APPID_URL = "https://store.steampowered.com/api/appdetails/?appids={}"
-
-sqlite_file_name = "database.db"
+sqlite_file_name = ".private/database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 
 
@@ -53,47 +48,34 @@ def main(argv: Sequence[str] | None = None) -> int:
             appid for appid, _ in db_appids_updated
         }
 
-        # remove any appids that have been modified within the last 3 days
+        # remove any appids that have been modified recently
         db_appids = [
             appid
             for appid, updated in db_appids_updated
             if ((datetime.datetime.utcnow().date() - updated.date()).days > 3)
         ]
 
-        appids_to_process_with_error_ids = list(missing_appids) + db_appids
+        appids_missing_and_older = list(missing_appids) + db_appids
 
         # remove any appids that have been flagged as errors from previous runs
         error_appids = get_error_appids(session)
         appids_to_process = [
             appid
-            for appid in appids_to_process_with_error_ids
+            for appid in appids_missing_and_older
             if appid not in set(error_appids)
         ]
 
-        urls = [APPID_URL.format(appid) for appid in appids_to_process]
+        urls_total = (APPID_URL.format(appid) for appid in appids_to_process)
 
-        # ! do not go over DAILY_API_LIMIT
-        # request batches of appids from steam
-        urls = urls[0:10]
+        for urls in utils.grouper(urls_total, BATCH_SIZE, fillvalue=None):
 
-        responses = asyncio.run(make_requests(urls))
+            apps = get_and_store_app_data(session, steam_appids_names, urls)
 
-        for resp in responses:
-            try:
-                resp.raise_for_status()
-            except HTTPStatusError as e:
-                appid = int(str(resp.request.url).split("=")[-1])
-                reason = f"Response code: {e.response.status_code}, {e}"
-                print(reason)
-                record_appid_error(session, appid, steam_appids_names[appid], reason)
-
-            try:
-                item = resp.json()
-                import_single_item(session, item)
-            except DataParsingError as e:
-                record_appid_error(
-                    session, e.appid, steam_appids_names[e.appid], e.reason
-                )
+            apps_with_achievements = [app for app in apps if app.achievements_total > 0]
+            # dynamically delay our next set of API calls
+            utils.delay_by(len(apps_with_achievements))(get_apps_achievements)(
+                session, apps_with_achievements
+            )
 
     return 0
 
