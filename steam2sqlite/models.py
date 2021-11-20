@@ -71,7 +71,7 @@ class SteamApp(SQLModel, table=True):
     metacritic_score: Optional[int] = Field(default=None)
     metacritic_url: Optional[str] = Field(default=None)
     recommendations: Optional[int] = Field(default=None)
-    achievements_total: Optional[int] = Field(default=None)
+    achievements_total: int = Field(default=0)
     release_date: Optional[date] = Field(default=None)
 
     created: datetime = Field(sa_column_kwargs={"default": datetime.utcnow})
@@ -85,6 +85,16 @@ class SteamApp(SQLModel, table=True):
     genres: List[Genre] = Relationship(
         back_populates="steam_apps", link_model=GenreSteammAppLink
     )
+    achievements: List["Achievement"] = Relationship(back_populates="steam_app")
+
+
+class Achievement(SQLModel, table=True):
+    pk: Optional[int] = Field(default=None, primary_key=True)
+    name: str = Field()
+    percent: float = Field()
+
+    steam_app_pk: Optional[int] = Field(default=None, foreign_key="steam_app.pk")
+    steam_app: Optional[SteamApp] = Relationship(back_populates="achievements")
 
 
 class AppidError(SQLModel, table=True):

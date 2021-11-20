@@ -1,8 +1,13 @@
 from datetime import datetime
+from typing import List
 
+import httpx
+from pydantic import parse_obj_as
 from sqlmodel import Session, select
 
-from steam2sqlite.models import AppidError, Category, Genre, SteamApp
+from steam2sqlite.models import Achievement, AppidError, Category, Genre, SteamApp
+
+ACHIEVEMENT_URL = "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid={}&format=json"
 
 
 class DataParsingError(Exception):
@@ -22,6 +27,24 @@ def get_or_create(session, model, **kwargs):
         return instance
 
 
+def get_app_achievements(appid: int) -> list[Achievement]:
+    url = ACHIEVEMENT_URL.format(appid)
+    resp = httpx.get(url, headers={"accept": "application/json"})
+    try:
+        resp.raise_for_status()
+        data = resp.json()
+        if (
+            "achievementpercentages" in data
+            and "achievements" in data["achievementpercentages"]
+        ):
+            return parse_obj_as(
+                List[Achievement], data["achievementpercentages"]["achievements"]
+            )
+    except httpx.HTTPStatusError:
+        pass
+    return []
+
+
 def load_into_db(session: Session, data: dict) -> SteamApp:
 
     genres_data = data.get("genres") or []
@@ -39,9 +62,9 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
     if "recommendations" in data:
         recommendations_total = data["recommendations"].get("total")
 
-    achievements_total = None
+    achievements_total = 0
     if "achievements" in data:
-        achievements_total = data["achievements"].get("total")
+        achievements_total = data["achievements"].get("total", 0)
 
     release_date = None
     if "release_date" in data and not (
@@ -76,8 +99,13 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
     else:  # create
         steam_app = SteamApp(**app_attrs)
 
+    achievements = []
+    if achievements_total > 0:
+        achievements = get_app_achievements(steam_app.appid)
+
     steam_app.categories = categories
     steam_app.genres = genres
+    steam_app.achievements = achievements
 
     session.add(steam_app)
     session.commit()

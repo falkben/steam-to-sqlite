@@ -27,8 +27,8 @@ sqlite_url = f"sqlite:///{sqlite_file_name}"
 
 def get_appids_from_steam() -> dict[int, str]:
     # todo: eventually will be an API call but currently have it locally
-    # http://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json
-    with open("steam_appids.json") as steam_appids_fp:
+    # https://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json
+    with open(".private/steam_appids.json") as steam_appids_fp:
         appid_data = json.load(steam_appids_fp)
 
     return {item["appid"]: item["name"] for item in appid_data["applist"]["apps"]}
@@ -73,6 +73,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         urls = [APPID_URL.format(appid) for appid in appids_to_process]
 
         # ! do not go over DAILY_API_LIMIT
+        # request batches of appids from steam
         urls = urls[0:10]
 
         responses = asyncio.run(make_requests(urls))
@@ -93,10 +94,6 @@ def main(argv: Sequence[str] | None = None) -> int:
                 record_appid_error(
                     session, e.appid, steam_appids_names[e.appid], e.reason
                 )
-
-    # request batches of appids from steam
-    # insert batches into database
-    # write out to the database
 
     return 0
 
