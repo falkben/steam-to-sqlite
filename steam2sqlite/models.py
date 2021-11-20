@@ -1,9 +1,27 @@
 from collections.abc import Sequence
 from datetime import date, datetime
+from functools import wraps
 from typing import Optional  # to be removed once Pydantic supports Union operator
 from typing import List
 
 from sqlmodel import Field, Relationship, SQLModel, create_engine
+
+
+def set_default_index(func):
+    """Decorator to set default index for SQLModel
+    Can be removed when https://github.com/tiangolo/sqlmodel/pull/11 is fixed
+    """
+
+    @wraps(func)
+    def inner(*args, index=False, **kwargs):
+        return func(*args, index=index, **kwargs)
+
+    return inner
+
+
+# monkey patch field with default index=False
+# as long as we always call Field this works
+Field = set_default_index(Field)
 
 
 class CategorySteamAppLink(SQLModel, table=True):
@@ -17,8 +35,8 @@ class CategorySteamAppLink(SQLModel, table=True):
 
 class Category(SQLModel, table=True):
     pk: Optional[int] = Field(default=None, primary_key=True)
-    id: int
-    description: str
+    id: int = Field()
+    description: str = Field()
     steam_apps: List["SteamApp"] = Relationship(
         back_populates="categories", link_model=CategorySteamAppLink
     )
@@ -35,8 +53,8 @@ class GenreSteammAppLink(SQLModel, table=True):
 
 class Genre(SQLModel, table=True):
     pk: Optional[int] = Field(default=None, primary_key=True)
-    id: int
-    description: str
+    id: int = Field()
+    description: str = Field()
     steam_apps: List["SteamApp"] = Relationship(
         back_populates="genres", link_model=GenreSteammAppLink
     )
@@ -46,15 +64,15 @@ class SteamApp(SQLModel, table=True):
     __tablename__ = "steam_app"
     pk: Optional[int] = Field(default=None, primary_key=True)
     appid: int = Field(index=True, sa_column_kwargs={"unique": True})
-    type: Optional[str] = None
-    is_free: Optional[bool] = False
+    type: Optional[str] = Field(default=None)
+    is_free: Optional[bool] = Field(default=False)
     name: str = Field(index=True)
-    controller_support: Optional[str] = None
-    metacritic_score: Optional[int] = None
-    metacritic_url: Optional[str] = Field(default=None, index=False)
-    recommendations: Optional[int] = None
-    achievements_total: Optional[int] = None
-    release_date: Optional[date] = None
+    controller_support: Optional[str] = Field(default=None)
+    metacritic_score: Optional[int] = Field(default=None)
+    metacritic_url: Optional[str] = Field(default=None)
+    recommendations: Optional[int] = Field(default=None)
+    achievements_total: Optional[int] = Field(default=None)
+    release_date: Optional[date] = Field(default=None)
 
     created: datetime = Field(sa_column_kwargs={"default": datetime.utcnow})
     updated: datetime = Field(
@@ -75,9 +93,9 @@ class AppidError(SQLModel, table=True):
     __tablename__ = "appid_error"
 
     pk: Optional[int] = Field(default=None, primary_key=True)
-    appid: int = Field(index=False, sa_column_kwargs={"unique": True})
-    name: Optional[str] = Field(default=None, index=False)
-    reason: Optional[str] = Field(default=None, index=False)
+    appid: int = Field(sa_column_kwargs={"unique": True})
+    name: Optional[str] = Field(default=None)
+    reason: Optional[str] = Field(default=None)
 
 
 sqlite_file_name = "database.db"
