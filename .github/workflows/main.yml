@@ -24,8 +24,11 @@ jobs:
 
       - name: install
         run: |
+          # todo: apparently this installer is deprecated?
           curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+          source $HOME/.poetry/env
           poetry install
+
         shell: bash
 
       - name: run the script
