@@ -6,7 +6,7 @@ import httpx
 from pydantic import parse_obj_as
 from sqlmodel import Session, select
 
-from navigator import make_requests
+import navigator
 from steam2sqlite import ACHIEVEMENT_URL, BATCH_SIZE, utils
 from steam2sqlite.models import Achievement, AppidError, Category, Genre, SteamApp
 
@@ -28,9 +28,11 @@ def get_or_create(session, model, **kwargs):
         return instance
 
 
-def get_app_achievements_from_API(appid: int) -> list[Achievement]:
+async def get_app_achievements(
+    client: httpx.AsyncClient, appid: int
+) -> list[Achievement]:
     url = ACHIEVEMENT_URL.format(appid)
-    resp = httpx.get(url, headers={"accept": "application/json"})
+    resp = await navigator.get(client, url, headers={"accept": "application/json"})
     try:
         resp.raise_for_status()
         data = resp.json()
@@ -41,26 +43,32 @@ def get_app_achievements_from_API(appid: int) -> list[Achievement]:
             return parse_obj_as(
                 List[Achievement], data["achievementpercentages"]["achievements"]
             )
-    except httpx.HTTPStatusError:
+    except (httpx.TimeoutException, httpx.HTTPError) as e:
+        print(f"Error getting achievements for appid: {appid}, {e}")
+        # todo: log this error in db
         pass
     return []
 
 
-def get_app_achievements(session: Session, steam_app: SteamApp):
+async def get_apps_achievements(apps: list[SteamApp]) -> list[list[Achievement]]:
 
-    achievements = []
-    if steam_app.achievements_total > 0:
-        achievements = get_app_achievements_from_API(steam_app.appid)
-    steam_app.achievements = achievements
+    limits = httpx.Limits(max_keepalive_connections=5, max_connections=10)
 
-    session.commit()
-    session.refresh(steam_app)
+    async with httpx.AsyncClient(
+        headers={"accept": "application/json"}, timeout=10, limits=limits
+    ) as client:
+        tasks = [get_app_achievements(client, app.appid) for app in apps]
+        achievements = await asyncio.gather(*tasks)
+    return achievements  # type: ignore
 
 
-def get_apps_achievements(session: Session, apps: list[SteamApp]) -> None:
+def store_apps_achievements(
+    session: Session, apps: list[SteamApp], achievements: list[list[Achievement]]
+) -> None:
 
-    for app in apps:
-        get_app_achievements(session, app)
+    for app, app_achievements in zip(apps, achievements):
+        app.achievements = app_achievements
+        session.commit()
 
 
 def load_into_db(session: Session, data: dict) -> SteamApp:
@@ -165,7 +173,7 @@ def get_and_store_app_data(
     session: Session, steam_appids_names: dict[int, str], urls: list[str]
 ) -> list[SteamApp]:
 
-    responses = asyncio.run(make_requests(urls))
+    responses = asyncio.run(navigator.make_requests(urls))
 
     apps = []
     for url, resp in zip(urls, responses):
@@ -175,7 +183,7 @@ def get_and_store_app_data(
             app = import_single_item(session, item)
             apps.append(app)
 
-        except httpx.HTTPStatusError as e:
+        except httpx.HTTPError as e:
             appid = int(url.split("=")[-1])
             reason = f"{e}"
             print(reason)

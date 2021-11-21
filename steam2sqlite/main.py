@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import asyncio
 import datetime
 import json
 import os
@@ -18,6 +19,7 @@ from steam2sqlite.handler import (
     get_appids_from_db,
     get_apps_achievements,
     get_error_appids,
+    store_apps_achievements,
 )
 from steam2sqlite.models import create_db_and_tables
 
@@ -101,10 +103,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             apps = get_and_store_app_data(session, steam_appids_names, urls)
 
             apps_with_achievements = [app for app in apps if app.achievements_total > 0]
-            # dynamically delay our next set of API calls
-            utils.delay_by(len(apps_with_achievements))(get_apps_achievements)(
-                session, apps_with_achievements
-            )
+            apps_achievements = utils.delay_by(len(apps_with_achievements))(
+                asyncio.run
+            )(get_apps_achievements(apps_with_achievements))
+            store_apps_achievements(session, apps_with_achievements, apps_achievements)
 
             # todo: support a time limit instead
             if args.limit and iters + 1 >= args.limit - 1:
