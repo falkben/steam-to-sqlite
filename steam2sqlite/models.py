@@ -1,10 +1,9 @@
-from collections.abc import Sequence
 from datetime import date, datetime
 from functools import wraps
 from typing import Optional  # to be removed once Pydantic supports Union operator
 from typing import List
 
-from sqlmodel import Field, Relationship, SQLModel, create_engine
+from sqlmodel import Field, Relationship, SQLModel
 
 
 def set_default_index(func):
@@ -108,21 +107,5 @@ class AppidError(SQLModel, table=True):
     reason: Optional[str] = Field(default=None)
 
 
-# todo: we should incorporate db setup into main.py to make models.py simpler
-sqlite_file_name = "database.db"
-sqlite_url = f"sqlite:///{sqlite_file_name}"
-
-engine = create_engine(sqlite_url, echo=True)
-
-
-def create_db_and_tables():
+def create_db_and_tables(engine):
     SQLModel.metadata.create_all(engine)
-
-
-def main(argv: Sequence[str] | None = None) -> int:
-    create_db_and_tables()
-    return 0
-
-
-if __name__ == "__main__":
-    exit(main())

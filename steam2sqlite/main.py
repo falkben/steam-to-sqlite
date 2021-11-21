@@ -19,6 +19,7 @@ from steam2sqlite.handler import (
     get_apps_achievements,
     get_error_appids,
 )
+from steam2sqlite.models import create_db_and_tables
 
 load_dotenv()
 
@@ -59,6 +60,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     uvloop.install()
 
     engine = create_engine(sqlite_url, echo=False)
+    create_db_and_tables(engine)
 
     # From steam api, dict of: {appids: names}
     steam_appids_names = get_appids_from_steam(APPIDS_FILE)
