@@ -3,6 +3,7 @@ import sqlite3
 from datetime import datetime
 
 import httpx
+import sqlalchemy.exc
 from rich import print
 from sqlmodel import Session, select
 
@@ -71,9 +72,15 @@ def store_apps_achievements(
 def load_into_db(session: Session, data: dict) -> SteamApp:
 
     genres_data = data.get("genres") or []
+    if genres_data:
+        # deduplicate
+        genres_data = list({v["id"]: v for v in genres_data}.values())
     genres = [get_or_create(session, Genre, **dd) for dd in genres_data]
 
     categories_data = data.get("categories") or []
+    if categories_data:
+        # deduplicate
+        categories_data = list({v["id"]: v for v in categories_data}.values())
     categories = [get_or_create(session, Category, **dd) for dd in categories_data]
 
     metacritic_score, metacritic_url = None, None
@@ -148,7 +155,7 @@ def import_single_item(session: Session, item: dict) -> SteamApp | None:
 
     try:
         app = load_into_db(session, data)
-    except sqlite3.DatabaseError as e:
+    except (sqlite3.DatabaseError, sqlalchemy.exc.IntegrityError) as e:
         raise DataParsingError(int(appid), reason=f"Database error: {e}")
 
     return app
