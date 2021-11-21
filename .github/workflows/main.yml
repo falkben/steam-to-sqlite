@@ -2,10 +2,7 @@ name: Run steam2sqlite
 
 on:
   schedule:
-    - cron: "0 0 * * *" # every day
-
-  # todo: remove on push
-  push:
+    - cron: "0 * * * *" # every hour
 
   # Allows running this workflow manually from the Actions tab
   workflow_dispatch:
@@ -48,13 +45,13 @@ jobs:
         run: |
           source .venv/bin/activate
           python steam2sqlite/models.py
-          python steam2sqlite/main.py
+          python steam2sqlite/main.py 100
         shell: bash
 
-      - name: Push to database branch
+      - name: Push to main branch
         uses: Automattic/action-commit-to-branch@master
         with:
-          branch: "database"
+          branch: "main"
           commit_message: "GitHub action database update"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
