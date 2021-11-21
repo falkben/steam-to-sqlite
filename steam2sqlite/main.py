@@ -14,13 +14,14 @@ from dotenv import load_dotenv
 from rich import print
 from sqlmodel import Session, create_engine
 
-from steam2sqlite import APPID_URL, APPIDS_URL, BATCH_SIZE, utils
+from steam2sqlite import APPIDS_URL, BATCH_SIZE, utils
 from steam2sqlite.handler import (
-    get_and_store_app_data,
     get_appids_from_db,
     get_apps_achievements,
+    get_apps_data,
     get_error_appids,
     store_apps_achievements,
+    store_apps_data,
 )
 from steam2sqlite.models import create_db_and_tables
 
@@ -29,7 +30,7 @@ load_dotenv()
 APPIDS_FILE = os.getenv("APPIDS_FILE")
 
 sqlite_file_name = "database.db"
-sqlite_url = f"sqlite:///{sqlite_file_name}"
+SQLITE_URL = f"sqlite:///{sqlite_file_name}"
 
 
 def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
@@ -64,7 +65,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     uvloop.install()
 
-    engine = create_engine(sqlite_url, echo=False)
+    engine = create_engine(SQLITE_URL, echo=False)
     create_db_and_tables(engine)
 
     # From steam api, dict of: {appids: names}
@@ -97,13 +98,12 @@ def main(argv: Sequence[str] | None = None) -> int:
             if appid not in set(error_appids)
         ]
 
-        urls_total = (APPID_URL.format(appid) for appid in appids_to_process)
-
-        for iters, urls in enumerate(
-            utils.grouper(urls_total, BATCH_SIZE, fillvalue=None)
+        for iters, appids in enumerate(
+            utils.grouper(appids_to_process, BATCH_SIZE, fillvalue=None)
         ):
 
-            apps = get_and_store_app_data(session, steam_appids_names, urls)
+            apps_data = get_apps_data(session, steam_appids_names, appids)
+            apps = store_apps_data(session, steam_appids_names, apps_data)
 
             apps_with_achievements = [app for app in apps if app.achievements_total > 0]
             if apps_with_achievements:

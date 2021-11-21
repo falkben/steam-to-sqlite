@@ -5,7 +5,7 @@ import httpx
 from rich import print
 from sqlmodel import Session, select
 
-from steam2sqlite import ACHIEVEMENT_URL, BATCH_SIZE, navigator, utils
+from steam2sqlite import ACHIEVEMENT_URL, APPID_URL, BATCH_SIZE, navigator, utils
 from steam2sqlite.models import Achievement, AppidError, Category, Genre, SteamApp
 
 
@@ -140,6 +140,12 @@ def import_single_item(session: Session, item: dict) -> SteamApp | None:
         raise DataParsingError(int(appid), reason="Response from api: success=False")
 
     data = item[appid]["data"]
+
+    if int(appid) != data["steam_appid"]:
+        raise DataParsingError(
+            int(appid),
+            f"duplicate entry with current appid {appid} and steam appid: {data['steam_appid']}",
+        )
     app = load_into_db(session, data)
     return app
 
@@ -165,27 +171,38 @@ def record_appid_error(
 
 # delay by 10 seconds for rate limiting
 @utils.delay_by(BATCH_SIZE)
-def get_and_store_app_data(
-    session: Session, steam_appids_names: dict[int, str], urls: list[str]
-) -> list[SteamApp]:
+def get_apps_data(
+    session: Session, steam_appids_names: dict[int, str], appids: list[str]
+) -> list[dict]:
 
+    urls = [APPID_URL.format(appid) for appid in appids if appid is not None]
     responses = asyncio.run(navigator.make_requests(urls))
 
-    apps = []
-    for url, resp in zip(urls, responses):
+    apps_data = []
+    for appid, resp in zip(appids, responses):
         try:
             resp.raise_for_status()
             item = resp.json()
-            app = import_single_item(session, item)
-            apps.append(app)
+            apps_data.append(item)
 
         except httpx.HTTPError as e:
-            appid = int(url.split("=")[-1])
-            reason = f"{e}"
-            print(reason)
-            record_appid_error(session, appid, steam_appids_names[appid], reason)
+            print(e)
+            record_appid_error(session, appid, steam_appids_names[appid], e.reason)
 
+    return apps_data
+
+
+def store_apps_data(
+    session: Session, steam_appids_names: dict[int, str], apps_data: list[dict]
+) -> list[SteamApp]:
+    apps = []
+    for app_data in apps_data:
+        try:
+            app = import_single_item(session, app_data)
+            apps.append(app)
         except DataParsingError as e:
-            record_appid_error(session, e.appid, steam_appids_names[e.appid], e.reason)
-
+            print(e)
+            record_appid_error(
+                session, e.appid, steam_appids_names.get(e.appid, 0), e.reason
+            )
     return apps
