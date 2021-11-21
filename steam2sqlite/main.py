@@ -54,7 +54,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         "-l",
         "--limit",
         type=int,
-        default=1,
+        default=None,
+        nargs="?",
+        const=1,
         help="limit the number of batches to process",
     )
     args = parser.parse_args(argv)
