@@ -44,7 +44,7 @@ jobs:
       - name: run the script
         run: |
           source .venv/bin/activate
-          python steam2sqlite/main.py --limit 100
+          python steam2sqlite/main.py --limit 150
         shell: bash
 
       - name: Push to main branch
