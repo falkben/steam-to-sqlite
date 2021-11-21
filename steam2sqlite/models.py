@@ -108,7 +108,8 @@ class AppidError(SQLModel, table=True):
     reason: Optional[str] = Field(default=None)
 
 
-sqlite_file_name = ".private/database.db"
+# todo: we should incorporate db setup into main.py to make models.py simpler
+sqlite_file_name = "database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 
 engine = create_engine(sqlite_url, echo=True)
