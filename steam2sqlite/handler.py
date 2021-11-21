@@ -1,4 +1,5 @@
 import asyncio
+import sqlite3
 from datetime import datetime
 
 import httpx
@@ -146,7 +147,12 @@ def import_single_item(session: Session, item: dict) -> SteamApp | None:
             int(appid),
             f"duplicate entry with current appid {appid} and steam appid: {data['steam_appid']}",
         )
-    app = load_into_db(session, data)
+
+    try:
+        app = load_into_db(session, data)
+    except sqlite3.IntegrityError as e:
+        raise DataParsingError(int(appid), f"Data integrity check failed {e}")
+
     return app
 
 
