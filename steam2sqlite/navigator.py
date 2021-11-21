@@ -12,7 +12,7 @@ async def get(client: httpx.AsyncClient, url: str, wait_time=2, headers=None):
             raise
         print(f"Error in response, trying again in: {wait_time}s")
         await asyncio.sleep(wait_time)
-        return await get(client, url, wait_time=wait_time ** 2, headers=headers)
+        return await get(client, url, wait_time=wait_time * 2, headers=headers)
 
     return resp
 
