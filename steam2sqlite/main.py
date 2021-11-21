@@ -11,6 +11,7 @@ from collections.abc import Sequence
 import httpx
 import uvloop
 from dotenv import load_dotenv
+from rich import print
 from sqlmodel import Session, create_engine
 
 from steam2sqlite import APPID_URL, APPIDS_URL, BATCH_SIZE, utils
@@ -105,13 +106,16 @@ def main(argv: Sequence[str] | None = None) -> int:
             apps = get_and_store_app_data(session, steam_appids_names, urls)
 
             apps_with_achievements = [app for app in apps if app.achievements_total > 0]
-            apps_achievements = utils.delay_by(len(apps_with_achievements))(
-                asyncio.run
-            )(get_apps_achievements(apps_with_achievements))
-            store_apps_achievements(session, apps_with_achievements, apps_achievements)
+            if apps_with_achievements:
+                apps_achievements = utils.delay_by(len(apps_with_achievements))(
+                    asyncio.run
+                )(get_apps_achievements(apps_with_achievements))
+                store_apps_achievements(
+                    session, apps_with_achievements, apps_achievements
+                )
 
             # todo: support a time limit instead
-            if args.limit and iters + 1 >= args.limit - 1:
+            if args.limit and iters + 1 >= args.limit:
                 break
 
     return 0

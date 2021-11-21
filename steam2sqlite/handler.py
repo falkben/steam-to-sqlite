@@ -1,13 +1,11 @@
 import asyncio
 from datetime import datetime
-from typing import List
 
 import httpx
-from pydantic import parse_obj_as
+from rich import print
 from sqlmodel import Session, select
 
-import navigator
-from steam2sqlite import ACHIEVEMENT_URL, BATCH_SIZE, utils
+from steam2sqlite import ACHIEVEMENT_URL, BATCH_SIZE, navigator, utils
 from steam2sqlite.models import Achievement, AppidError, Category, Genre, SteamApp
 
 
@@ -28,9 +26,7 @@ def get_or_create(session, model, **kwargs):
         return instance
 
 
-async def get_app_achievements(
-    client: httpx.AsyncClient, appid: int
-) -> list[Achievement]:
+async def get_app_achievements(client: httpx.AsyncClient, appid: int) -> list[dict]:
     url = ACHIEVEMENT_URL.format(appid)
     resp = await navigator.get(client, url, headers={"accept": "application/json"})
     try:
@@ -40,9 +36,7 @@ async def get_app_achievements(
             "achievementpercentages" in data
             and "achievements" in data["achievementpercentages"]
         ):
-            return parse_obj_as(
-                List[Achievement], data["achievementpercentages"]["achievements"]
-            )
+            return data["achievementpercentages"]["achievements"]
     except (httpx.TimeoutException, httpx.HTTPError) as e:
         print(f"Error getting achievements for appid: {appid}, {e}")
         # todo: log this error in db
@@ -50,10 +44,9 @@ async def get_app_achievements(
     return []
 
 
-async def get_apps_achievements(apps: list[SteamApp]) -> list[list[Achievement]]:
+async def get_apps_achievements(apps: list[SteamApp]) -> list[list[dict]]:
 
     limits = httpx.Limits(max_keepalive_connections=5, max_connections=10)
-
     async with httpx.AsyncClient(
         headers={"accept": "application/json"}, timeout=10, limits=limits
     ) as client:
@@ -63,11 +56,14 @@ async def get_apps_achievements(apps: list[SteamApp]) -> list[list[Achievement]]
 
 
 def store_apps_achievements(
-    session: Session, apps: list[SteamApp], achievements: list[list[Achievement]]
+    session: Session, apps: list[SteamApp], achievements_dict: list[list[dict]]
 ) -> None:
 
-    for app, app_achievements in zip(apps, achievements):
-        app.achievements = app_achievements
+    for app, app_achievements_dict in zip(apps, achievements_dict):
+        for achievement_dict in app_achievements_dict:
+            achievement_args = achievement_dict | {"steam_app": app}
+            get_or_create(session, Achievement, **achievement_args)
+
         session.commit()
 
 
@@ -140,7 +136,7 @@ def import_single_item(session: Session, item: dict) -> SteamApp | None:
     appid = list(item.keys())[0]
     if item[appid]["success"] is False:
         # todo: log the error/appid
-        print(f"error encountered with appid {appid}")
+        print(f"missing app data from steam for appid {appid}")
         raise DataParsingError(int(appid), reason="Response from api: success=False")
 
     data = item[appid]["data"]

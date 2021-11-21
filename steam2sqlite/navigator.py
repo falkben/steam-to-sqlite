@@ -1,6 +1,7 @@
 import asyncio
 
 import httpx
+from rich import print
 
 
 async def get(client: httpx.AsyncClient, url: str, wait_time=2, headers=None):
