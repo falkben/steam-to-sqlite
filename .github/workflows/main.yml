@@ -30,7 +30,7 @@ jobs:
 
       - name: run the script
         run: |
-          poetry activate
+          poetry shell
           python steam2sqlite/models.py
           python steam2sqlite/main.py
         shell: bash
