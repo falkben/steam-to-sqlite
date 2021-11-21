@@ -136,8 +136,6 @@ def import_single_item(session: Session, item: dict) -> SteamApp | None:
 
     appid = list(item.keys())[0]
     if item[appid]["success"] is False:
-        # todo: log the error/appid
-        print(f"missing app data from steam for appid {appid}")
         raise DataParsingError(int(appid), reason="Response from api: success=False")
 
     data = item[appid]["data"]
@@ -145,13 +143,13 @@ def import_single_item(session: Session, item: dict) -> SteamApp | None:
     if int(appid) != data["steam_appid"]:
         raise DataParsingError(
             int(appid),
-            f"duplicate entry with current appid {appid} and steam appid: {data['steam_appid']}",
+            reason=f"duplicate entry with current appid {appid} and steam appid: {data['steam_appid']}",
         )
 
     try:
         app = load_into_db(session, data)
-    except sqlite3.IntegrityError as e:
-        raise DataParsingError(int(appid), f"Data integrity check failed {e}")
+    except sqlite3.DatabaseError as e:
+        raise DataParsingError(int(appid), reason=f"Database error: {e}")
 
     return app
 
@@ -207,7 +205,8 @@ def store_apps_data(
             app = import_single_item(session, app_data)
             apps.append(app)
         except DataParsingError as e:
-            print(e)
+            # todo: log the error instead of print
+            print(f"Error for appid: {e.appid}, reason: {e.reason}")
             record_appid_error(
                 session, e.appid, steam_appids_names.get(e.appid, 0), e.reason
             )
