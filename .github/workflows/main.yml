@@ -2,7 +2,7 @@ name: Run steam2sqlite
 
 on:
   schedule:
-    - cron: "0 * * * *" # every hour
+    - cron: "0 */6 * * *" # every 6 hours
 
   # Allows running this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,7 +44,7 @@ jobs:
       - name: run the script
         run: |
           source .venv/bin/activate
-          python steam2sqlite/main.py --limit 150
+          python steam2sqlite/main.py --limit 350
         shell: bash
 
       - name: Push to main branch

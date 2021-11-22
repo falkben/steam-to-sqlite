@@ -59,9 +59,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         default=None,
         nargs="?",
         const=1,
-        help="limit the number of batches to process",
+        help="limit runtime (minutes)",
     )
     args = parser.parse_args(argv)
+
+    start_time = time.monotonic()
 
     uvloop.install()
 
@@ -98,9 +100,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             if appid not in set(error_appids)
         ]
 
-        for iters, appids in enumerate(
-            utils.grouper(appids_to_process, BATCH_SIZE, fillvalue=None)
-        ):
+        for appids in utils.grouper(appids_to_process, BATCH_SIZE, fillvalue=None):
 
             apps_data = get_apps_data(session, steam_appids_names, appids)
             apps = store_apps_data(session, steam_appids_names, apps_data)
@@ -114,8 +114,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                     session, apps_with_achievements, apps_achievements
                 )
 
-            # todo: support a time limit instead
-            if args.limit and iters + 1 >= args.limit:
+            if args.limit and (time.monotonic() - start_time) / 60 > args.limit:
                 break
 
     return 0
