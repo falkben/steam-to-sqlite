@@ -45,6 +45,7 @@ jobs:
         run: |
           source .venv/bin/activate
           python steam2sqlite/main.py --limit 350
+          git pull
         shell: bash
 
       - name: Push to main branch

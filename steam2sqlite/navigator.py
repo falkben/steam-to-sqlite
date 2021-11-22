@@ -1,4 +1,5 @@
 import asyncio
+import ssl
 
 import httpx
 from rich import print
@@ -13,7 +14,7 @@ async def get(
     try:
         resp = await client.get(url, headers=headers)
         resp.raise_for_status()
-    except (httpx.TimeoutException, httpx.HTTPError):
+    except (httpx.HTTPError, ssl.SSLError):
         if wait_time > 2 ** 6:
             raise
         print(f"Error in response, trying again in: {wait_time}s")
