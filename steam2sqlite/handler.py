@@ -12,7 +12,7 @@ from steam2sqlite.models import Achievement, AppidError, Category, Genre, SteamA
 
 
 class DataParsingError(Exception):
-    def __init__(self, appid: int, reason: str | None = None):
+    def __init__(self, appid: int, reason: str = ""):
         self.appid = appid
         self.reason = reason
 
@@ -139,7 +139,7 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
     return steam_app
 
 
-def import_single_item(session: Session, item: dict) -> SteamApp | None:
+def import_single_item(session: Session, item: dict) -> SteamApp:
 
     appid = list(item.keys())[0]
     if item[appid]["success"] is False:
@@ -183,7 +183,7 @@ def record_appid_error(
 # delay by 10 seconds for rate limiting
 @utils.delay_by(BATCH_SIZE)
 def get_apps_data(
-    session: Session, steam_appids_names: dict[int, str], appids: list[str]
+    session: Session, steam_appids_names: dict[int, str], appids: list[int]
 ) -> list[dict]:
 
     urls = [APPID_URL.format(appid) for appid in appids if appid is not None]
@@ -198,7 +198,7 @@ def get_apps_data(
 
         except httpx.HTTPError as e:
             print(e)
-            record_appid_error(session, appid, steam_appids_names[appid], e.reason)
+            record_appid_error(session, appid, steam_appids_names[appid], f"{e}")
 
     return apps_data
 
@@ -215,6 +215,6 @@ def store_apps_data(
             # todo: log the error instead of print
             print(f"Error for appid: {e.appid}, reason: {e.reason}")
             record_appid_error(
-                session, e.appid, steam_appids_names.get(e.appid, 0), e.reason
+                session, e.appid, steam_appids_names.get(e.appid, "unknown"), e.reason
             )
     return apps

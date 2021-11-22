@@ -4,7 +4,12 @@ import httpx
 from rich import print
 
 
-async def get(client: httpx.AsyncClient, url: str, wait_time=2, headers=None):
+async def get(
+    client: httpx.AsyncClient,
+    url: str,
+    wait_time: float = 2,
+    headers: dict[str, str] | None = None,
+) -> httpx.Response:
     try:
         resp = await client.get(url, headers=headers)
         resp.raise_for_status()
