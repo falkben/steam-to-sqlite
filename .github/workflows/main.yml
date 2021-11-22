@@ -55,3 +55,12 @@ jobs:
           commit_message: "GitHub action database update"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
+
+      - name: Deploy Datasette using Vercel
+        env:
+          NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+        run: |-
+          datasette publish vercel database.db \
+            --token $NOW_TOKEN \
+            --install datasette-graphql \
+            --project steam-to-sqlite
