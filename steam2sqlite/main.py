@@ -11,10 +11,10 @@ from collections.abc import Sequence
 import httpx
 import uvloop
 from dotenv import load_dotenv
-from rich import print
+from loguru import logger
 from sqlmodel import Session, create_engine
 
-from steam2sqlite import APPIDS_URL, BATCH_SIZE, utils
+from steam2sqlite import APPIDS_URL, BATCH_SIZE, navigator, utils
 from steam2sqlite.handler import (
     get_appids_from_db,
     get_apps_achievements,
@@ -33,17 +33,18 @@ sqlite_file_name = "database.db"
 SQLITE_URL = f"sqlite:///{sqlite_file_name}"
 
 
-def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
+async def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
     if local_file:
         with open(local_file) as steam_appids_fp:
             appid_data = json.load(steam_appids_fp)
     else:
         try:
-            resp = httpx.get(APPIDS_URL)
+            async with httpx.AsyncClient() as client:
+                resp = await navigator.get(client, APPIDS_URL)
             appid_data = resp.json()
-            time.sleep(1)
-        except httpx.HTTPStatusError as e:
-            print(e)
+            asyncio.sleep(1)
+        except navigator.NavigatorError:
+            logger.exception("Error getting the appids from Steam")
             raise
 
     return {item["appid"]: item["name"] for item in appid_data["applist"]["apps"]}
@@ -71,7 +72,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     create_db_and_tables(engine)
 
     # From steam api, dict of: {appids: names}
-    steam_appids_names = get_appids_from_steam(APPIDS_FILE)
+    steam_appids_names = asyncio.run(get_appids_from_steam(APPIDS_FILE))
 
     with Session(engine) as session:
 

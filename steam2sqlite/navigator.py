@@ -2,7 +2,14 @@ import asyncio
 import ssl
 
 import httpx
-from rich import print
+from loguru import logger
+
+
+class NavigatorError(Exception):
+    """Exception for navigator errors (after multiple retries)"""
+
+    def __init__(self, url: str) -> None:
+        self.url = url
 
 
 async def get(
@@ -14,10 +21,11 @@ async def get(
     try:
         resp = await client.get(url, headers=headers)
         resp.raise_for_status()
-    except (httpx.HTTPError, ssl.SSLError):
+    except (httpx.HTTPError, ssl.SSLError) as e:
         if wait_time > 2 ** 6:
-            raise
-        print(f"Error in response, trying again in: {wait_time}s")
+            logger.exception(f"Response never succeeded on url {url}")
+            raise NavigatorError(url=url) from e
+        logger.error(f"Error in response, trying again in: {wait_time}s")
         await asyncio.sleep(wait_time)
         return await get(client, url, wait_time=wait_time * 2, headers=headers)
 

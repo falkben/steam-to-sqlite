@@ -4,7 +4,7 @@ from datetime import datetime
 
 import httpx
 import sqlalchemy.exc
-from rich import print
+from loguru import logger
 from sqlmodel import Session, select
 
 from steam2sqlite import ACHIEVEMENT_URL, APPID_URL, BATCH_SIZE, navigator, utils
@@ -30,8 +30,8 @@ def get_or_create(session, model, **kwargs):
 
 async def get_app_achievements(client: httpx.AsyncClient, appid: int) -> list[dict]:
     url = ACHIEVEMENT_URL.format(appid)
-    resp = await navigator.get(client, url, headers={"accept": "application/json"})
     try:
+        resp = await navigator.get(client, url, headers={"accept": "application/json"})
         resp.raise_for_status()
         data = resp.json()
         if (
@@ -39,9 +39,9 @@ async def get_app_achievements(client: httpx.AsyncClient, appid: int) -> list[di
             and "achievements" in data["achievementpercentages"]
         ):
             return data["achievementpercentages"]["achievements"]
-    except (httpx.TimeoutException, httpx.HTTPError) as e:
-        print(f"Error getting achievements for appid: {appid}, {e}")
-        # todo: log this error in db
+    except (httpx.HTTPError, navigator.NavigatorError):
+        logger.exception(f"Error getting achievements for appid: {appid}")
+        # todo: log this error in db, tricky since we're in async context
         pass
     return []
 
@@ -187,7 +187,11 @@ def get_apps_data(
 ) -> list[dict]:
 
     urls = [APPID_URL.format(appid) for appid in appids if appid is not None]
-    responses = asyncio.run(navigator.make_requests(urls))
+    try:
+        responses = asyncio.run(navigator.make_requests(urls))
+    except navigator.NavigatorError:
+        logger.exception(f"Error getting app data for {appids}")
+        raise
 
     apps_data = []
     for appid, resp in zip(appids, responses):
@@ -197,7 +201,7 @@ def get_apps_data(
             apps_data.append(item)
 
         except httpx.HTTPError as e:
-            print(e)
+            logger.exception(f"Http error with appid: {appid}")
             record_appid_error(session, appid, steam_appids_names[appid], f"{e}")
 
     return apps_data
@@ -212,8 +216,7 @@ def store_apps_data(
             app = import_single_item(session, app_data)
             apps.append(app)
         except DataParsingError as e:
-            # todo: log the error instead of print
-            print(f"Error for appid: {e.appid}, reason: {e.reason}")
+            logger.exception(f"Error for appid: {e.appid}, reason: {e.reason}")
             record_appid_error(
                 session, e.appid, steam_appids_names.get(e.appid, "unknown"), e.reason
             )
