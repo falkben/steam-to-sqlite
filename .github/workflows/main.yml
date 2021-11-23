@@ -60,6 +60,7 @@ jobs:
         env:
           NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
         run: |-
+          source .venv/bin/activate
           datasette publish vercel database.db \
             --token $NOW_TOKEN \
             --install datasette-graphql \
