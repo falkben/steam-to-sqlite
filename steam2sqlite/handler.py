@@ -180,7 +180,7 @@ def record_appid_error(
     session.commit()
 
 
-# delay by 10 seconds for rate limiting
+# delay for rate limiting
 @utils.delay_by(BATCH_SIZE)
 def get_apps_data(
     session: Session, steam_appids_names: dict[int, str], appids: list[int]
