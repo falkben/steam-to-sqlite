@@ -6,12 +6,15 @@ Public [Steam](https://store.steampowered.com/) app and achievement data in a sq
 
 The database and deployments are updated automatically through gitub actions.
 
-- View the data inside a [Datasette](https://datasette.io/) deployment at: <https://steam-to-sqlite.vercel.app/>. A graphql interface can be accessed at <https://steam-to-sqlite.vercel.app/graphql>.
-- Download the most recent sqlite [database.db](https://github.com/falkben/steam2sqlite/raw/main/database.db) file.
+| | |
+|-|-|
+|SQLite3 File|[database.db ⬇️](https://github.com/falkben/steam2sqlite/raw/main/database.db) |
+|[Datasette deployment](https://datasette.io/)|<https://steam-to-sqlite.vercel.app/>|
+|GraphQL interface|<https://steam-to-sqlite.vercel.app/graphql>|
 
-To preview the database schema without, you can view [models.py](/steam2sqlite/models.py), which contains a [SQLModel](https://sqlmodel.tiangolo.com/) representation.
+To preview the database schema, you can view [models.py](/steam2sqlite/models.py), which contains a [SQLModel](https://sqlmodel.tiangolo.com/) representation.
 
-## Dev
+## Install
 
 To install the project locally:
 
@@ -25,7 +28,7 @@ To install the project locally:
 python steam2sqlite/main.py
 ```
 
-Note: Due to the rate limits on the public steam api, the program will take several days to iterate over all the steam apps in the steam catalog.
+Due to rate limits on the public Steam api, the program will take several days to iterate over all the Steam apps in the Steam catalog.
 
 Limit the runtime in minutes with the `-l` or `--limit` argument:
 
@@ -35,11 +38,11 @@ python steam2sqlite/main.py --limit 10
 
 Will run for 10 minutes and then (hopefully) exit cleanly with a database partially updated.
 
-## Deploy to vercel
+## Deploy to Vercel
 
 The deployment runs automatically with [github actions](/.github/workflows/main.yml). To manually deploy:
 
-1. install [vercel](https://vercel.com/cli)
+1. install [Vercel CLI](https://vercel.com/cli)
 2. `vercel login`
 3. Deploy:
     ```sh
