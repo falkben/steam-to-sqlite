@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v2
@@ -49,12 +50,12 @@ jobs:
         shell: bash
 
       - name: Push to main branch
-        uses: Automattic/action-commit-to-branch@master
-        with:
-          branch: "main"
-          commit_message: "GitHub action database update"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
+        run: |
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add database.db
+          git commit -m "GitHub action database update" || exit 0
+          git push
 
       - name: Deploy Datasette using Vercel
         env:
