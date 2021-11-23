@@ -40,7 +40,7 @@ async def get_app_achievements(client: httpx.AsyncClient, appid: int) -> list[di
         ):
             return data["achievementpercentages"]["achievements"]
     except (httpx.HTTPError, navigator.NavigatorError):
-        logger.exception(f"Error getting achievements for appid: {appid}")
+        logger.error(f"Error getting achievements for appid: {appid}")
         # todo: log this error in db, tricky since we're in async context
         pass
     return []
@@ -190,7 +190,7 @@ def get_apps_data(
     try:
         responses = asyncio.run(navigator.make_requests(urls))
     except navigator.NavigatorError:
-        logger.exception(f"Error getting app data for {appids}")
+        logger.error(f"Error getting app data for {appids}")
         raise
 
     apps_data = []
@@ -201,7 +201,7 @@ def get_apps_data(
             apps_data.append(item)
 
         except httpx.HTTPError as e:
-            logger.exception(f"Http error with appid: {appid}")
+            logger.error(f"Http error with appid: {appid}")
             record_appid_error(session, appid, steam_appids_names[appid], f"{e}")
 
     return apps_data
@@ -216,7 +216,7 @@ def store_apps_data(
             app = import_single_item(session, app_data)
             apps.append(app)
         except DataParsingError as e:
-            logger.exception(f"Error for appid: {e.appid}, reason: {e.reason}")
+            logger.error(f"Error for appid: {e.appid}, reason: {e.reason}")
             record_appid_error(
                 session, e.appid, steam_appids_names.get(e.appid, "unknown"), e.reason
             )

@@ -44,7 +44,7 @@ async def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
             appid_data = resp.json()
             asyncio.sleep(1)
         except navigator.NavigatorError:
-            logger.exception("Error getting the appids from Steam")
+            logger.error("Error getting the appids from Steam")
             raise
 
     return {item["appid"]: item["name"] for item in appid_data["applist"]["apps"]}
