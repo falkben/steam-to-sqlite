@@ -188,14 +188,15 @@ def get_apps_data(
 ) -> list[dict]:
 
     urls = [APPID_URL.format(appid) for appid in appids if appid is not None]
-    try:
-        responses = asyncio.run(navigator.make_requests(urls))
-    except navigator.NavigatorError:
-        logger.error(f"Error getting app data for {appids}")
-        raise
+    responses = asyncio.run(navigator.make_requests(urls))
 
     apps_data = []
     for appid, resp in zip(appids, responses):
+        # make_requests inserts exceptions into the responses list
+        if isinstance(resp, navigator.NavigatorError):
+            logger.error(f"Error getting app data for {appid}")
+            record_appid_error(session, appid, steam_appids_names[appid], f"{resp}")
+
         try:
             resp.raise_for_status()
             item = resp.json()
