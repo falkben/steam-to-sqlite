@@ -1,4 +1,5 @@
 import asyncio
+import json
 import sqlite3
 from datetime import datetime
 
@@ -200,7 +201,7 @@ def get_apps_data(
             item = resp.json()
             apps_data.append(item)
 
-        except httpx.HTTPError as e:
+        except (httpx.HTTPError, json.JSONDecodeError) as e:
             logger.error(f"Http error with appid: {appid}")
             record_appid_error(session, appid, steam_appids_names[appid], f"{e}")
 
