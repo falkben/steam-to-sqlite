@@ -45,17 +45,16 @@ jobs:
       - name: run the script
         run: |
           source .venv/bin/activate
-          python steam2sqlite/main.py --limit 50
-          git pull
+          wget -qO database.db https://www.dropbox.com/s/i47qt3chrp9lr9e/database.db?dl=1
+          python steam2sqlite/main.py --limit 2
+          python scripts/uploader.py database.db /database.db
         shell: bash
 
-      - name: Push to main branch
-        run: |
-          git config user.name "Automated"
-          git config user.email "actions@users.noreply.github.com"
-          git add database.db
-          git commit -m "GitHub action database update" || exit 0
-          git push
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: database.db
+          path: database.db
 
       - name: Deploy Datasette using Vercel
         env:

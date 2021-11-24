@@ -8,7 +8,7 @@ The database and deployments are updated automatically through gitub actions.
 
 | | |
 |-|-|
-|SQLite3 File|[database.db ⬇️](https://github.com/falkben/steam2sqlite/raw/main/database.db) |
+|SQLite3 File|[database.db ⬇️](https://www.dropbox.com/s/i47qt3chrp9lr9e/database.db?dl=1) |
 |[Datasette deployment](https://datasette.io/)|<https://steam-to-sqlite.vercel.app/>|
 |GraphQL interface|<https://steam-to-sqlite.vercel.app/graphql>|
 
