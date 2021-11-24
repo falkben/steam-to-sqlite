@@ -51,9 +51,11 @@ jobs:
 
       - name: upload to dropbox
         run: |
+          source .venv/bin/activate
           python scripts/uploader.py database.db /database.db
         env:
           DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
+        shell: bash
 
       - uses: actions/upload-artifact@v2
         if: failure()
