@@ -13,7 +13,6 @@ python-dotenv = "^0.19.2"
 loguru = "^0.5.3"
 datasette = "^0.59.3"
 datasette-publish-vercel = "^0.12"
-datasette-graphql = "^2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
