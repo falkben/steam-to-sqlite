@@ -29,45 +29,44 @@ def get_or_create(session, model, **kwargs):
         return instance
 
 
-async def get_app_achievements(client: httpx.AsyncClient, appid: int) -> list[dict]:
-    url = ACHIEVEMENT_URL.format(appid)
-    try:
-        resp = await navigator.get(client, url, headers={"accept": "application/json"})
-        resp.raise_for_status()
-        data = resp.json()
+def attach_achievements_to_app(
+    session: Session, app_achievements_dict: dict, app: SteamApp
+):
+
+    for achievement_dict in app_achievements_dict:
+        achievement_args = achievement_dict | {"steam_app": app}  # joining dicts
+        get_or_create(session, Achievement, **achievement_args)
+
+    session.commit()
+
+
+def get_apps_achievements(session: Session, apps: list[SteamApp]):
+
+    urls = [ACHIEVEMENT_URL.format(app.appid) for app in apps]
+    responses = asyncio.run(navigator.make_requests(urls))
+
+    for app, resp in zip(apps, responses):
+        # make_requests inserts exceptions into the responses list
+        if isinstance(resp, navigator.NavigatorError):
+            logger.error(f"Error getting achievement data for {app.appid}")
+            continue
+
+        try:
+            resp.raise_for_status()
+            data = resp.json()
+        except (httpx.HTTPError, json.JSONDecodeError):
+            logger.error(f"Error getting achievements for appid: {app.appid}")
+            continue
+
         if (
             "achievementpercentages" in data
             and "achievements" in data["achievementpercentages"]
         ):
-            return data["achievementpercentages"]["achievements"]
-    except (httpx.HTTPError, navigator.NavigatorError):
-        logger.error(f"Error getting achievements for appid: {appid}")
-        # todo: log this error in db, tricky since we're in async context
-        pass
-    return []
-
-
-async def get_apps_achievements(apps: list[SteamApp]) -> list[list[dict]]:
-
-    limits = httpx.Limits(max_keepalive_connections=5, max_connections=10)
-    async with httpx.AsyncClient(
-        headers={"accept": "application/json"}, timeout=10, limits=limits
-    ) as client:
-        tasks = [get_app_achievements(client, app.appid) for app in apps]
-        achievements = await asyncio.gather(*tasks)
-    return achievements  # type: ignore
-
-
-def store_apps_achievements(
-    session: Session, apps: list[SteamApp], achievements_dict: list[list[dict]]
-) -> None:
-
-    for app, app_achievements_dict in zip(apps, achievements_dict):
-        for achievement_dict in app_achievements_dict:
-            achievement_args = achievement_dict | {"steam_app": app}
-            get_or_create(session, Achievement, **achievement_args)
-
-        session.commit()
+            attach_achievements_to_app(
+                session, data["achievementpercentages"]["achievements"], app
+            )
+        else:
+            logger.error(f"Error getting achievements for appid: {app.appid}")
 
 
 def load_into_db(session: Session, data: dict) -> SteamApp:
@@ -196,12 +195,12 @@ def get_apps_data(
         if isinstance(resp, navigator.NavigatorError):
             logger.error(f"Error getting app data for {appid}")
             record_appid_error(session, appid, steam_appids_names[appid], f"{resp}")
+            continue
 
         try:
             resp.raise_for_status()
             item = resp.json()
             apps_data.append(item)
-
         except (httpx.HTTPError, json.JSONDecodeError) as e:
             logger.error(f"Http error with appid: {appid}")
             record_appid_error(session, appid, steam_appids_names[appid], f"{e}")
