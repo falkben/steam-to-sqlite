@@ -42,7 +42,7 @@ async def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
             async with httpx.AsyncClient() as client:
                 resp = await navigator.get(client, APPIDS_URL)
             appid_data = resp.json()
-            asyncio.sleep(1)
+            await asyncio.sleep(1)
         except navigator.NavigatorError:
             logger.error("Error getting the appids from Steam")
             raise
