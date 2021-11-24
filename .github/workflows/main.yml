@@ -1,4 +1,4 @@
-name: Run steam2sqlite
+name: Run steam-to-sqlite
 
 on:
   schedule:
@@ -71,4 +71,5 @@ jobs:
           datasette publish vercel database.db \
             --token $NOW_TOKEN \
             --install datasette-graphql \
-            --project steam-to-sqlite
+            --project steam-to-sqlite \
+            --metadata datasette-data/metadata.json

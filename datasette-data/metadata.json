@@ -1,0 +1,5 @@
+{
+    "title": "Public Steam app and achievement data",
+    "source": "steam-to-sqlite",
+    "source_url": "https://github.com/falkben/steam-to-sqlite"
+}
