@@ -70,6 +70,6 @@ jobs:
           source .venv/bin/activate
           datasette publish vercel database.db \
             --token $NOW_TOKEN \
-            --install datasette-graphql \
+            --install datasette-graphql --install datasette-vega \
             --project steam-to-sqlite \
             --metadata datasette-data/metadata.json

@@ -18,6 +18,8 @@ dropbox = "^11.24.0"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
 pytest-asyncio = "^0.16.0"
+datasette-vega = "^0.6.2"
+datasette-graphql = "^2.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
