@@ -2,7 +2,7 @@ import json
 
 import pytest
 from sqlmodel import Session, create_engine
-from steam2sqlite import handler, main, models
+from steam2sqlite import handler, models
 
 steam_appids_names = {620: "Portal 2", 659: "Portal 2 - Pre-order"}
 SQLITE_URL = "sqlite://"
@@ -12,15 +12,6 @@ SQLITE_URL = "sqlite://"
 def session():
     engine = create_engine(SQLITE_URL, echo=False)
     models.create_db_and_tables(engine)
-    with Session(engine) as session:
-        yield session
-
-
-@pytest.fixture
-def session_from_file():
-    engine = create_engine(main.SQLITE_URL, echo=False)
-    models.create_db_and_tables(engine)
-    # todo: mock the session.commit() and/or rollback at the end
     with Session(engine) as session:
         yield session
 
@@ -159,6 +150,7 @@ def test_updates_on_diff_achievement_data(
         ),
         None,
     )
+    assert modified_achievement
     assert modified_achievement.percent == 100
 
 
@@ -204,6 +196,7 @@ def test_duplicate_acheievemnts_on_app(
         ),
         None,
     )
+    assert modified_achievement
     assert modified_achievement.percent == 100
 
     # assert there are the correct number of achievements
@@ -215,40 +208,22 @@ def test_duplicate_acheievemnts_on_app(
 
 def test_update_column_updated(session: Session, portal_app: models.SteamApp):
 
-    initial_updated = portal_app.updated
-
     # assert our initial data
     assert portal_app.is_free is False
 
-    # make an update
+    initial_updated = portal_app.updated
+
     data = get_apps_data([f"{portal_app.appid}"])[0]
+    new_portal_app = handler.import_single_app(session, data)
+
+    first_update = new_portal_app.updated
+
+    assert new_portal_app.is_free is False
+    assert first_update > initial_updated
+
+    # make an update
     data[f"{portal_app.appid}"]["data"]["is_free"] = True
     new_portal_app = handler.import_single_app(session, data)
 
     assert new_portal_app.is_free is True
-    assert new_portal_app.updated > initial_updated
-
-
-def test_update_column_updated_local_db(session_from_file: Session):
-    session = session_from_file
-
-    portal_app = (
-        session.query(models.SteamApp).filter(models.SteamApp.appid == 620).one()
-    )
-
-    initial_updated = portal_app.updated
-
-    # assert our initial data
-    assert portal_app.is_free is False
-
-    # make an update
-    data = get_apps_data([f"{portal_app.appid}"])[0]
-    data[f"{portal_app.appid}"]["data"]["is_free"] = True
-    new_portal_app = handler.import_single_app(session, data)
-
-    assert new_portal_app.is_free is True
-    assert new_portal_app.updated > initial_updated
-
-    # return to original
-    data[f"{portal_app.appid}"]["data"]["is_free"] = False
-    handler.import_single_app(session, data)
+    assert new_portal_app.updated > first_update > initial_updated
