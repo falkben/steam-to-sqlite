@@ -202,3 +202,19 @@ def test_duplicate_acheievemnts_on_app(
 
     # assert we only have 51 achievements total in the db (cascade delete)
     assert len(session.query(models.Achievement).all()) == portal_app.achievements_total
+
+
+def test_update_column_updated(session: Session, portal_app: models.SteamApp):
+
+    initial_updated = portal_app.updated
+
+    # assert our initial data
+    assert portal_app.is_free is False
+
+    # make an update
+    portal_app.is_free = True
+    session.add(portal_app)
+    session.commit()
+    session.refresh(portal_app)
+
+    assert portal_app.updated > initial_updated
