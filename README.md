@@ -38,6 +38,22 @@ python steam2sqlite/main.py --limit 10
 
 Will run for 10 minutes and then (hopefully) exit cleanly with a database partially updated.
 
+## Migrations
+
+To upgrade db to current migration/revision
+
+```sh
+alembic upgrade head
+```
+
+Generate a migration/revision
+
+```sh
+alembic revision --autogenerate -m "MESSAGE"
+```
+
+Examine generated file in `migrations/versions`. Pay attention to table/column renames (they will be dropped/created in migration file).
+
 ## Deploy to Vercel
 
 The deployment runs automatically with [github actions](/.github/workflows/main.yml). To manually deploy:
