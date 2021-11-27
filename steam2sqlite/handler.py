@@ -179,6 +179,8 @@ def load_app_into_db(session: Session, data: dict) -> SteamApp:
     steam_app.categories = categories
     steam_app.genres = genres
 
+    steam_app.updated = datetime.utcnow()
+
     session.add(steam_app)
     session.commit()
     session.refresh(steam_app)
