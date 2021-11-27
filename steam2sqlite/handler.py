@@ -31,7 +31,14 @@ def get_or_create(session, model, **kwargs):
 
 def update_or_create(session, model, filterargs, **kwargs):
 
-    instance = session.exec(select(model).filter_by(**filterargs)).one_or_none()
+    try:
+        instance = session.exec(select(model).filter_by(**filterargs)).one_or_none()
+    except sqlalchemy.exc.MultipleResultsFound:
+        logger.error(
+            f"multiple results found for filter arguments: {filterargs} on model {model}"
+        )
+        instance = session.exec(select(model).filter_by(**filterargs)).first()
+
     if instance:  # update
         for key, value in kwargs.items():
             setattr(instance, key, value)
