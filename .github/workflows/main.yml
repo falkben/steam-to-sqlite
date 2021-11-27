@@ -46,6 +46,7 @@ jobs:
         run: |
           source .venv/bin/activate
           wget -qO database.db https://www.dropbox.com/s/i47qt3chrp9lr9e/database.db?dl=1
+          python -m alembic upgrade head
           python steam2sqlite/main.py --limit 45
         shell: bash
 
