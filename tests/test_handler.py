@@ -30,7 +30,7 @@ def get_apps_data(appids: list[str]):
 
 def get_apps_achievements(
     apps: list[models.SteamApp],
-) -> list[tuple[models.SteamApp, dict]]:
+) -> list[tuple[models.SteamApp, list[dict]]]:
     """'mocks' handler.get_apps_achievements function"""
 
     # todo: actually mock the handler function replacing the url requests w/ static data
@@ -151,3 +151,54 @@ def test_updates_on_diff_achievement_data(
         None,
     )
     assert modified_achievement.percent == 100
+
+
+def test_duplicate_acheievemnts_on_app(
+    session: Session, portal_app: models.SteamApp, portal_achievements
+):
+    """App with duplicated achievements
+    assert clear out achievements with updates
+    """
+
+    # duplicate the first achievement
+    first_achievement = portal_app.achievements[0]
+    a = models.Achievement(
+        name=first_achievement.name, percent=first_achievement.percent
+    )
+    portal_app.achievements.append(a)
+    session.commit()
+
+    # assert we have a duplicate
+    result = (
+        session.query(models.Achievement)
+        .filter_by(name=first_achievement.name, steam_app=portal_app)
+        .all()
+    )
+    assert len(result) == 2
+    assert portal_app.achievements_total == len(portal_app.achievements) - 1
+
+    # set first achievement percent to something diff for assertions
+    apps_achievements_data = get_apps_achievements([portal_app])
+    portal_achievements_data = apps_achievements_data[0]
+    modified_achievement_name = portal_achievements_data[1][0]["name"]
+    portal_achievements_data[1][0]["percent"] = 100
+
+    # now update
+    handler.store_apps_achievements(session, [portal_achievements_data])
+
+    # assert we got an update
+    modified_achievement = next(
+        (
+            achievement
+            for achievement in portal_app.achievements
+            if achievement.name == modified_achievement_name
+        ),
+        None,
+    )
+    assert modified_achievement.percent == 100
+
+    # assert there are the correct number of achievements
+    assert portal_app.achievements_total == len(portal_app.achievements)
+
+    # assert we only have 51 achievements total in the db (cascade delete)
+    assert len(session.query(models.Achievement).all()) == portal_app.achievements_total

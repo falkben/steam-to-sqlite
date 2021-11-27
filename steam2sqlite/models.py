@@ -84,7 +84,10 @@ class SteamApp(SQLModel, table=True):
     genres: List[Genre] = Relationship(
         back_populates="steam_apps", link_model=GenreSteammAppLink
     )
-    achievements: List["Achievement"] = Relationship(back_populates="steam_app")
+    achievements: List["Achievement"] = Relationship(
+        back_populates="steam_app",
+        sa_relationship_kwargs={"cascade": "all, delete-orphan"},
+    )
 
 
 class Achievement(SQLModel, table=True):

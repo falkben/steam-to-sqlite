@@ -37,7 +37,7 @@ def update_or_create(session, model, filterargs, **kwargs):
         logger.error(
             f"multiple results found for filter arguments: {filterargs} on model {model}"
         )
-        instance = session.exec(select(model).filter_by(**filterargs)).first()
+        raise
 
     if instance:  # update
         for key, value in kwargs.items():
@@ -49,7 +49,7 @@ def update_or_create(session, model, filterargs, **kwargs):
 
 
 def attach_achievements_to_app(
-    session: Session, app_achievements_dict: dict, app: SteamApp
+    session: Session, app_achievements_dict: list[dict], app: SteamApp
 ):
 
     for achievement_dict in app_achievements_dict:
@@ -64,7 +64,20 @@ def attach_achievements_to_app(
     session.commit()
 
 
-def get_apps_achievements(apps: list[SteamApp]) -> list[tuple[SteamApp, dict]]:
+def clear_and_store_achievements(
+    session: Session, app_achievements_dict: list[dict], app: SteamApp
+):
+    app.achievements = []
+    session.commit()
+    session.refresh(app)
+
+    for achievement_dict in app_achievements_dict:
+        inst = Achievement(**achievement_dict)
+        app.achievements.append(inst)
+    session.commit()
+
+
+def get_apps_achievements(apps: list[SteamApp]) -> list[tuple[SteamApp, list[dict]]]:
 
     urls = [ACHIEVEMENT_URL.format(app.appid) for app in apps]
     responses = asyncio.run(navigator.make_requests(urls))
@@ -97,11 +110,15 @@ def get_apps_achievements(apps: list[SteamApp]) -> list[tuple[SteamApp, dict]]:
 
 
 def store_apps_achievements(
-    session: Session, apps_achievements_data: list[tuple[SteamApp, dict]]
+    session: Session, apps_achievements_data: list[tuple[SteamApp, list[dict]]]
 ):
     for app_achievement_data in apps_achievements_data:
         app, achievement_data = app_achievement_data
-        attach_achievements_to_app(session, achievement_data, app)
+        try:
+            attach_achievements_to_app(session, achievement_data, app)
+        except sqlalchemy.exc.MultipleResultsFound:
+            # clear out achievements and store them fresh
+            clear_and_store_achievements(session, achievement_data, app)
 
 
 def load_app_into_db(session: Session, data: dict) -> SteamApp:
