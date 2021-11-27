@@ -212,9 +212,9 @@ def test_update_column_updated(session: Session, portal_app: models.SteamApp):
     assert portal_app.is_free is False
 
     # make an update
-    portal_app.is_free = True
-    session.add(portal_app)
-    session.commit()
-    session.refresh(portal_app)
+    data = get_apps_data([f"{portal_app.appid}"])[0]
+    data[f"{portal_app.appid}"]["data"]["is_free"] = True
+    new_portal_app = handler.import_single_app(session, data)
 
-    assert portal_app.updated > initial_updated
+    assert new_portal_app.is_free is True
+    assert new_portal_app.updated > initial_updated

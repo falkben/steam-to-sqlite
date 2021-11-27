@@ -179,9 +179,6 @@ def load_app_into_db(session: Session, data: dict) -> SteamApp:
     steam_app.categories = categories
     steam_app.genres = genres
 
-    # clear the updated attribute in case of an update
-    steam_app.updated = None
-
     session.add(steam_app)
     session.commit()
     session.refresh(steam_app)
