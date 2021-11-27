@@ -29,22 +29,40 @@ def get_or_create(session, model, **kwargs):
         return instance
 
 
+def update_or_create(session, model, filterargs, **kwargs):
+
+    instance = session.exec(select(model).filter_by(**filterargs)).one_or_none()
+    if instance:  # update
+        for key, value in kwargs.items():
+            setattr(instance, key, value)
+    else:  # create
+        instance = model(**kwargs)
+
+    return instance
+
+
 def attach_achievements_to_app(
     session: Session, app_achievements_dict: dict, app: SteamApp
 ):
 
     for achievement_dict in app_achievements_dict:
         achievement_args = achievement_dict | {"steam_app": app}  # joining dicts
-        get_or_create(session, Achievement, **achievement_args)
+        update_or_create(
+            session,
+            Achievement,
+            {"steam_app": app, "name": achievement_dict["name"]},
+            **achievement_args,
+        )
 
     session.commit()
 
 
-def get_apps_achievements(session: Session, apps: list[SteamApp]):
+def get_apps_achievements(apps: list[SteamApp]) -> list[tuple[SteamApp, dict]]:
 
     urls = [ACHIEVEMENT_URL.format(app.appid) for app in apps]
     responses = asyncio.run(navigator.make_requests(urls))
 
+    apps_achievements_data = []
     for app, resp in zip(apps, responses):
         # make_requests inserts exceptions into the responses list
         if isinstance(resp, navigator.NavigatorError):
@@ -62,14 +80,24 @@ def get_apps_achievements(session: Session, apps: list[SteamApp]):
             "achievementpercentages" in data
             and "achievements" in data["achievementpercentages"]
         ):
-            attach_achievements_to_app(
-                session, data["achievementpercentages"]["achievements"], app
+            apps_achievements_data.append(
+                (app, data["achievementpercentages"]["achievements"])
             )
         else:
             logger.error(f"Error getting achievements for appid: {app.appid}")
 
+    return apps_achievements_data
 
-def load_into_db(session: Session, data: dict) -> SteamApp:
+
+def store_apps_achievements(
+    session: Session, apps_achievements_data: list[tuple[SteamApp, dict]]
+):
+    for app_achievement_data in apps_achievements_data:
+        app, achievement_data = app_achievement_data
+        attach_achievements_to_app(session, achievement_data, app)
+
+
+def load_app_into_db(session: Session, data: dict) -> SteamApp:
 
     genres_data = data.get("genres") or []
     if genres_data:
@@ -120,14 +148,9 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
         "achievements_total": achievements_total,
         "release_date": release_date,
     }
-    steam_app = session.exec(
-        select(SteamApp).where(SteamApp.appid == data["steam_appid"])
-    ).one_or_none()
-    if steam_app:  # update
-        for key, value in app_attrs.items():
-            setattr(steam_app, key, value)
-    else:  # create
-        steam_app = SteamApp(**app_attrs)
+    steam_app = update_or_create(
+        session, SteamApp, {"appid": data["steam_appid"]}, **app_attrs
+    )
 
     steam_app.categories = categories
     steam_app.genres = genres
@@ -139,7 +162,7 @@ def load_into_db(session: Session, data: dict) -> SteamApp:
     return steam_app
 
 
-def import_single_item(session: Session, item: dict) -> SteamApp:
+def import_single_app(session: Session, item: dict) -> SteamApp:
 
     appid = list(item.keys())[0]
     if item[appid]["success"] is False:
@@ -154,7 +177,7 @@ def import_single_item(session: Session, item: dict) -> SteamApp:
         )
 
     try:
-        app = load_into_db(session, data)
+        app = load_app_into_db(session, data)
     except (sqlite3.DatabaseError, sqlalchemy.exc.IntegrityError) as e:
         raise DataParsingError(int(appid), reason=f"Database error: {e}")
 
@@ -214,7 +237,7 @@ def store_apps_data(
     apps = []
     for app_data in apps_data:
         try:
-            app = import_single_item(session, app_data)
+            app = import_single_app(session, app_data)
             apps.append(app)
         except DataParsingError as e:
             logger.error(f"Error for appid: {e.appid}, reason: {e.reason}")

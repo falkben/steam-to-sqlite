@@ -1,0 +1,210 @@
+{
+    "achievementpercentages": {
+        "achievements": [
+            {
+                "name": "ACH.SURVIVE_CONTAINER_RIDE",
+                "percent": 79.5
+            },
+            {
+                "name": "ACH.WAKE_UP",
+                "percent": 70.8000030517578125
+            },
+            {
+                "name": "ACH.LASER",
+                "percent": 68.8000030517578125
+            },
+            {
+                "name": "ACH.BRIDGE",
+                "percent": 59.5
+            },
+            {
+                "name": "ACH.HI_FIVE_YOUR_PARTNER",
+                "percent": 58.5
+            },
+            {
+                "name": "ACH.BREAK_OUT",
+                "percent": 52.2999992370605469
+            },
+            {
+                "name": "ACH.STALEMATE_ASSOCIATE",
+                "percent": 51.2999992370605469
+            },
+            {
+                "name": "ACH.TEAM_BUILDING",
+                "percent": 49.4000015258789063
+            },
+            {
+                "name": "ACH.BLUE_GEL",
+                "percent": 48.4000015258789063
+            },
+            {
+                "name": "ACH.ADDICTED_TO_SPUDS",
+                "percent": 46.2999992370605469
+            },
+            {
+                "name": "ACH.ORANGE_GEL",
+                "percent": 44.5999984741210938
+            },
+            {
+                "name": "ACH.WHITE_GEL",
+                "percent": 43.4000015258789063
+            },
+            {
+                "name": "ACH.TRIVIAL_TEST",
+                "percent": 41.9000015258789063
+            },
+            {
+                "name": "ACH.MASS_AND_VELOCITY",
+                "percent": 41.2000007629394531
+            },
+            {
+                "name": "ACH.TRACTOR_BEAM",
+                "percent": 39.7000007629394531
+            },
+            {
+                "name": "ACH.NOT_THE_DROID",
+                "percent": 38.9000015258789063
+            },
+            {
+                "name": "ACH.WHEATLEY_TRIES_TO",
+                "percent": 38.9000015258789063
+            },
+            {
+                "name": "ACH.SHOOT_THE_MOON",
+                "percent": 38.5999984741210938
+            },
+            {
+                "name": "ACH.WITH_STYLE",
+                "percent": 34.7999992370605469
+            },
+            {
+                "name": "ACH.SAVE_REDEMPTION_TURRET",
+                "percent": 34.2999992370605469
+            },
+            {
+                "name": "ACH.HUG_NAME",
+                "percent": 32.5
+            },
+            {
+                "name": "ACH.REENTER_TEST_CHAMBERS",
+                "percent": 31.7999992370605469
+            },
+            {
+                "name": "ACH.BOX_HOLE_IN_ONE",
+                "percent": 31.2999992370605469
+            },
+            {
+                "name": "ACH.TAUNTS",
+                "percent": 27.7999992370605469
+            },
+            {
+                "name": "ACH.SAVE_CUBE",
+                "percent": 27.1000003814697266
+            },
+            {
+                "name": "ACH.EXCURSION_FUNNELS",
+                "percent": 26.8999996185302734
+            },
+            {
+                "name": "ACH.NEW_BLOOD",
+                "percent": 21.7000007629394531
+            },
+            {
+                "name": "ACH.PORTRAIT",
+                "percent": 13.3999996185302734
+            },
+            {
+                "name": "ACH.NO_BOAT",
+                "percent": 12.1000003814697266
+            },
+            {
+                "name": "ACH.YOU_MONSTER",
+                "percent": 10.8000001907348633
+            },
+            {
+                "name": "ACH.ROCK_CRUSHES_ROBOT",
+                "percent": 10.3000001907348633
+            },
+            {
+                "name": "ACH.LAUNCH_TURRET",
+                "percent": 10.1000003814697266
+            },
+            {
+                "name": "ACH.TAUNT_CAMERA",
+                "percent": 9.60000038146972656
+            },
+            {
+                "name": "ACH.COMPLIANT",
+                "percent": 8.5
+            },
+            {
+                "name": "ACH.A3_DOORS",
+                "percent": 8.30000019073486328
+            },
+            {
+                "name": "ACH.DEFIANT",
+                "percent": 7.59999990463256836
+            },
+            {
+                "name": "ACH.CATCH_CRAZY_BOX",
+                "percent": 7.5
+            },
+            {
+                "name": "ACH.FOUR_PORTALS",
+                "percent": 7.30000019073486328
+            },
+            {
+                "name": "ACH.PORTAL_TAUNT",
+                "percent": 6.40000009536743164
+            },
+            {
+                "name": "ACH.CLEAN_UP",
+                "percent": 6.40000009536743164
+            },
+            {
+                "name": "ACH.TEACHER",
+                "percent": 5.80000019073486328
+            },
+            {
+                "name": "ACH.PARTNER_DROP",
+                "percent": 5
+            },
+            {
+                "name": "ACH.SPREAD_THE_LOVE",
+                "percent": 4.5
+            },
+            {
+                "name": "ACH.SPEED_RUN_LEVEL",
+                "percent": 4.40000009536743164
+            },
+            {
+                "name": "ACH.BREAK_MONITORS",
+                "percent": 3.90000009536743164
+            },
+            {
+                "name": "ACH.PARTY_OF_THREE",
+                "percent": 3.79999995231628418
+            },
+            {
+                "name": "ACH.NICE_CATCH",
+                "percent": 3.79999995231628418
+            },
+            {
+                "name": "ACH.SPEED_RUN_COOP",
+                "percent": 3.09999990463256836
+            },
+            {
+                "name": "ACH.LIMITED_PORTALS",
+                "percent": 2.79999995231628418
+            },
+            {
+                "name": "ACH.SUMMER_SALE",
+                "percent": 2.59999990463256836
+            },
+            {
+                "name": "ACH.STAYING_ALIVE",
+                "percent": 2.40000009536743164
+            }
+        ]
+    }
+}

@@ -20,6 +20,7 @@ from steam2sqlite.handler import (
     get_apps_achievements,
     get_apps_data,
     get_error_appids,
+    store_apps_achievements,
     store_apps_data,
 )
 from steam2sqlite.models import create_db_and_tables
@@ -107,9 +108,10 @@ def main(argv: Sequence[str] | None = None) -> int:
 
             apps_with_achievements = [app for app in apps if app.achievements_total > 0]
             if apps_with_achievements:
-                utils.delay_by(len(apps_with_achievements))(
-                    get_apps_achievements(session, apps_with_achievements)
+                apps_achievements_data = utils.delay_by(len(apps_with_achievements))(
+                    get_apps_achievements(apps_with_achievements)
                 )
+                store_apps_achievements(session, apps_achievements_data)
 
             if args.limit and (time.monotonic() - start_time) / 60 > args.limit:
                 break
