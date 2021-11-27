@@ -69,7 +69,6 @@ def main(argv: Sequence[str] | None = None) -> int:
     uvloop.install()
 
     engine = create_engine(SQLITE_URL, echo=False)
-    create_db_and_tables(engine)
 
     # From steam api, dict of: {appids: names}
     steam_appids_names = asyncio.run(get_appids_from_steam(APPIDS_FILE))
