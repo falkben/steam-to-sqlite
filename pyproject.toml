@@ -22,6 +22,7 @@ pytest-asyncio = "^0.16.0"
 datasette-vega = "^0.6.2"
 datasette-graphql = "^2.0"
 black = "^21.11b1"
+pytest-cov = "^3.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
