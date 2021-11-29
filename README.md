@@ -1,5 +1,7 @@
 # steam-to-sqlite
 
+![main branch](https://github.com/falkben/steam-to-sqlite/actions/workflows/test.yml/badge.svg?branch=main) [![codecov](https://codecov.io/gh/falkben/steam-to-sqlite/branch/main/graph/badge.svg?token=ZPVU94M3XE)](https://codecov.io/gh/falkben/steam-to-sqlite)
+
 Public [Steam](https://store.steampowered.com/) app and achievement data in a sqlite database
 
 ## Quick links
