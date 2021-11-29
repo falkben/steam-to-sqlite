@@ -23,7 +23,6 @@ from steam2sqlite.handler import (
     store_apps_achievements,
     store_apps_data,
 )
-from steam2sqlite.models import create_db_and_tables
 
 load_dotenv()
 
@@ -35,9 +34,11 @@ SQLITE_URL = f"sqlite:///{sqlite_file_name}"
 
 async def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
     if local_file:
+        logger.info(f"Loading appids from local file: {local_file}")
         with open(local_file) as steam_appids_fp:
             appid_data = json.load(steam_appids_fp)
     else:
+        logger.info("Loading appids from Steam API")
         try:
             async with httpx.AsyncClient() as client:
                 resp = await navigator.get(client, APPIDS_URL)
@@ -56,13 +57,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument(
         "-l",
         "--limit",
-        type=int,
+        type=float,
         default=None,
         nargs="?",
         const=1,
         help="limit runtime (minutes)",
     )
     args = parser.parse_args(argv)
+
+    logger.info("Starting...")
 
     start_time = time.monotonic()
 
@@ -100,6 +103,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             if appid not in set(error_appids)
         ]
 
+        logger.info("Loading app data from Steam API and saving to db")
+
         for appids in utils.grouper(appids_to_process, BATCH_SIZE, fillvalue=None):
 
             apps_data = get_apps_data(session, steam_appids_names, appids)
@@ -113,6 +118,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 store_apps_achievements(session, apps_achievements_data)
 
             if args.limit and (time.monotonic() - start_time) / 60 > args.limit:
+                logger.info(f"Limit ({args.limit} min) reached shutting down...")
                 break
 
     return 0

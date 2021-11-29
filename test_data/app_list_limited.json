@@ -1,0 +1,3462 @@
+{
+    "applist": {
+        "apps": [
+            {
+                "appid": 1685446,
+                "name": "Tiger Tank 59 Ⅰ Black Hill Fortress MP097"
+            },
+            {
+                "appid": 1685447,
+                "name": "Tiger Tank 59 Ⅰ Black Hill Fortress MP098"
+            },
+            {
+                "appid": 1685448,
+                "name": "Tiger Tank 59 Ⅰ Black Hill Fortress MP099"
+            },
+            {
+                "appid": 1685449,
+                "name": "Tiger Tank 59 Ⅰ Black Hill Fortress MP100"
+            },
+            {
+                "appid": 1685470,
+                "name": "新倾国之怒"
+            },
+            {
+                "appid": 1685480,
+                "name": "SUPER UFO FIGHTER Demo"
+            },
+            {
+                "appid": 1685500,
+                "name": "简单的跑酷"
+            },
+            {
+                "appid": 1685510,
+                "name": "Couch Combat"
+            },
+            {
+                "appid": 1685520,
+                "name": "Hyper Treasure - Macaronic Labyrinth"
+            },
+            {
+                "appid": 1685550,
+                "name": "Zombardment"
+            },
+            {
+                "appid": 1685560,
+                "name": "Chimes"
+            },
+            {
+                "appid": 1685590,
+                "name": "NetSpace Saga Ep.1"
+            },
+            {
+                "appid": 1685620,
+                "name": "It´s Mealtime!"
+            },
+            {
+                "appid": 1685630,
+                "name": "浊之铃"
+            },
+            {
+                "appid": 1685660,
+                "name": "保护蛋蛋"
+            },
+            {
+                "appid": 1685670,
+                "name": "Last Light Digital Artbook"
+            },
+            {
+                "appid": 1685720,
+                "name": "Car Mechanic Simulator 2021 - Nissan DLC"
+            },
+            {
+                "appid": 1685760,
+                "name": "Revival: Recolonization Playtest"
+            },
+            {
+                "appid": 1685770,
+                "name": "Post Industrial Renovator"
+            },
+            {
+                "appid": 1685790,
+                "name": "Need for sharp"
+            },
+            {
+                "appid": 1685850,
+                "name": "The Wolf's Girl"
+            },
+            {
+                "appid": 1685870,
+                "name": "Near-Mage"
+            },
+            {
+                "appid": 1684800,
+                "name": "Fantasy Grounds - Mini-Dungeons Bundle #046-050"
+            },
+            {
+                "appid": 1684810,
+                "name": "Karanos Solitaire Demo"
+            },
+            {
+                "appid": 1684830,
+                "name": "Meow'n'Dash"
+            },
+            {
+                "appid": 1684840,
+                "name": "Hot Tub Simulator"
+            },
+            {
+                "appid": 1684850,
+                "name": "Knife To Meet You Playtest"
+            },
+            {
+                "appid": 1684860,
+                "name": "Click Quest 3D"
+            },
+            {
+                "appid": 1684870,
+                "name": "Lifing"
+            },
+            {
+                "appid": 1684880,
+                "name": "Reset"
+            },
+            {
+                "appid": 1684890,
+                "name": "Undercover Agent DLC"
+            },
+            {
+                "appid": 1684900,
+                "name": "Pop it, Please!"
+            },
+            {
+                "appid": 1684910,
+                "name": "Kitsune Killer"
+            },
+            {
+                "appid": 1684920,
+                "name": "Dungless 2"
+            },
+            {
+                "appid": 1684930,
+                "name": "CULTIC"
+            },
+            {
+                "appid": 1684960,
+                "name": "Idle Wasteland - Pet Slot Bundle"
+            },
+            {
+                "appid": 1684961,
+                "name": "Idle Wasteland - Pet Exp Bundle"
+            },
+            {
+                "appid": 1685010,
+                "name": "Antithesis"
+            },
+            {
+                "appid": 1685020,
+                "name": "Cat Attack"
+            },
+            {
+                "appid": 1685030,
+                "name": "Pop This Pop-It"
+            },
+            {
+                "appid": 1685040,
+                "name": "Dirge Soundtrack"
+            },
+            {
+                "appid": 1685050,
+                "name": "RPG Maker VX Ace - Casual and Social Games"
+            },
+            {
+                "appid": 1685080,
+                "name": "RPG Maker MV - MT Terrains"
+            },
+            {
+                "appid": 1685081,
+                "name": "RPG Maker MV - Casual and Social Games"
+            },
+            {
+                "appid": 1685090,
+                "name": "RPG Maker MZ - MT Terrains"
+            },
+            {
+                "appid": 1685100,
+                "name": "RPG Maker MZ - Casual and Social Games"
+            },
+            {
+                "appid": 1685110,
+                "name": "Visual Novel Maker - Casual and Social Games"
+            },
+            {
+                "appid": 1685160,
+                "name": "PixPhys Soundtrack"
+            },
+            {
+                "appid": 1685190,
+                "name": "The Game For Skippers Playtest"
+            },
+            {
+                "appid": 1685200,
+                "name": "The Tool For Skippers"
+            },
+            {
+                "appid": 1685260,
+                "name": "Asdivine Saga"
+            },
+            {
+                "appid": 1685270,
+                "name": "Resonant"
+            },
+            {
+                "appid": 1685290,
+                "name": "蛊婆 - 古久寻 - 青花旗袍"
+            },
+            {
+                "appid": 1685300,
+                "name": "Verdict"
+            },
+            {
+                "appid": 1684330,
+                "name": "VGL: Imperative"
+            },
+            {
+                "appid": 1684400,
+                "name": "Best Month Ever!"
+            },
+            {
+                "appid": 1684410,
+                "name": "Seal World"
+            },
+            {
+                "appid": 1684420,
+                "name": "Nym: Path of the Skycaster"
+            },
+            {
+                "appid": 1684460,
+                "name": "Hollowsk 1999 3D"
+            },
+            {
+                "appid": 1684510,
+                "name": "The Plane Effect Prologue"
+            },
+            {
+                "appid": 1684520,
+                "name": "Glory of the Colosseum"
+            },
+            {
+                "appid": 1684530,
+                "name": "100 Doors: Escape from Work"
+            },
+            {
+                "appid": 1684540,
+                "name": "Eye of the Temple Original Soundtrack"
+            },
+            {
+                "appid": 1684550,
+                "name": "After Shadows Demo"
+            },
+            {
+                "appid": 1684560,
+                "name": "Urban Fantasy: Vampires vs Werewolves"
+            },
+            {
+                "appid": 1684580,
+                "name": "PC Hockey League"
+            },
+            {
+                "appid": 1684590,
+                "name": "Idle Wasteland - Super Bundle"
+            },
+            {
+                "appid": 1684591,
+                "name": "Idle Wasteland - Nuclear Bundle"
+            },
+            {
+                "appid": 1684592,
+                "name": "Idle Wasteland - Ultimate Bundle"
+            },
+            {
+                "appid": 1684610,
+                "name": "Hentai Girl Clicker"
+            },
+            {
+                "appid": 1684650,
+                "name": "Pareidolia"
+            },
+            {
+                "appid": 1684670,
+                "name": "Best Forklift Operator"
+            },
+            {
+                "appid": 1684710,
+                "name": "CAT Interstellar: Recast"
+            },
+            {
+                "appid": 1684730,
+                "name": "Fantasy Grounds - Journal of the Travellers' Aid Society Volume 2"
+            },
+            {
+                "appid": 1684750,
+                "name": "I deserve a happy ending"
+            },
+            {
+                "appid": 1684770,
+                "name": "Fantasy Grounds - Future's Past: Paying Forward (2 of 5)"
+            },
+            {
+                "appid": 1684780,
+                "name": "Hero Zex"
+            },
+            {
+                "appid": 1684080,
+                "name": "Toroom"
+            },
+            {
+                "appid": 1684110,
+                "name": "Field of Arms: Tactics"
+            },
+            {
+                "appid": 1684130,
+                "name": "Void's Ballad"
+            },
+            {
+                "appid": 1684190,
+                "name": "投资时代打工人Demo"
+            },
+            {
+                "appid": 1684200,
+                "name": "Super Sami Roll Soundtrack"
+            },
+            {
+                "appid": 1684210,
+                "name": "Horror Villa 恐怖撤锁"
+            },
+            {
+                "appid": 1684220,
+                "name": "SEDOMAIRI"
+            },
+            {
+                "appid": 1684230,
+                "name": "Arcadius"
+            },
+            {
+                "appid": 1684240,
+                "name": "Metal Faith"
+            },
+            {
+                "appid": 1684250,
+                "name": "The Evil Farming Game: Replanted"
+            },
+            {
+                "appid": 1684260,
+                "name": "Run, Doodleguy! Playtest"
+            },
+            {
+                "appid": 1684270,
+                "name": "It's a wrap!"
+            },
+            {
+                "appid": 1684280,
+                "name": "Last Light Demo"
+            },
+            {
+                "appid": 1684290,
+                "name": "Mistmoon Falls"
+            },
+            {
+                "appid": 1684300,
+                "name": "The Evil Farming Game: Replanted Demo"
+            },
+            {
+                "appid": 1684310,
+                "name": "The Evil Farming Game: Replanted Playtest"
+            },
+            {
+                "appid": 1683580,
+                "name": "SPACE DANCE"
+            },
+            {
+                "appid": 1683590,
+                "name": "Hustle Game"
+            },
+            {
+                "appid": 1683600,
+                "name": "Piggy Disco"
+            },
+            {
+                "appid": 1683620,
+                "name": "Plan B from Outer Space: A Bavarian Odyssey"
+            },
+            {
+                "appid": 1683630,
+                "name": "Oval Racer Series - Stoxkarts"
+            },
+            {
+                "appid": 1683640,
+                "name": "Gunnar’s Conquest"
+            },
+            {
+                "appid": 1683660,
+                "name": "The Hunter of Falkenberg"
+            },
+            {
+                "appid": 1683670,
+                "name": "Robot Labs: Remake"
+            },
+            {
+                "appid": 1683690,
+                "name": "Skiing VR"
+            },
+            {
+                "appid": 1683700,
+                "name": "DCS: MiG-21bis Battle of Krasnodar Campaign"
+            },
+            {
+                "appid": 1683720,
+                "name": "Hungry Fish"
+            },
+            {
+                "appid": 1683730,
+                "name": "Welcome to PINEHILLS"
+            },
+            {
+                "appid": 1683750,
+                "name": "Bubbleland"
+            },
+            {
+                "appid": 1683780,
+                "name": "Paladin Dream Soundtrack"
+            },
+            {
+                "appid": 1683800,
+                "name": "Robot Daycare"
+            },
+            {
+                "appid": 1683830,
+                "name": "Cyber Puzzle HackRow Demo"
+            },
+            {
+                "appid": 1683860,
+                "name": "Eronoctosis: Put Yourself Together"
+            },
+            {
+                "appid": 1683870,
+                "name": "Crystalreach Islands"
+            },
+            {
+                "appid": 1683890,
+                "name": "RETROLD"
+            },
+            {
+                "appid": 1683900,
+                "name": "Hunter Girls"
+            },
+            {
+                "appid": 1683910,
+                "name": "Cyber Defence"
+            },
+            {
+                "appid": 1683930,
+                "name": "Rollers of the Realm Demo"
+            },
+            {
+                "appid": 1683940,
+                "name": "Carpathian Night Demo"
+            },
+            {
+                "appid": 1683950,
+                "name": "The Witch's Sexual Prison"
+            },
+            {
+                "appid": 1683960,
+                "name": "Glisten to your heart: The courage within you"
+            },
+            {
+                "appid": 1683980,
+                "name": "Super Astreus 2 Demo"
+            },
+            {
+                "appid": 1684030,
+                "name": "Hyper-5 Demo"
+            },
+            {
+                "appid": 1684050,
+                "name": "Scary Tales"
+            },
+            {
+                "appid": 1683110,
+                "name": "Memory Lane Demo"
+            },
+            {
+                "appid": 1683140,
+                "name": "Anima Forest"
+            },
+            {
+                "appid": 1683240,
+                "name": "Misha Adventures"
+            },
+            {
+                "appid": 1683260,
+                "name": "Erotic Jigsaw Puzzle Summer - ArtBook"
+            },
+            {
+                "appid": 1683270,
+                "name": "Recall : Empty wishes"
+            },
+            {
+                "appid": 1683280,
+                "name": "Recall : Empty wishes Demo"
+            },
+            {
+                "appid": 1683290,
+                "name": "666 Masks"
+            },
+            {
+                "appid": 1683300,
+                "name": "CubePuzzle"
+            },
+            {
+                "appid": 1683310,
+                "name": "Heartbeat: Regret"
+            },
+            {
+                "appid": 1683330,
+                "name": "Flying Fury Demo"
+            },
+            {
+                "appid": 1683340,
+                "name": "Kayak VR"
+            },
+            {
+                "appid": 1683350,
+                "name": "Pixel Ramen - Easy Pixel Art and Pixel GIF Creator"
+            },
+            {
+                "appid": 1683360,
+                "name": "Kayak VR Playtest"
+            },
+            {
+                "appid": 1683380,
+                "name": "噗噗的冒险乐园"
+            },
+            {
+                "appid": 1683410,
+                "name": "Hentai Jigsaw Girls"
+            },
+            {
+                "appid": 1683420,
+                "name": "Strategic Mind: Spirit of Liberty - Prologue 1939"
+            },
+            {
+                "appid": 1683430,
+                "name": "冥婚交友中心《厲鬼的戀愛指南》"
+            },
+            {
+                "appid": 1683500,
+                "name": "Dandelion"
+            },
+            {
+                "appid": 1683510,
+                "name": "Runes of Avalon 2"
+            },
+            {
+                "appid": 1683530,
+                "name": "Golden Underfoot"
+            },
+            {
+                "appid": 1683540,
+                "name": "Unknown path"
+            },
+            {
+                "appid": 1682640,
+                "name": "Century - Behemoth Founder's Pack"
+            },
+            {
+                "appid": 1682740,
+                "name": "Sakuna: Of Rice and Ruin Original Soundtrack"
+            },
+            {
+                "appid": 1682750,
+                "name": "RoguekiniZ"
+            },
+            {
+                "appid": 1682760,
+                "name": "The Strange Story Of Brian Fisher: Chapter 2 Demo"
+            },
+            {
+                "appid": 1682770,
+                "name": "Destined to Die - Cat Postcard Wallpapers"
+            },
+            {
+                "appid": 1682771,
+                "name": "Destined to Die - TV Cutscene Raw Art"
+            },
+            {
+                "appid": 1682790,
+                "name": "BlastFort"
+            },
+            {
+                "appid": 1682830,
+                "name": "BlastFort - Knight's Shield Expansion Pack"
+            },
+            {
+                "appid": 1682840,
+                "name": "Evorales"
+            },
+            {
+                "appid": 1682870,
+                "name": "Fish Heads"
+            },
+            {
+                "appid": 1682880,
+                "name": "Stolen Eggs"
+            },
+            {
+                "appid": 1682890,
+                "name": "Golden Boy"
+            },
+            {
+                "appid": 1682920,
+                "name": "Song of Life"
+            },
+            {
+                "appid": 1682930,
+                "name": "Wardens Rising Playtest"
+            },
+            {
+                "appid": 1682950,
+                "name": "Dream Mirror"
+            },
+            {
+                "appid": 1682960,
+                "name": "Agora"
+            },
+            {
+                "appid": 1682980,
+                "name": "Azurael’s Circle: Chapter 5"
+            },
+            {
+                "appid": 1682990,
+                "name": "Piffsy"
+            },
+            {
+                "appid": 1683010,
+                "name": "Cat from the box"
+            },
+            {
+                "appid": 1683020,
+                "name": "Haunted Hotel: The X Collector's Edition"
+            },
+            {
+                "appid": 1683070,
+                "name": "3 O'clock Horror"
+            },
+            {
+                "appid": 1682130,
+                "name": "藏梦：序曲"
+            },
+            {
+                "appid": 1682150,
+                "name": "Supreme OS"
+            },
+            {
+                "appid": 1682180,
+                "name": "akeytsu Indie 2021 Upgrade"
+            },
+            {
+                "appid": 1682200,
+                "name": "Cloud Island"
+            },
+            {
+                "appid": 1682210,
+                "name": "You Can't Finish"
+            },
+            {
+                "appid": 1682230,
+                "name": "Cyber Manhunt - Home Sweet Home"
+            },
+            {
+                "appid": 1682240,
+                "name": "Deck Adventurers - Heroes of the Valley"
+            },
+            {
+                "appid": 1682260,
+                "name": "Black Sheep"
+            },
+            {
+                "appid": 1682270,
+                "name": "Beers and Boomerangs Playtest"
+            },
+            {
+                "appid": 1682290,
+                "name": "Wéko The Mask Gatherer - Prologue"
+            },
+            {
+                "appid": 1682300,
+                "name": "Flirtatious: Fallen Angels"
+            },
+            {
+                "appid": 1682310,
+                "name": "Destroyer: The U-Boat Hunter Playtest"
+            },
+            {
+                "appid": 1682330,
+                "name": "Death Drive: A Deck-Building Open World Survival RPG"
+            },
+            {
+                "appid": 1682340,
+                "name": "Plane Accident"
+            },
+            {
+                "appid": 1682350,
+                "name": "Save Yourself!"
+            },
+            {
+                "appid": 1682370,
+                "name": "Prisonscape"
+            },
+            {
+                "appid": 1682390,
+                "name": "X-Plane 11 - Add-on: Airfield Canada - CYHZ - Halifax Stanfield International Airport"
+            },
+            {
+                "appid": 1682400,
+                "name": "The Strange Story Of Brian Fisher: Chapter 2"
+            },
+            {
+                "appid": 1682420,
+                "name": "Creeping Darkness"
+            },
+            {
+                "appid": 1682430,
+                "name": "Music Label Manager Demo"
+            },
+            {
+                "appid": 1682450,
+                "name": "Mimir's Recruit"
+            },
+            {
+                "appid": 1682480,
+                "name": "Rhythmetallic - Full Metal Expansion"
+            },
+            {
+                "appid": 1682510,
+                "name": "X-Plane 11 - Add-on: Aerosoft - Airport Zagreb"
+            },
+            {
+                "appid": 1682550,
+                "name": "Lost and found - What if I come and find it"
+            },
+            {
+                "appid": 1682580,
+                "name": "Smithy Wars"
+            },
+            {
+                "appid": 1682600,
+                "name": "Rolling Car"
+            },
+            {
+                "appid": 1682610,
+                "name": "Tank Zombie Smasher"
+            },
+            {
+                "appid": 1682620,
+                "name": "Ascent"
+            },
+            {
+                "appid": 1682630,
+                "name": "Big Boy Boxing Demo"
+            },
+            {
+                "appid": 1681630,
+                "name": "Rule No. 1 Soundtrack"
+            },
+            {
+                "appid": 1681660,
+                "name": "Alpha Particle Soundtrack"
+            },
+            {
+                "appid": 1681680,
+                "name": "Who Stole My Beard? Soundtrack"
+            },
+            {
+                "appid": 1681690,
+                "name": "Masters of Puzzle - Battlegroup Selcior"
+            },
+            {
+                "appid": 1681720,
+                "name": "My Otaku Academia"
+            },
+            {
+                "appid": 1681750,
+                "name": "Last Stop - Original Soundtrack"
+            },
+            {
+                "appid": 1681760,
+                "name": "Mech Mind Ninja"
+            },
+            {
+                "appid": 1681780,
+                "name": "Born Punk Demo"
+            },
+            {
+                "appid": 1681790,
+                "name": "Bara Giants - Adult Art Pack + Guide"
+            },
+            {
+                "appid": 1681800,
+                "name": "ソードオブパラディンRE Demo"
+            },
+            {
+                "appid": 1681810,
+                "name": "Umbra: Journey Home"
+            },
+            {
+                "appid": 1681820,
+                "name": "THE LEGEND OF HEROES: HAJIMARI NO KISEKI - C's Special Costume \"White Knight\""
+            },
+            {
+                "appid": 1681840,
+                "name": "Summoners Fate"
+            },
+            {
+                "appid": 1681860,
+                "name": "はじめて点てたお茶がコーヒーの私は、破茶滅茶なお点前で茶道大会優勝を目指す。"
+            },
+            {
+                "appid": 1681900,
+                "name": "The Long Journey to Farewell"
+            },
+            {
+                "appid": 1682000,
+                "name": "BlockWorld"
+            },
+            {
+                "appid": 1682010,
+                "name": "Your Chronicle - Artwork Addition"
+            },
+            {
+                "appid": 1682020,
+                "name": "DELIRIA"
+            },
+            {
+                "appid": 1682040,
+                "name": "Captain Edgar Giza"
+            },
+            {
+                "appid": 1682060,
+                "name": "Warriors of the Nile 2"
+            },
+            {
+                "appid": 1682070,
+                "name": "战球英雄"
+            },
+            {
+                "appid": 1682080,
+                "name": "SAMUDRA Playtest"
+            },
+            {
+                "appid": 1682100,
+                "name": "ARIA CHRONICLE Amazon"
+            },
+            {
+                "appid": 1682120,
+                "name": "Welcome to Dreamville"
+            },
+            {
+                "appid": 1681201,
+                "name": "LegionWar - Dwarf Legion Pack"
+            },
+            {
+                "appid": 1681210,
+                "name": "Combots - Unlock All"
+            },
+            {
+                "appid": 1681220,
+                "name": "Combots Premium"
+            },
+            {
+                "appid": 1681270,
+                "name": "Star Conflict - Emperor"
+            },
+            {
+                "appid": 1681290,
+                "name": "Full Moon"
+            },
+            {
+                "appid": 1681300,
+                "name": "Car Physics Simulator - Trucks + Missions DLC"
+            },
+            {
+                "appid": 1681320,
+                "name": "Maze of Acheron"
+            },
+            {
+                "appid": 1681350,
+                "name": "代号608<CODE 608>"
+            },
+            {
+                "appid": 1681360,
+                "name": "Gore Prologue"
+            },
+            {
+                "appid": 1681380,
+                "name": "Haos"
+            },
+            {
+                "appid": 1681400,
+                "name": "Magic Adventures"
+            },
+            {
+                "appid": 1681430,
+                "name": "Robocop: Rogue City"
+            },
+            {
+                "appid": 1681460,
+                "name": "Dark Edges"
+            },
+            {
+                "appid": 1681480,
+                "name": "The Repairing Mantis"
+            },
+            {
+                "appid": 1681520,
+                "name": "Fifefer Island"
+            },
+            {
+                "appid": 1681550,
+                "name": "Sealer of Dungeons"
+            },
+            {
+                "appid": 1681560,
+                "name": "Hungry Bunny"
+            },
+            {
+                "appid": 1681570,
+                "name": "haunTD Demo"
+            },
+            {
+                "appid": 1681590,
+                "name": "Luminus"
+            },
+            {
+                "appid": 1681620,
+                "name": "Mines & Dragons"
+            },
+            {
+                "appid": 1680750,
+                "name": "Norega(Full Expansion)"
+            },
+            {
+                "appid": 1680770,
+                "name": "The Grass"
+            },
+            {
+                "appid": 1680790,
+                "name": "B.O.O.M. Company"
+            },
+            {
+                "appid": 1680800,
+                "name": "Biwar Legend of Dragon Slayer"
+            },
+            {
+                "appid": 1680820,
+                "name": "Tree of Savior - Summerly July 2021 OST Collection"
+            },
+            {
+                "appid": 1680840,
+                "name": "Stardust Origins Demo"
+            },
+            {
+                "appid": 1680850,
+                "name": "Tree of Savior Japan - Summerly JULY 2021 OST Collection"
+            },
+            {
+                "appid": 1680870,
+                "name": "卡纳！卡呐？一起来学假名吧！"
+            },
+            {
+                "appid": 1680890,
+                "name": "Coldage"
+            },
+            {
+                "appid": 1680900,
+                "name": "Escape from Nowhere"
+            },
+            {
+                "appid": 1680910,
+                "name": "Golf Together"
+            },
+            {
+                "appid": 1680920,
+                "name": "RPG Maker MZ - High Fantasy Generator Pack for MZ"
+            },
+            {
+                "appid": 1680930,
+                "name": "RPG Maker MZ - Creepy Land Tileset Pack"
+            },
+            {
+                "appid": 1680940,
+                "name": "RPG Maker MZ - Wizards Pack (8 Elements)"
+            },
+            {
+                "appid": 1680950,
+                "name": "RPG Maker MZ - Minikle's Background CG Material Collection \"Dungeon\" part01 A"
+            },
+            {
+                "appid": 1680960,
+                "name": "RPG Maker MZ - Minikle's Background CG Material Collection \"Dungeon\" part01 B"
+            },
+            {
+                "appid": 1680970,
+                "name": "RPG Maker MV - Creepy Land Tileset Pack"
+            },
+            {
+                "appid": 1680971,
+                "name": "RPG Maker MV - Wizards Pack (8 Elements)"
+            },
+            {
+                "appid": 1680972,
+                "name": "RPG Maker MV - Minikle's Background CG Material Collection \"Dungeon\" part01 A"
+            },
+            {
+                "appid": 1680973,
+                "name": "RPG Maker MV - Minikle's Background CG Material Collection \"Dungeon\" part01 B"
+            },
+            {
+                "appid": 1680980,
+                "name": "Celestine"
+            },
+            {
+                "appid": 1680990,
+                "name": "Sexy Heroine! Part 3"
+            },
+            {
+                "appid": 1681000,
+                "name": "超逼真的攻城模拟器 Playtest"
+            },
+            {
+                "appid": 1681010,
+                "name": "Go! Go! PogoGirl"
+            },
+            {
+                "appid": 1681030,
+                "name": "METAL DOGS Playtest"
+            },
+            {
+                "appid": 1681040,
+                "name": "Murder Diaries 2"
+            },
+            {
+                "appid": 1681050,
+                "name": "Hundred Days - Grape Lab"
+            },
+            {
+                "appid": 1681060,
+                "name": "Exogate Initiative"
+            },
+            {
+                "appid": 1681070,
+                "name": "Garbage Crew Demo"
+            },
+            {
+                "appid": 1681080,
+                "name": "New Supper Banana!"
+            },
+            {
+                "appid": 1681090,
+                "name": "Road 96 Book Prologue"
+            },
+            {
+                "appid": 1681120,
+                "name": "Dark Side of Fate"
+            },
+            {
+                "appid": 1681130,
+                "name": "Warcry: Challenges Demo"
+            },
+            {
+                "appid": 1681140,
+                "name": "Pagan Age"
+            },
+            {
+                "appid": 1681180,
+                "name": "Eternal Hope Soundtrack"
+            },
+            {
+                "appid": 1680250,
+                "name": "Craft Craft Craft!"
+            },
+            {
+                "appid": 1680260,
+                "name": "Dead-End Detective: The Sixpence Strangler"
+            },
+            {
+                "appid": 1680270,
+                "name": "SaberStyle"
+            },
+            {
+                "appid": 1680280,
+                "name": "Amidst The Darkness"
+            },
+            {
+                "appid": 1680300,
+                "name": "Spades"
+            },
+            {
+                "appid": 1680310,
+                "name": "Cubiverse"
+            },
+            {
+                "appid": 1680360,
+                "name": "Dark Prospect Playtest"
+            },
+            {
+                "appid": 1680380,
+                "name": "Oozing Islands"
+            },
+            {
+                "appid": 1680390,
+                "name": "Shooter for Dummies"
+            },
+            {
+                "appid": 1680400,
+                "name": "Argus Panoptes"
+            },
+            {
+                "appid": 1680420,
+                "name": "Prehistoric Marine Monsters dedicated server"
+            },
+            {
+                "appid": 1680440,
+                "name": "Sin-Cay"
+            },
+            {
+                "appid": 1680450,
+                "name": "Fantasy Grounds - FG Siege Map Pack 1"
+            },
+            {
+                "appid": 1680480,
+                "name": "Fantasy Grounds - FG Siege Map Pack 2"
+            },
+            {
+                "appid": 1680500,
+                "name": "Roar of Revenge"
+            },
+            {
+                "appid": 1680510,
+                "name": "Vulto Playtest"
+            },
+            {
+                "appid": 1680530,
+                "name": "3AM"
+            },
+            {
+                "appid": 1680540,
+                "name": "MESOZOIKUM"
+            },
+            {
+                "appid": 1680560,
+                "name": "SIGURAT"
+            },
+            {
+                "appid": 1680580,
+                "name": "haunTD"
+            },
+            {
+                "appid": 1680620,
+                "name": "Tree of Mu"
+            },
+            {
+                "appid": 1680650,
+                "name": "Astonishing Baseball 21"
+            },
+            {
+                "appid": 1680660,
+                "name": "Synth Run"
+            },
+            {
+                "appid": 1680670,
+                "name": "Mango Mischief"
+            },
+            {
+                "appid": 1680680,
+                "name": "Galactic Merchant"
+            },
+            {
+                "appid": 1680690,
+                "name": "Castle of Delights"
+            },
+            {
+                "appid": 1680700,
+                "name": "Purgo box"
+            },
+            {
+                "appid": 1680145,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP056"
+            },
+            {
+                "appid": 1680146,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP057"
+            },
+            {
+                "appid": 1680147,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP058"
+            },
+            {
+                "appid": 1680148,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP059"
+            },
+            {
+                "appid": 1680149,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP060"
+            },
+            {
+                "appid": 1680150,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP061"
+            },
+            {
+                "appid": 1680151,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP062"
+            },
+            {
+                "appid": 1680152,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP063"
+            },
+            {
+                "appid": 1680153,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP064"
+            },
+            {
+                "appid": 1680154,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP065"
+            },
+            {
+                "appid": 1680155,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP066"
+            },
+            {
+                "appid": 1680156,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP067"
+            },
+            {
+                "appid": 1680157,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP068"
+            },
+            {
+                "appid": 1680158,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP069"
+            },
+            {
+                "appid": 1680159,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP070"
+            },
+            {
+                "appid": 1680160,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP071"
+            },
+            {
+                "appid": 1680161,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP072"
+            },
+            {
+                "appid": 1680162,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP073"
+            },
+            {
+                "appid": 1680163,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP074"
+            },
+            {
+                "appid": 1680164,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP075"
+            },
+            {
+                "appid": 1680165,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP076"
+            },
+            {
+                "appid": 1680166,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP077"
+            },
+            {
+                "appid": 1680167,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP078"
+            },
+            {
+                "appid": 1680168,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP079"
+            },
+            {
+                "appid": 1680169,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP080"
+            },
+            {
+                "appid": 1680170,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP081"
+            },
+            {
+                "appid": 1680171,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP082"
+            },
+            {
+                "appid": 1680172,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP083"
+            },
+            {
+                "appid": 1680173,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP084"
+            },
+            {
+                "appid": 1680174,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP085"
+            },
+            {
+                "appid": 1680175,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP086"
+            },
+            {
+                "appid": 1680176,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP087"
+            },
+            {
+                "appid": 1680177,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP088"
+            },
+            {
+                "appid": 1680178,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP089"
+            },
+            {
+                "appid": 1680179,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP090"
+            },
+            {
+                "appid": 1680180,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP091"
+            },
+            {
+                "appid": 1680181,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP092"
+            },
+            {
+                "appid": 1680182,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP093"
+            },
+            {
+                "appid": 1680183,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP094"
+            },
+            {
+                "appid": 1680184,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP095"
+            },
+            {
+                "appid": 1680185,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP096"
+            },
+            {
+                "appid": 1680186,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP097"
+            },
+            {
+                "appid": 1680187,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP098"
+            },
+            {
+                "appid": 1680188,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP099"
+            },
+            {
+                "appid": 1680189,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP100"
+            },
+            {
+                "appid": 1680200,
+                "name": "Finding A Prince: The Game Soundtrack"
+            },
+            {
+                "appid": 1680095,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP006"
+            },
+            {
+                "appid": 1680096,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP007"
+            },
+            {
+                "appid": 1680097,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP008"
+            },
+            {
+                "appid": 1680098,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP009"
+            },
+            {
+                "appid": 1680099,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP010"
+            },
+            {
+                "appid": 1680100,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP011"
+            },
+            {
+                "appid": 1680101,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP012"
+            },
+            {
+                "appid": 1680102,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP013"
+            },
+            {
+                "appid": 1680103,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP014"
+            },
+            {
+                "appid": 1680104,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP015"
+            },
+            {
+                "appid": 1680105,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP016"
+            },
+            {
+                "appid": 1680106,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP017"
+            },
+            {
+                "appid": 1680107,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP018"
+            },
+            {
+                "appid": 1680108,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP019"
+            },
+            {
+                "appid": 1680109,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP020"
+            },
+            {
+                "appid": 1680110,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP021"
+            },
+            {
+                "appid": 1680111,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP022"
+            },
+            {
+                "appid": 1680112,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP023"
+            },
+            {
+                "appid": 1680113,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP024"
+            },
+            {
+                "appid": 1680114,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP025"
+            },
+            {
+                "appid": 1680115,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP026"
+            },
+            {
+                "appid": 1680116,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP027"
+            },
+            {
+                "appid": 1680117,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP028"
+            },
+            {
+                "appid": 1680118,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP029"
+            },
+            {
+                "appid": 1680119,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP030"
+            },
+            {
+                "appid": 1680120,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP031"
+            },
+            {
+                "appid": 1680121,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP032"
+            },
+            {
+                "appid": 1680122,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP033"
+            },
+            {
+                "appid": 1680123,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP034"
+            },
+            {
+                "appid": 1680124,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP035"
+            },
+            {
+                "appid": 1680125,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP036"
+            },
+            {
+                "appid": 1680126,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP037"
+            },
+            {
+                "appid": 1680127,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP038"
+            },
+            {
+                "appid": 1680128,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP039"
+            },
+            {
+                "appid": 1680129,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP040"
+            },
+            {
+                "appid": 1680130,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP041"
+            },
+            {
+                "appid": 1680131,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP042"
+            },
+            {
+                "appid": 1680132,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP043"
+            },
+            {
+                "appid": 1680133,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP044"
+            },
+            {
+                "appid": 1680134,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP045"
+            },
+            {
+                "appid": 1680135,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP046"
+            },
+            {
+                "appid": 1680136,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP047"
+            },
+            {
+                "appid": 1680137,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP048"
+            },
+            {
+                "appid": 1680138,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP049"
+            },
+            {
+                "appid": 1680139,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP050"
+            },
+            {
+                "appid": 1680140,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP051"
+            },
+            {
+                "appid": 1680141,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP052"
+            },
+            {
+                "appid": 1680142,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP053"
+            },
+            {
+                "appid": 1680143,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP054"
+            },
+            {
+                "appid": 1680144,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP055"
+            },
+            {
+                "appid": 1679670,
+                "name": "Prehistoric Marine Monsters"
+            },
+            {
+                "appid": 1679690,
+                "name": "The Secret Blue Forest"
+            },
+            {
+                "appid": 1679720,
+                "name": "Sinbad"
+            },
+            {
+                "appid": 1679730,
+                "name": "筠宝大冒险"
+            },
+            {
+                "appid": 1679750,
+                "name": "Look and Find - Curiosity Demo"
+            },
+            {
+                "appid": 1679770,
+                "name": "Tank Guards"
+            },
+            {
+                "appid": 1679780,
+                "name": "Monstermörder Demo"
+            },
+            {
+                "appid": 1679800,
+                "name": "Get Tanked!"
+            },
+            {
+                "appid": 1679810,
+                "name": "Ace Campus Club: Dark Edition"
+            },
+            {
+                "appid": 1679820,
+                "name": "Skybinder"
+            },
+            {
+                "appid": 1679830,
+                "name": "Chernobyl inferno"
+            },
+            {
+                "appid": 1679880,
+                "name": "Gedaria"
+            },
+            {
+                "appid": 1679900,
+                "name": "No King No Kingdom - King of Angels"
+            },
+            {
+                "appid": 1679910,
+                "name": "Blow & Fly"
+            },
+            {
+                "appid": 1679920,
+                "name": "Project Absentia Demo"
+            },
+            {
+                "appid": 1679960,
+                "name": "Sapling"
+            },
+            {
+                "appid": 1679970,
+                "name": "MageTime Playtest"
+            },
+            {
+                "appid": 1679990,
+                "name": "Hentai Sexy"
+            },
+            {
+                "appid": 1680000,
+                "name": "Rewrite+"
+            },
+            {
+                "appid": 1680010,
+                "name": "PrincessCliffhouse(ver0.1)"
+            },
+            {
+                "appid": 1680020,
+                "name": "巫女契约"
+            },
+            {
+                "appid": 1680030,
+                "name": "巫女契约 Playtest"
+            },
+            {
+                "appid": 1680040,
+                "name": "巫女契约 Demo"
+            },
+            {
+                "appid": 1680050,
+                "name": "黑帝斗者"
+            },
+            {
+                "appid": 1680070,
+                "name": "Casual Golf"
+            },
+            {
+                "appid": 1680090,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP001"
+            },
+            {
+                "appid": 1680091,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP002"
+            },
+            {
+                "appid": 1680092,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP003"
+            },
+            {
+                "appid": 1680093,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP004"
+            },
+            {
+                "appid": 1680094,
+                "name": "Tiger Tank 59 Ⅰ Battleship MP005"
+            },
+            {
+                "appid": 1679200,
+                "name": "BridgeFix 2=3-1"
+            },
+            {
+                "appid": 1679240,
+                "name": "Disaster crisis Playtest"
+            },
+            {
+                "appid": 1679250,
+                "name": "Storyteller Demo"
+            },
+            {
+                "appid": 1679270,
+                "name": "Balls out of Control"
+            },
+            {
+                "appid": 1679330,
+                "name": "Heroes of Yore"
+            },
+            {
+                "appid": 1679340,
+                "name": "Shanghai1920"
+            },
+            {
+                "appid": 1679360,
+                "name": "CTRL Phreak"
+            },
+            {
+                "appid": 1679370,
+                "name": "Avalon: Sacred Crusade Demo"
+            },
+            {
+                "appid": 1679380,
+                "name": "Box And Ball Demo"
+            },
+            {
+                "appid": 1679390,
+                "name": "Geometric Sniper - Blood in Paris Soundtrack"
+            },
+            {
+                "appid": 1679410,
+                "name": "Labyrinths of the World: The Game of Minds Collector's Edition"
+            },
+            {
+                "appid": 1679440,
+                "name": "Fossilfuel Demo"
+            },
+            {
+                "appid": 1679480,
+                "name": "Edibles"
+            },
+            {
+                "appid": 1679490,
+                "name": "Sphere Arena"
+            },
+            {
+                "appid": 1679510,
+                "name": "Plushie from the Sky"
+            },
+            {
+                "appid": 1679530,
+                "name": "SYDE Rugby League Simulator"
+            },
+            {
+                "appid": 1679540,
+                "name": "Gravity Flip"
+            },
+            {
+                "appid": 1679560,
+                "name": "Yuko and the Akuma Menace Demo"
+            },
+            {
+                "appid": 1679580,
+                "name": "Girl Jigsaw 2 - Patch"
+            },
+            {
+                "appid": 1679590,
+                "name": "ZpellCatz: Pumpkin Prologue"
+            },
+            {
+                "appid": 1679600,
+                "name": "RPG Maker VX Ace - The Japan Collection - Backgrounds"
+            },
+            {
+                "appid": 1679601,
+                "name": "RPG Maker VX Ace - Super Retro World - Exterior Pack"
+            },
+            {
+                "appid": 1679610,
+                "name": "RPG Maker MV - The Japan Collection - Backgrounds"
+            },
+            {
+                "appid": 1679611,
+                "name": "RPG Maker MV - Super Retro World - Exterior Pack"
+            },
+            {
+                "appid": 1679620,
+                "name": "RPG Maker MZ - The Japan Collection - Backgrounds"
+            },
+            {
+                "appid": 1679630,
+                "name": "RPG Maker MZ - Super Retro World - Exterior Pack"
+            },
+            {
+                "appid": 1679640,
+                "name": "Visual Novel Maker - The Japan Collection - Backgrounds"
+            },
+            {
+                "appid": 1679650,
+                "name": "TANKBOX Demo"
+            },
+            {
+                "appid": 1678740,
+                "name": "Soccer Cup Solitaire"
+            },
+            {
+                "appid": 1678750,
+                "name": "SALIGIA"
+            },
+            {
+                "appid": 1678760,
+                "name": "Arcano: The Trickery"
+            },
+            {
+                "appid": 1678780,
+                "name": "Counter-Terrorism Ops"
+            },
+            {
+                "appid": 1678790,
+                "name": "Erotic Jigsaw Puzzle Summer"
+            },
+            {
+                "appid": 1678800,
+                "name": "Garlic Soundtrack"
+            },
+            {
+                "appid": 1678810,
+                "name": "Glorious"
+            },
+            {
+                "appid": 1678820,
+                "name": "Brave point kill"
+            },
+            {
+                "appid": 1678840,
+                "name": "Rebots Playtest"
+            },
+            {
+                "appid": 1678850,
+                "name": "弥留之岛 Xanadu Island"
+            },
+            {
+                "appid": 1678860,
+                "name": "TV Kid"
+            },
+            {
+                "appid": 1678880,
+                "name": "SeaRing"
+            },
+            {
+                "appid": 1678890,
+                "name": "Suez Canal Simulator: Ever Given Container Ship DLC"
+            },
+            {
+                "appid": 1678910,
+                "name": "The Nightmare Journey"
+            },
+            {
+                "appid": 1678920,
+                "name": "Samurai Journey"
+            },
+            {
+                "appid": 1678930,
+                "name": "Ultimo Soccer UDC"
+            },
+            {
+                "appid": 1678940,
+                "name": "NEG: The Threefold Cord"
+            },
+            {
+                "appid": 1678950,
+                "name": "Panda City"
+            },
+            {
+                "appid": 1678960,
+                "name": "OFFICESCAPE"
+            },
+            {
+                "appid": 1678970,
+                "name": "Coloring Pixels - 1-Bit Pack"
+            },
+            {
+                "appid": 1678980,
+                "name": "Reef Rumble"
+            },
+            {
+                "appid": 1679020,
+                "name": "Tiny Hunter Demo"
+            },
+            {
+                "appid": 1679030,
+                "name": "Brookhaven - Bunny Backer"
+            },
+            {
+                "appid": 1679031,
+                "name": "Brookhaven - Storage Pet"
+            },
+            {
+                "appid": 1679050,
+                "name": "TheLastHope Demo"
+            },
+            {
+                "appid": 1679070,
+                "name": "Emotion"
+            },
+            {
+                "appid": 1679090,
+                "name": "Collapse of Magic"
+            },
+            {
+                "appid": 1679100,
+                "name": "TheBlackHouse Playtest"
+            },
+            {
+                "appid": 1679110,
+                "name": "Hexahedra Playtest"
+            },
+            {
+                "appid": 1679120,
+                "name": "BOOG ADVENTURE: KING ZECTO CURSE"
+            },
+            {
+                "appid": 1679130,
+                "name": "Spinner Breaker"
+            },
+            {
+                "appid": 1679140,
+                "name": "Neko Hacker Plus: 18+ Hentai Edition"
+            },
+            {
+                "appid": 1679170,
+                "name": "The Callisto"
+            },
+            {
+                "appid": 1679180,
+                "name": "MEMORIES"
+            },
+            {
+                "appid": 1678240,
+                "name": "Students' horrible stories FIN - sHadoW FrIEND"
+            },
+            {
+                "appid": 1678260,
+                "name": "DCS: F-14A Fear the Bones Campaign"
+            },
+            {
+                "appid": 1678310,
+                "name": "Hentai Brick Breaker - ArtBook"
+            },
+            {
+                "appid": 1678320,
+                "name": "Heat Death"
+            },
+            {
+                "appid": 1678330,
+                "name": "Heim Demo"
+            },
+            {
+                "appid": 1678350,
+                "name": "EXOCIDE"
+            },
+            {
+                "appid": 1678360,
+                "name": "TheBlackHouse"
+            },
+            {
+                "appid": 1678370,
+                "name": "Tin Can Soundtrack"
+            },
+            {
+                "appid": 1678380,
+                "name": "自動切るクリップ Demo"
+            },
+            {
+                "appid": 1678410,
+                "name": "Not another zombie game"
+            },
+            {
+                "appid": 1678430,
+                "name": "PowerSlave Exhumed"
+            },
+            {
+                "appid": 1678450,
+                "name": "StOoPiD Puzzle Game"
+            },
+            {
+                "appid": 1678520,
+                "name": "Rent's Due: The Game"
+            },
+            {
+                "appid": 1678550,
+                "name": "Summer Mission"
+            },
+            {
+                "appid": 1678590,
+                "name": "Missing Love"
+            },
+            {
+                "appid": 1678600,
+                "name": "Kulebra and the Souls of Limbo - Demo"
+            },
+            {
+                "appid": 1678630,
+                "name": "Childhood Gone: Shadowed Wand"
+            },
+            {
+                "appid": 1678670,
+                "name": "Missing Love Demo"
+            },
+            {
+                "appid": 1678690,
+                "name": "Pet Knight into cave"
+            },
+            {
+                "appid": 1678700,
+                "name": "CarsFuckingDragons"
+            },
+            {
+                "appid": 1678710,
+                "name": "Project Venus.RP"
+            },
+            {
+                "appid": 1677750,
+                "name": "Splash King's Tournament Playtest"
+            },
+            {
+                "appid": 1677760,
+                "name": "Shades Of Rayna - Warrior Class"
+            },
+            {
+                "appid": 1677770,
+                "name": "The Case of the Golden Idol"
+            },
+            {
+                "appid": 1677780,
+                "name": "Star Renegades: Guardian of the Metaverse"
+            },
+            {
+                "appid": 1677800,
+                "name": "Tiger Trio's Tasty Travels"
+            },
+            {
+                "appid": 1677820,
+                "name": "HAAK 免费试玩版"
+            },
+            {
+                "appid": 1677840,
+                "name": "Color Your World"
+            },
+            {
+                "appid": 1677850,
+                "name": "Letters from a Rainy Day -Oceans and Lace- Trial Version"
+            },
+            {
+                "appid": 1677860,
+                "name": "Spirit of ARX Demo"
+            },
+            {
+                "appid": 1677870,
+                "name": "Gefragt Gejagt - Das Spiel"
+            },
+            {
+                "appid": 1677900,
+                "name": "Relentless Frontier"
+            },
+            {
+                "appid": 1677920,
+                "name": "Mana Go Round"
+            },
+            {
+                "appid": 1677970,
+                "name": "Railroad Corporation 2"
+            },
+            {
+                "appid": 1677990,
+                "name": "Fall Guys - Crown Capers Pack"
+            },
+            {
+                "appid": 1677991,
+                "name": "Fall Guys - Fruit Pirates Pack"
+            },
+            {
+                "appid": 1678010,
+                "name": "The Case of the Golden Idol Demo"
+            },
+            {
+                "appid": 1678020,
+                "name": "Through The Frame"
+            },
+            {
+                "appid": 1678030,
+                "name": "Burn Me Alive"
+            },
+            {
+                "appid": 1678050,
+                "name": "Runic Relay: The Trials"
+            },
+            {
+                "appid": 1678060,
+                "name": "Tactical Vanguard Saga"
+            },
+            {
+                "appid": 1678090,
+                "name": "Dark Home"
+            },
+            {
+                "appid": 1678100,
+                "name": "Long Tail"
+            },
+            {
+                "appid": 1678120,
+                "name": "Flow - Dance, release and scream"
+            },
+            {
+                "appid": 1678140,
+                "name": "Shades of Sakura"
+            },
+            {
+                "appid": 1678160,
+                "name": "Nature Treks: Together (Playtest)"
+            },
+            {
+                "appid": 1678180,
+                "name": "CompactO - Idle Game Demo"
+            },
+            {
+                "appid": 1678190,
+                "name": "Fantasy Grounds - Future's Past: Edge Station (1 of 5)"
+            },
+            {
+                "appid": 1678210,
+                "name": "Parasight Demo"
+            },
+            {
+                "appid": 1677280,
+                "name": "Company of Heroes 3"
+            },
+            {
+                "appid": 1677300,
+                "name": "Gemstone Defense"
+            },
+            {
+                "appid": 1677320,
+                "name": "Fantasy Grounds - Advanced Fighting Fantasy 2E Ruleset"
+            },
+            {
+                "appid": 1677360,
+                "name": "satryn deluxe"
+            },
+            {
+                "appid": 1677380,
+                "name": "Astronium"
+            },
+            {
+                "appid": 1677390,
+                "name": "なりきりVTuber Demo"
+            },
+            {
+                "appid": 1677400,
+                "name": "Black Lotus Motel"
+            },
+            {
+                "appid": 1677410,
+                "name": "Romeow: To The Cracked Mars"
+            },
+            {
+                "appid": 1677430,
+                "name": "Gabriels Worlds The Adventure"
+            },
+            {
+                "appid": 1677450,
+                "name": "In Search Of..."
+            },
+            {
+                "appid": 1677470,
+                "name": "GrandChase Classic"
+            },
+            {
+                "appid": 1677480,
+                "name": "Coral Quest"
+            },
+            {
+                "appid": 1677510,
+                "name": "Knotfiction"
+            },
+            {
+                "appid": 1677520,
+                "name": "Domino Sandbox"
+            },
+            {
+                "appid": 1677530,
+                "name": "Primal Light Soundtrack"
+            },
+            {
+                "appid": 1677540,
+                "name": "Idle Champions - Red Panda Baeloth Theme Pack"
+            },
+            {
+                "appid": 1677541,
+                "name": "Idle Champions - Red Panda Orisha Skin & Feat Pack"
+            },
+            {
+                "appid": 1677542,
+                "name": "Idle Champions - Groak the Toad Familiar Pack"
+            },
+            {
+                "appid": 1677550,
+                "name": "The Missing Link - Deluxe Edition"
+            },
+            {
+                "appid": 1677570,
+                "name": "Vacuum Pilot"
+            },
+            {
+                "appid": 1677590,
+                "name": "Jake's Paralysis"
+            },
+            {
+                "appid": 1677610,
+                "name": "Tanto Cuore - Expanding the House"
+            },
+            {
+                "appid": 1677620,
+                "name": "TurBot"
+            },
+            {
+                "appid": 1677630,
+                "name": "In Space No One Can Hear You Clean"
+            },
+            {
+                "appid": 1677640,
+                "name": "CESSPOOL Demo"
+            },
+            {
+                "appid": 1677650,
+                "name": "CubeCube"
+            },
+            {
+                "appid": 1677660,
+                "name": "Gypsy Retro TV"
+            },
+            {
+                "appid": 1677670,
+                "name": "Aeterna Noctis Demo"
+            },
+            {
+                "appid": 1677680,
+                "name": "Combots Demo"
+            },
+            {
+                "appid": 1677690,
+                "name": "接线员的使命"
+            },
+            {
+                "appid": 1677710,
+                "name": "Pixel Game Maker MV - Falling Blocks Puzzle"
+            },
+            {
+                "appid": 1677730,
+                "name": "美少女搜查官"
+            },
+            {
+                "appid": 1677740,
+                "name": "Stumble Guys"
+            },
+            {
+                "appid": 1676860,
+                "name": "Torschützenkönig"
+            },
+            {
+                "appid": 1676870,
+                "name": "ECO HOLE"
+            },
+            {
+                "appid": 1676880,
+                "name": "契灵之约"
+            },
+            {
+                "appid": 1676900,
+                "name": "Music Maker 2022 Premium Steam Edition"
+            },
+            {
+                "appid": 1676910,
+                "name": "Onde"
+            },
+            {
+                "appid": 1676920,
+                "name": "Save The Octo"
+            },
+            {
+                "appid": 1676940,
+                "name": "Lost scavenger Playtest"
+            },
+            {
+                "appid": 1676970,
+                "name": "Parasight"
+            },
+            {
+                "appid": 1676990,
+                "name": "Music Label Manager"
+            },
+            {
+                "appid": 1677000,
+                "name": "Church of Stratum Prologue"
+            },
+            {
+                "appid": 1677040,
+                "name": "The Clinic of Depravity - A Wife Reveals Her True Nature in Front of Her Husband - Demo"
+            },
+            {
+                "appid": 1677050,
+                "name": "The Married Manager's Scandalous Services - The Pleasures of the Night Shift Demo"
+            },
+            {
+                "appid": 1677070,
+                "name": "Hood: Outlaws & Legends - Battle Pass - 5 Tier Skip Pack"
+            },
+            {
+                "appid": 1677080,
+                "name": "Asteroid 5"
+            },
+            {
+                "appid": 1677150,
+                "name": "DCS: Mariana Islands Map"
+            },
+            {
+                "appid": 1677160,
+                "name": "Simona's Requiem Soundtrack"
+            },
+            {
+                "appid": 1677170,
+                "name": "MY HERO ONE'S JUSTICE 2 Three Musketeers Set"
+            },
+            {
+                "appid": 1677171,
+                "name": "MY HERO ONE'S JUSTICE 2 DLC Pack 6 Hitoshi Shinso"
+            },
+            {
+                "appid": 1677180,
+                "name": "Neko Hacker+"
+            },
+            {
+                "appid": 1677190,
+                "name": "Twelve Floors Below."
+            },
+            {
+                "appid": 1677210,
+                "name": "Fantasy Grounds - More Ancestries & Cultures"
+            },
+            {
+                "appid": 1677220,
+                "name": "OnlyGame: Athlete girls"
+            },
+            {
+                "appid": 1677240,
+                "name": "Please, Come Back before Winter!"
+            },
+            {
+                "appid": 1677250,
+                "name": "Tristan Cole's Pro Driver"
+            },
+            {
+                "appid": 1677260,
+                "name": "Oatmeal"
+            },
+            {
+                "appid": 1676280,
+                "name": "Metasweeper"
+            },
+            {
+                "appid": 1676320,
+                "name": "A Week in the Office -Under the Table-"
+            },
+            {
+                "appid": 1676330,
+                "name": "Cyber Girl 1.0: Booting"
+            },
+            {
+                "appid": 1676340,
+                "name": "Vampire Revenge"
+            },
+            {
+                "appid": 1676350,
+                "name": "摆地摊"
+            },
+            {
+                "appid": 1676390,
+                "name": "Take town"
+            },
+            {
+                "appid": 1676420,
+                "name": "Blood Labs"
+            },
+            {
+                "appid": 1676440,
+                "name": "Tackle Girl"
+            },
+            {
+                "appid": 1676450,
+                "name": "Path of Vidya"
+            },
+            {
+                "appid": 1676460,
+                "name": "Castle Dornstein Demo"
+            },
+            {
+                "appid": 1676490,
+                "name": "PHYSARUM: Slime Mold Simulator Demo"
+            },
+            {
+                "appid": 1676500,
+                "name": "Norega(Expansion)"
+            },
+            {
+                "appid": 1676520,
+                "name": "Hidden Expedition: A King's Line Collector's Edition"
+            },
+            {
+                "appid": 1676530,
+                "name": "Hentai Sushi Jigsaw"
+            },
+            {
+                "appid": 1676540,
+                "name": "Raccoon Roller Playtest"
+            },
+            {
+                "appid": 1676550,
+                "name": "Dull Grey"
+            },
+            {
+                "appid": 1676560,
+                "name": "Redux"
+            },
+            {
+                "appid": 1676570,
+                "name": "Kosmo Laika: Space and Beyond"
+            },
+            {
+                "appid": 1676580,
+                "name": "My Stepmom is a Futanari"
+            },
+            {
+                "appid": 1676590,
+                "name": "BULLETHEAT"
+            },
+            {
+                "appid": 1676600,
+                "name": "末日航路-The Termination"
+            },
+            {
+                "appid": 1676610,
+                "name": "Mac's Journal"
+            },
+            {
+                "appid": 1676620,
+                "name": "Kellogg's Gut Bacteria Reef"
+            },
+            {
+                "appid": 1676630,
+                "name": "Newfound Courage - Art Pack"
+            },
+            {
+                "appid": 1676650,
+                "name": "Paint the Town Red Demo"
+            },
+            {
+                "appid": 1676670,
+                "name": "东方有顶天梦"
+            },
+            {
+                "appid": 1676700,
+                "name": "Smoots Summer Games - First Training"
+            },
+            {
+                "appid": 1676710,
+                "name": "Robogal"
+            },
+            {
+                "appid": 1676720,
+                "name": "White Eyes"
+            },
+            {
+                "appid": 1676740,
+                "name": "Animus: Revenant"
+            },
+            {
+                "appid": 1676750,
+                "name": "Beautiful Mystic Defenders Demo"
+            },
+            {
+                "appid": 1676770,
+                "name": "Stone Guardian"
+            },
+            {
+                "appid": 1675850,
+                "name": "The Unexpected Quest Playtest"
+            },
+            {
+                "appid": 1675880,
+                "name": "Unnatural : Land Of Dead"
+            },
+            {
+                "appid": 1675890,
+                "name": "Ashwalkers Soundtrack"
+            },
+            {
+                "appid": 1675910,
+                "name": "Mavis Beacon Teaches Typing"
+            },
+            {
+                "appid": 1675920,
+                "name": "Jewel Match Solitaire Summertime"
+            },
+            {
+                "appid": 1675930,
+                "name": "OhShape - Caravan Palace Music Pack"
+            },
+            {
+                "appid": 1675970,
+                "name": "Fire Commander: First Response"
+            },
+            {
+                "appid": 1675980,
+                "name": "Lover OST四季篇"
+            },
+            {
+                "appid": 1676000,
+                "name": "崩坏3 Playtest"
+            },
+            {
+                "appid": 1676010,
+                "name": "Unity of Command II - DLC 4"
+            },
+            {
+                "appid": 1676030,
+                "name": "SINGULARITY WORLD"
+            },
+            {
+                "appid": 1676042,
+                "name": "Booty Calls - Eva Elfie Pack"
+            },
+            {
+                "appid": 1676043,
+                "name": "Booty Calls - Miyu Pack"
+            },
+            {
+                "appid": 1676044,
+                "name": "Booty Calls - Eve Pack"
+            },
+            {
+                "appid": 1676050,
+                "name": "BEYOND THE EVIL"
+            },
+            {
+                "appid": 1676060,
+                "name": "Beta Escape"
+            },
+            {
+                "appid": 1676080,
+                "name": "Haru to Shura - Donate"
+            },
+            {
+                "appid": 1676090,
+                "name": "Destroy The Shogun"
+            },
+            {
+                "appid": 1676100,
+                "name": "Space Engineers - Heavy Industry"
+            },
+            {
+                "appid": 1676110,
+                "name": "AST-Hero Beta"
+            },
+            {
+                "appid": 1676150,
+                "name": "Endless Boss Fight"
+            },
+            {
+                "appid": 1676180,
+                "name": "Pablo Let's Go Bar"
+            },
+            {
+                "appid": 1676200,
+                "name": "Underwater"
+            },
+            {
+                "appid": 1676220,
+                "name": "Plank not included Demo"
+            },
+            {
+                "appid": 1676230,
+                "name": "Femdom Lines: Total Obedience Pack"
+            },
+            {
+                "appid": 1676250,
+                "name": "Sunblaze Soundtrack"
+            },
+            {
+                "appid": 1675771,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP052"
+            },
+            {
+                "appid": 1675772,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP053"
+            },
+            {
+                "appid": 1675773,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP054"
+            },
+            {
+                "appid": 1675774,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP055"
+            },
+            {
+                "appid": 1675775,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP056"
+            },
+            {
+                "appid": 1675776,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP057"
+            },
+            {
+                "appid": 1675777,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP058"
+            },
+            {
+                "appid": 1675778,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP059"
+            },
+            {
+                "appid": 1675779,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP060"
+            },
+            {
+                "appid": 1675780,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP061"
+            },
+            {
+                "appid": 1675781,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP062"
+            },
+            {
+                "appid": 1675782,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP063"
+            },
+            {
+                "appid": 1675783,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP064"
+            },
+            {
+                "appid": 1675784,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP065"
+            },
+            {
+                "appid": 1675785,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP066"
+            },
+            {
+                "appid": 1675786,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP067"
+            },
+            {
+                "appid": 1675787,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP068"
+            },
+            {
+                "appid": 1675788,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP069"
+            },
+            {
+                "appid": 1675789,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP070"
+            },
+            {
+                "appid": 1675800,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP071"
+            },
+            {
+                "appid": 1675801,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP072"
+            },
+            {
+                "appid": 1675802,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP073"
+            },
+            {
+                "appid": 1675803,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP074"
+            },
+            {
+                "appid": 1675804,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP075"
+            },
+            {
+                "appid": 1675805,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP076"
+            },
+            {
+                "appid": 1675806,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP077"
+            },
+            {
+                "appid": 1675807,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP078"
+            },
+            {
+                "appid": 1675808,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP079"
+            },
+            {
+                "appid": 1675809,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP080"
+            },
+            {
+                "appid": 1675810,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP081"
+            },
+            {
+                "appid": 1675811,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP082"
+            },
+            {
+                "appid": 1675812,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP083"
+            },
+            {
+                "appid": 1675813,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP084"
+            },
+            {
+                "appid": 1675814,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP085"
+            },
+            {
+                "appid": 1675815,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP086"
+            },
+            {
+                "appid": 1675816,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP087"
+            },
+            {
+                "appid": 1675817,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP088"
+            },
+            {
+                "appid": 1675818,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP089"
+            },
+            {
+                "appid": 1675819,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP090"
+            },
+            {
+                "appid": 1675820,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP091"
+            },
+            {
+                "appid": 1675821,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP092"
+            },
+            {
+                "appid": 1675822,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP093"
+            },
+            {
+                "appid": 1675823,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP094"
+            },
+            {
+                "appid": 1675824,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP095"
+            },
+            {
+                "appid": 1675825,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP096"
+            },
+            {
+                "appid": 1675826,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP097"
+            },
+            {
+                "appid": 1675827,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP098"
+            },
+            {
+                "appid": 1675828,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP099"
+            },
+            {
+                "appid": 1675829,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP100"
+            },
+            {
+                "appid": 1675712,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP003"
+            },
+            {
+                "appid": 1675713,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP004"
+            },
+            {
+                "appid": 1675714,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP005"
+            },
+            {
+                "appid": 1675715,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP006"
+            },
+            {
+                "appid": 1675716,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP007"
+            },
+            {
+                "appid": 1675717,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP008"
+            },
+            {
+                "appid": 1675718,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP009"
+            },
+            {
+                "appid": 1675719,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP010"
+            },
+            {
+                "appid": 1675720,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP011"
+            },
+            {
+                "appid": 1675721,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP012"
+            },
+            {
+                "appid": 1675722,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP013"
+            },
+            {
+                "appid": 1675723,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP014"
+            },
+            {
+                "appid": 1675724,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP015"
+            },
+            {
+                "appid": 1675725,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP016"
+            },
+            {
+                "appid": 1675726,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP017"
+            },
+            {
+                "appid": 1675727,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP018"
+            },
+            {
+                "appid": 1675728,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP019"
+            },
+            {
+                "appid": 1675729,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP020"
+            },
+            {
+                "appid": 1675730,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP021"
+            },
+            {
+                "appid": 1675731,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP022"
+            },
+            {
+                "appid": 1675732,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP023"
+            },
+            {
+                "appid": 1675733,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP024"
+            },
+            {
+                "appid": 1675734,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP025"
+            },
+            {
+                "appid": 1675735,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP026"
+            },
+            {
+                "appid": 1675736,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP027"
+            },
+            {
+                "appid": 1675737,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP028"
+            },
+            {
+                "appid": 1675738,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP029"
+            },
+            {
+                "appid": 1675739,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP030"
+            },
+            {
+                "appid": 1675740,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP031"
+            },
+            {
+                "appid": 1675741,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP032"
+            },
+            {
+                "appid": 1675742,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP033"
+            },
+            {
+                "appid": 1675743,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP034"
+            },
+            {
+                "appid": 1675744,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP035"
+            },
+            {
+                "appid": 1675745,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP036"
+            },
+            {
+                "appid": 1675746,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP037"
+            },
+            {
+                "appid": 1675747,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP038"
+            },
+            {
+                "appid": 1675748,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP039"
+            },
+            {
+                "appid": 1675749,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP040"
+            },
+            {
+                "appid": 1675750,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP041"
+            },
+            {
+                "appid": 1675751,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP042"
+            },
+            {
+                "appid": 1675752,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP043"
+            },
+            {
+                "appid": 1675753,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP044"
+            },
+            {
+                "appid": 1675754,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP045"
+            },
+            {
+                "appid": 1675755,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP046"
+            },
+            {
+                "appid": 1675756,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP047"
+            },
+            {
+                "appid": 1675757,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP048"
+            },
+            {
+                "appid": 1675758,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP049"
+            },
+            {
+                "appid": 1675759,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP050"
+            },
+            {
+                "appid": 1675760,
+                "name": "Blipz"
+            },
+            {
+                "appid": 1675770,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP051"
+            },
+            {
+                "appid": 1675200,
+                "name": "Steam Deck"
+            },
+            {
+                "appid": 1675270,
+                "name": "Hanoi Puzzles: Flip Match"
+            },
+            {
+                "appid": 1675320,
+                "name": "Everblood Arena"
+            },
+            {
+                "appid": 1675410,
+                "name": "There May Be Ninety-Nine Of Us, But We Have To Win In Ninety-Nine Turns!"
+            },
+            {
+                "appid": 1675420,
+                "name": "Kin's Chronicle Demo"
+            },
+            {
+                "appid": 1675430,
+                "name": "Kensei"
+            },
+            {
+                "appid": 1675440,
+                "name": "Moxie's Lemon"
+            },
+            {
+                "appid": 1675480,
+                "name": "Advent Crossroad"
+            },
+            {
+                "appid": 1675500,
+                "name": "Veronica's Body"
+            },
+            {
+                "appid": 1675510,
+                "name": "梦回三国"
+            },
+            {
+                "appid": 1675590,
+                "name": "诛天记"
+            },
+            {
+                "appid": 1675600,
+                "name": "Holt"
+            },
+            {
+                "appid": 1675610,
+                "name": "Immense Threat"
+            },
+            {
+                "appid": 1675620,
+                "name": "Last Light"
+            },
+            {
+                "appid": 1675640,
+                "name": "Planet B24"
+            },
+            {
+                "appid": 1675680,
+                "name": "Instinction"
+            },
+            {
+                "appid": 1675690,
+                "name": "WoodHeart"
+            },
+            {
+                "appid": 1675700,
+                "name": "少女首領の推理領域 -黄金島の密約- Demo"
+            },
+            {
+                "appid": 1675710,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP001"
+            },
+            {
+                "appid": 1675711,
+                "name": "Tiger Tank 59 Ⅰ Air Strike MP002"
+            },
+            {
+                "appid": 1674760,
+                "name": "Invertigo Demo"
+            },
+            {
+                "appid": 1674780,
+                "name": "Lone Fungus"
+            },
+            {
+                "appid": 1674790,
+                "name": "Hentai Fight Club Jigsaw"
+            },
+            {
+                "appid": 1674820,
+                "name": "TFC: The Fertile Crescent"
+            },
+            {
+                "appid": 1674840,
+                "name": "My Universe - Puppies & Kittens"
+            },
+            {
+                "appid": 1674880,
+                "name": "Lost Kittens: Maze Garden"
+            },
+            {
+                "appid": 1674900,
+                "name": "Train Yard Builder"
+            },
+            {
+                "appid": 1674910,
+                "name": "Super Jigsaw Puzzle: Generations - Switzerland"
+            },
+            {
+                "appid": 1674911,
+                "name": "Super Jigsaw Puzzle: Generations - Mushrooms"
+            },
+            {
+                "appid": 1674920,
+                "name": "Sovereign Syndicate"
+            },
+            {
+                "appid": 1674930,
+                "name": "Dread Templar Playtest"
+            },
+            {
+                "appid": 1674951,
+                "name": "Fostering Apocalypse Art Book"
+            },
+            {
+                "appid": 1674960,
+                "name": "Marble Parkour 2: Roll and roll"
+            },
+            {
+                "appid": 1674970,
+                "name": "Fostering Apocalypse Soundtrack"
+            },
+            {
+                "appid": 1674980,
+                "name": "Viking Heroes 2"
+            },
+            {
+                "appid": 1675010,
+                "name": "Antonball Deluxe - DLC Content 1"
+            },
+            {
+                "appid": 1675011,
+                "name": "Antonball Deluxe - DLC Content 2"
+            },
+            {
+                "appid": 1675030,
+                "name": "XSection"
+            },
+            {
+                "appid": 1675050,
+                "name": "Iselin Saga"
+            },
+            {
+                "appid": 1675070,
+                "name": "SMETANKA"
+            },
+            {
+                "appid": 1675080,
+                "name": "Barbarian Kingdom"
+            },
+            {
+                "appid": 1675100,
+                "name": "AE86 EUROBEAT DRIFT"
+            },
+            {
+                "appid": 1675110,
+                "name": "My Downtown"
+            },
+            {
+                "appid": 1675140,
+                "name": "Reminiscence"
+            },
+            {
+                "appid": 1675150,
+                "name": "「３」"
+            },
+            {
+                "appid": 1675170,
+                "name": "VRAstroSmash"
+            },
+            {
+                "appid": 1675180,
+                "name": "Steam Deck Deposit"
+            },
+            {
+                "appid": 1674370,
+                "name": "战斗俄罗斯方块"
+            },
+            {
+                "appid": 1674390,
+                "name": "Craftopia DevKit"
+            },
+            {
+                "appid": 1674420,
+                "name": "Brick BiuBiu"
+            },
+            {
+                "appid": 1674430,
+                "name": "Crown Alpha"
+            },
+            {
+                "appid": 1674440,
+                "name": "Submarine War"
+            },
+            {
+                "appid": 1674450,
+                "name": "迷霧國度: 傳承 Myth of Mist：Legacy Soundtrack"
+            },
+            {
+                "appid": 1674460,
+                "name": "7Days Origins Soundtrack"
+            },
+            {
+                "appid": 1674470,
+                "name": "ELYON"
+            },
+            {
+                "appid": 1674480,
+                "name": "Lamia's Plan NSFW DLC"
+            },
+            {
+                "appid": 1674490,
+                "name": "Only Me"
+            },
+            {
+                "appid": 1674510,
+                "name": "Vacation Adventures: Park Ranger 7"
+            },
+            {
+                "appid": 1674530,
+                "name": "Feudal Baron: King's Land"
+            },
+            {
+                "appid": 1674550,
+                "name": "Song of Farca Playtest"
+            },
+            {
+                "appid": 1674570,
+                "name": "Hunt: Showdown - Bayou Wraith"
+            },
+            {
+                "appid": 1674580,
+                "name": "Hunt: Showdown - Through the Bone Briar"
+            },
+            {
+                "appid": 1674640,
+                "name": "XEL"
+            },
+            {
+                "appid": 1674660,
+                "name": "Cards of the Dead - Prologue"
+            },
+            {
+                "appid": 1674670,
+                "name": "Smoots Golf - First Training"
+            },
+            {
+                "appid": 1674680,
+                "name": "Sword of the Necromancer - Artbook"
+            },
+            {
+                "appid": 1674720,
+                "name": "Rage Quit: The Beginning!"
+            },
+            {
+                "appid": 1674730,
+                "name": "RGByte"
+            },
+            {
+                "appid": 1673840,
+                "name": "The Absolutely Hilarious Cat Game"
+            },
+            {
+                "appid": 1673850,
+                "name": "Bright girl"
+            },
+            {
+                "appid": 1673860,
+                "name": "念诗姬 Poetry Tuber Demo"
+            },
+            {
+                "appid": 1673880,
+                "name": "Spirit of ARX"
+            },
+            {
+                "appid": 1673920,
+                "name": "50 Waves Hero"
+            },
+            {
+                "appid": 1673930,
+                "name": "祛魅·格心（祛魅3） - Disenchantment Heart - 女主角超清凉皮肤画集"
+            },
+            {
+                "appid": 1673960,
+                "name": "Bounce Paradise - Bonus Content"
+            },
+            {
+                "appid": 1673980,
+                "name": "Riflestorm Playtest"
+            },
+            {
+                "appid": 1674010,
+                "name": "Nin Online"
+            },
+            {
+                "appid": 1674020,
+                "name": "Lost in Red Valley"
+            },
+            {
+                "appid": 1674030,
+                "name": "Custodian: Beginning of the End"
+            },
+            {
+                "appid": 1674040,
+                "name": "Midnight Stories 2 - DLC 2 - The Beach Party"
+            },
+            {
+                "appid": 1674050,
+                "name": "Deathtrap Dungeon: The Interactive Video Adventure Demo"
+            },
+            {
+                "appid": 1674060,
+                "name": "The Search For Fran"
+            },
+            {
+                "appid": 1674120,
+                "name": "Red Rust"
+            },
+            {
+                "appid": 1674140,
+                "name": "2089 - Space Divided Demo"
+            },
+            {
+                "appid": 1674150,
+                "name": "Gromopoli"
+            },
+            {
+                "appid": 1674160,
+                "name": "DeHexTD"
+            },
+            {
+                "appid": 1674170,
+                "name": "Sprocket"
+            },
+            {
+                "appid": 1674180,
+                "name": "Euryale's Gambit"
+            },
+            {
+                "appid": 1674190,
+                "name": "Fantasy Grounds - Custom Ancestries & Cultures"
+            },
+            {
+                "appid": 1674210,
+                "name": "Fantasy Grounds - Fort Scurvy"
+            },
+            {
+                "appid": 1674260,
+                "name": "Keeper of the Labyrinth"
+            },
+            {
+                "appid": 1674280,
+                "name": "Fantasy Grounds - World of Farland Players Guide"
+            },
+            {
+                "appid": 1674290,
+                "name": "U.F.O. K.O. Tower Defense Soundtrack"
+            },
+            {
+                "appid": 1674300,
+                "name": "Ablockalypse"
+            },
+            {
+                "appid": 1674330,
+                "name": "Family Is Nothing"
+            },
+            {
+                "appid": 1673360,
+                "name": "MY TIME ALIVE"
+            },
+            {
+                "appid": 1673370,
+                "name": "Kanamono"
+            },
+            {
+                "appid": 1673420,
+                "name": "Demon's Residence"
+            },
+            {
+                "appid": 1673450,
+                "name": "Geisterland"
+            },
+            {
+                "appid": 1673470,
+                "name": "Finding A Prince: The Game"
+            },
+            {
+                "appid": 1673490,
+                "name": "Animosa"
+            },
+            {
+                "appid": 1673520,
+                "name": "Mini Kart Racing"
+            },
+            {
+                "appid": 1673530,
+                "name": "Fantasy Mahjong connect"
+            },
+            {
+                "appid": 1673540,
+                "name": "Jaunt"
+            },
+            {
+                "appid": 1673550,
+                "name": "Barking Puzzle"
+            },
+            {
+                "appid": 1673560,
+                "name": "The Mysteries of Ranko Togawa: Murder on the Marine Express"
+            },
+            {
+                "appid": 1673570,
+                "name": "Game of Love"
+            },
+            {
+                "appid": 1673590,
+                "name": "Zombaliens Demo"
+            },
+            {
+                "appid": 1673600,
+                "name": "Game For Anna"
+            },
+            {
+                "appid": 1673620,
+                "name": "Rhythmetallic"
+            },
+            {
+                "appid": 1673630,
+                "name": "Eternal Evil"
+            },
+            {
+                "appid": 1673670,
+                "name": "TowersRTS"
+            },
+            {
+                "appid": 1673690,
+                "name": "Ball Way Crush Color Tower 3d"
+            },
+            {
+                "appid": 1673710,
+                "name": "High Dimension"
+            }
+        ]
+    }
+}
