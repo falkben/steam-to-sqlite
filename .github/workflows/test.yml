@@ -1,0 +1,50 @@
+name: Test steam-to-sqlite
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2.3.0
+        with:
+          python-version: "3.10"
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+
+      # load cached venv if cache exists
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-pytest-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}-v1
+
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+
+      - name: Install library
+        run: poetry install --no-interaction
+
+      - name: test
+        run: |
+          source .venv/bin/activate
+          pytest
+
+      - name: run script for 1 minute
+        run: |
+          source .venv/bin/activate
+          python -m alembic upgrade head
+          python steam2sqlite/main.py --limit 1
