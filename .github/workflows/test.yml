@@ -43,8 +43,10 @@ jobs:
           source .venv/bin/activate
           pytest
 
-      - name: run script for 1 minute
+      - name: run script for a short time
         run: |
           source .venv/bin/activate
           python -m alembic upgrade head
-          python steam2sqlite/main.py --limit 1
+          python steam2sqlite/main.py --limit 0.1
+        env:
+          APPIDS_FILE: test_data/app_list_limited.json
