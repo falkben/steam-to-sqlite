@@ -42,3 +42,9 @@ jobs:
         run: |
           source .venv/bin/activate
           pytest
+
+      - name: run script for 1 minute
+        run: |
+          source .venv/bin/activate
+          python -m alembic upgrade head
+          python steam2sqlite/main.py --limit 1
