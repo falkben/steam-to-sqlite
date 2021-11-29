@@ -13,7 +13,7 @@ python-dotenv = "^0.19.2"
 loguru = "^0.5.3"
 datasette = "^0.59.3"
 datasette-publish-vercel = "^0.12"
-dropbox = "^11.24.0"
+dropbox = "^11.25.0"
 alembic = "^1.7.5"
 
 [tool.poetry.dev-dependencies]
