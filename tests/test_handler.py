@@ -227,3 +227,20 @@ def test_update_column_updated(session: Session, portal_app: models.SteamApp):
 
     assert new_portal_app.is_free is True
     assert new_portal_app.updated > first_update > initial_updated
+
+
+def test_price_present(session: Session, portal_app: models.SteamApp):
+    assert isinstance(portal_app.current_price, int)
+    assert portal_app.initial_price == 999
+    assert portal_app.current_price <= portal_app.initial_price
+
+
+def test_price_update(session: Session, portal_app: models.SteamApp):
+
+    appid = str(portal_app.appid)
+    app_data = get_apps_data([appid])[0]
+
+    app_data[appid]["data"]["price_overview"]["final"] = 1
+
+    updated_app = handler.import_single_app(session, app_data)
+    assert updated_app.current_price == 1

@@ -72,6 +72,8 @@ class SteamApp(SQLModel, table=True):
     recommendations: Optional[int] = Field(default=None)
     achievements_total: int = Field(default=0)
     release_date: Optional[date] = Field(default=None)
+    initial_price: Optional[int] = Field(default=None)
+    current_price: Optional[int] = Field(default=None)
 
     created: datetime = Field(sa_column_kwargs={"default": datetime.utcnow})
     updated: datetime = Field(

@@ -160,6 +160,11 @@ def load_app_into_db(session: Session, data: dict) -> SteamApp:
             # todo: log this error
             pass
 
+    initial_price = current_price = None
+    if "price_overview" in data:
+        initial_price = data["price_overview"].get("initial")
+        current_price = data["price_overview"].get("final")
+
     app_attrs = {
         "appid": data["steam_appid"],
         "type": data["type"],
@@ -171,6 +176,8 @@ def load_app_into_db(session: Session, data: dict) -> SteamApp:
         "recommendations": recommendations_total,
         "achievements_total": achievements_total,
         "release_date": release_date,
+        "initial_price": initial_price,
+        "current_price": current_price,
     }
     steam_app = update_or_create(
         session, SteamApp, {"appid": data["steam_appid"]}, **app_attrs
