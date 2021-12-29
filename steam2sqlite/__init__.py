@@ -7,8 +7,8 @@ __version__ = "0.1.0"
 BATCH_SIZE = 5
 
 APPIDS_URL = "https://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json"
-APPID_URL = "https://store.steampowered.com/api/appdetails/?appids={}"
-ACHIEVEMENT_URL = "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid={}&format=json"
+APPID_URL = "https://store.steampowered.com/api/appdetails/?appids={}&l=english"
+ACHIEVEMENT_URL = "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={}&format=json"
 
 
 # ! do not go over DAILY_API_LIMIT, curently not used
