@@ -219,7 +219,7 @@ test = ["pytest (>=5.2.2,<6.3.0)", "pytest-xdist (>=2.2.1,<2.5)", "pytest-asynci
 
 [[package]]
 name = "datasette-graphql"
-version = "2.0"
+version = "2.0.1"
 description = "Datasette plugin providing an automatic GraphQL API for your SQLite databases"
 category = "dev"
 optional = false
@@ -1029,8 +1029,8 @@ datasette = [
     {file = "datasette-0.59.4.tar.gz", hash = "sha256:6eea9eab7ad65e0bb0c043ab50daf31c2eb4c13f099809e3432dfc71c69b1dce"},
 ]
 datasette-graphql = [
-    {file = "datasette-graphql-2.0.tar.gz", hash = "sha256:16eb79210d8cede9d960bf7e32d684ca674ea7a9e63d64a46c6a079f582a647a"},
-    {file = "datasette_graphql-2.0-py3-none-any.whl", hash = "sha256:821303ceb63dbba849fddf9b683e75bdfb1ee693274a8fec35c01c523da3a334"},
+    {file = "datasette-graphql-2.0.1.tar.gz", hash = "sha256:7c80e488be786a121073dc46179d32dca5df0bb7c2074bc62e6b551a58c4711e"},
+    {file = "datasette_graphql-2.0.1-py3-none-any.whl", hash = "sha256:9580f3c9b95f5f78da3478006a437afbaca8d818448f7db107c873745e9926ec"},
 ]
 datasette-publish-vercel = [
     {file = "datasette-publish-vercel-0.12.tar.gz", hash = "sha256:b97a570680bedf469b3a9a83a1ea3f22a3b72325bc22116eeedc8266538a5063"},
