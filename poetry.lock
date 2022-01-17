@@ -188,7 +188,7 @@ toml = ["tomli"]
 
 [[package]]
 name = "datasette"
-version = "0.59.4"
+version = "0.60"
 description = "An open source multi-tool for exploring and publishing data"
 category = "main"
 optional = false
@@ -203,11 +203,11 @@ click-default-group = ">=1.2.2,<1.3.0"
 httpx = ">=0.20"
 hupper = ">=1.9,<2.0"
 itsdangerous = ">=1.1,<3.0"
-janus = ">=0.6.2,<0.8"
+janus = ">=0.6.2,<1.1"
 Jinja2 = ">=2.10.3,<3.1.0"
 mergedeep = ">=1.1.1,<1.4.0"
 pint = ">=0.9,<1.0"
-pluggy = ">=0.13,<1.1"
+pluggy = ">=1.0,<1.1"
 python-baseconv = "1.2.2"
 PyYAML = ">=5.3,<7.0"
 uvicorn = ">=0.11,<1.0"
@@ -215,7 +215,7 @@ uvicorn = ">=0.11,<1.0"
 [package.extras]
 docs = ["sphinx-rtd-theme", "sphinx-autobuild", "codespell"]
 rich = ["rich"]
-test = ["pytest (>=5.2.2,<6.3.0)", "pytest-xdist (>=2.2.1,<2.5)", "pytest-asyncio (>=0.10,<0.17)", "beautifulsoup4 (>=4.8.1,<4.11.0)", "black (==21.11b1)", "pytest-timeout (>=1.4.2,<2.1)", "trustme (>=0.7,<0.10)"]
+test = ["pytest (>=5.2.2,<6.3.0)", "pytest-xdist (>=2.2.1,<2.6)", "pytest-asyncio (>=0.10,<0.17)", "beautifulsoup4 (>=4.8.1,<4.11.0)", "black (==21.12b0)", "pytest-timeout (>=1.4.2,<2.1)", "trustme (>=0.7,<0.10)", "cogapp (>=3.3.0)"]
 
 [[package]]
 name = "datasette-graphql"
@@ -917,7 +917,7 @@ dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "009337a14f818e1ab21b96543ae2828e47c284afbc2d82596b58ae5f1db05bd3"
+content-hash = "bb0aed208f2c9f5d8e71349312d9d8f9c92e1ba3a2c373c81a3f627d7f610e96"
 
 [metadata.files]
 aiofiles = [
@@ -1025,8 +1025,8 @@ coverage = [
     {file = "coverage-6.2.tar.gz", hash = "sha256:e2cad8093172b7d1595b4ad66f24270808658e11acf43a8f95b41276162eb5b8"},
 ]
 datasette = [
-    {file = "datasette-0.59.4-py3-none-any.whl", hash = "sha256:35edfa9bb6a391c3bc47f2c8cbf9bcf26d4bf2808763ee480166bc0f52811543"},
-    {file = "datasette-0.59.4.tar.gz", hash = "sha256:6eea9eab7ad65e0bb0c043ab50daf31c2eb4c13f099809e3432dfc71c69b1dce"},
+    {file = "datasette-0.60-py3-none-any.whl", hash = "sha256:0f9f937a0af621f8929df627d7bf15a154fa6458e3d15b9a6c70bf9d482951ce"},
+    {file = "datasette-0.60.tar.gz", hash = "sha256:59e325aabd66340b83a5d48ffb37d14223a651ce6d2141810be1fa053b1adbbc"},
 ]
 datasette-graphql = [
     {file = "datasette-graphql-2.0.tar.gz", hash = "sha256:16eb79210d8cede9d960bf7e32d684ca674ea7a9e63d64a46c6a079f582a647a"},
