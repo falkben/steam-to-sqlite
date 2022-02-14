@@ -260,7 +260,7 @@ datasette = "*"
 
 [[package]]
 name = "dropbox"
-version = "11.26.0"
+version = "11.27.0"
 description = "Official Dropbox API Client"
 category = "main"
 optional = false
@@ -917,7 +917,7 @@ dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "23b2de64f7634550ec8cdd9f40ecff4c16cd585af742851a6f017928e5405097"
+content-hash = "5db625b1c03a56032587c42d4b0ae33e11552c73a618c6458d013571eda781bc"
 
 [metadata.files]
 aiofiles = [
@@ -1034,9 +1034,9 @@ datasette-vega = [
     {file = "datasette_vega-0.6.2-py3-none-any.whl", hash = "sha256:6aca6a40f0b244d6d05548bfff94a99f0ef96bd5b89ade241f0d389f7a01a063"},
 ]
 dropbox = [
-    {file = "dropbox-11.26.0-py2-none-any.whl", hash = "sha256:abd29587fa692bde0c3a48ce8efb56c24d8df92c5f402bbcdd78f3089d5ced5c"},
-    {file = "dropbox-11.26.0-py3-none-any.whl", hash = "sha256:84becf043a63007ae67620946acb0fa164669ce691c7f1dbfdabb6712a258b29"},
-    {file = "dropbox-11.26.0.tar.gz", hash = "sha256:dd79e3dfc216688020959462aefac54ffce7c07a45e89f4fb258348885195a73"},
+    {file = "dropbox-11.27.0-py2-none-any.whl", hash = "sha256:9a6a5acfdbcef0d65f2e3bdc85f166425c3faf8363f6abd64e4dc4c448e6a56e"},
+    {file = "dropbox-11.27.0-py3-none-any.whl", hash = "sha256:5d9a3714bf9329ab8c74737cc6fa19ffa3d964958a718954afcb28927b4d5c4c"},
+    {file = "dropbox-11.27.0.tar.gz", hash = "sha256:9c11536e6c789625aa6ae8e7fc77033a673f1f97a4144ebc6e77d9d49f70e1d5"},
 ]
 graphene = [
     {file = "graphene-3.0-py2.py3-none-any.whl", hash = "sha256:57ce5ee7c9dc194224a1df96e4f7cb48d31eae96c791091d059f8f3d4d131390"},
