@@ -188,7 +188,7 @@ toml = ["tomli"]
 
 [[package]]
 name = "datasette"
-version = "0.60"
+version = "0.60.2"
 description = "An open source multi-tool for exploring and publishing data"
 category = "main"
 optional = false
@@ -215,7 +215,7 @@ uvicorn = ">=0.11,<1.0"
 [package.extras]
 docs = ["sphinx-rtd-theme", "sphinx-autobuild", "codespell"]
 rich = ["rich"]
-test = ["pytest (>=5.2.2,<6.3.0)", "pytest-xdist (>=2.2.1,<2.6)", "pytest-asyncio (>=0.10,<0.17)", "beautifulsoup4 (>=4.8.1,<4.11.0)", "black (==21.12b0)", "pytest-timeout (>=1.4.2,<2.1)", "trustme (>=0.7,<0.10)", "cogapp (>=3.3.0)"]
+test = ["pytest (==6.2.5)", "pytest-xdist (==2.5.0)", "pytest-asyncio (==0.16.0)", "beautifulsoup4 (==4.10.0)", "black (==21.12b0)", "pytest-timeout (==2.0.2)", "trustme (==0.9.0)", "cogapp (==3.3.0)"]
 
 [[package]]
 name = "datasette-graphql"
@@ -1021,8 +1021,8 @@ coverage = [
     {file = "coverage-6.3.2.tar.gz", hash = "sha256:03e2a7826086b91ef345ff18742ee9fc47a6839ccd517061ef8fa1976e652ce9"},
 ]
 datasette = [
-    {file = "datasette-0.60-py3-none-any.whl", hash = "sha256:0f9f937a0af621f8929df627d7bf15a154fa6458e3d15b9a6c70bf9d482951ce"},
-    {file = "datasette-0.60.tar.gz", hash = "sha256:59e325aabd66340b83a5d48ffb37d14223a651ce6d2141810be1fa053b1adbbc"},
+    {file = "datasette-0.60.2-py3-none-any.whl", hash = "sha256:3d72bb0e1822845ca84e566a12fd304773ac148f11f154c1b52d1e32dc3c95ac"},
+    {file = "datasette-0.60.2.tar.gz", hash = "sha256:167b25d3c02f3fbeb98ed1fafc6d5f77e3089c4a415f17a80ea148cbadb52f93"},
 ]
 datasette-graphql = [
     {file = "datasette-graphql-2.0.1.tar.gz", hash = "sha256:7c80e488be786a121073dc46179d32dca5df0bb7c2074bc62e6b551a58c4711e"},
