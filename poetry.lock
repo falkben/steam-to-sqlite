@@ -230,7 +230,7 @@ test = ["pytest", "pytest-asyncio"]
 
 [[package]]
 name = "datasette-publish-vercel"
-version = "0.12"
+version = "0.13"
 description = "Datasette plugin for publishing data using Vercel"
 category = "main"
 optional = false
@@ -906,7 +906,7 @@ dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "8bfe4ff0292dd0574d406f889787533ea88de304796a859f253dc3b80f2d140a"
+content-hash = "879db65b5ce9221b5b47b05992ef290e9c52ff100b252ea28a1a64c98d7a592e"
 
 [metadata.files]
 aiofiles = [
@@ -1037,8 +1037,8 @@ datasette-graphql = [
     {file = "datasette_graphql-2.0.1-py3-none-any.whl", hash = "sha256:9580f3c9b95f5f78da3478006a437afbaca8d818448f7db107c873745e9926ec"},
 ]
 datasette-publish-vercel = [
-    {file = "datasette-publish-vercel-0.12.tar.gz", hash = "sha256:b97a570680bedf469b3a9a83a1ea3f22a3b72325bc22116eeedc8266538a5063"},
-    {file = "datasette_publish_vercel-0.12-py3-none-any.whl", hash = "sha256:a4535aed81f22b9931aacdec480c51fde14a05edb8b4a2dcfbc407ca9d802055"},
+    {file = "datasette-publish-vercel-0.13.tar.gz", hash = "sha256:3e8825729d4d5288a4414ffa9629655638a87a99c545755b4410e92977f0d04f"},
+    {file = "datasette_publish_vercel-0.13-py3-none-any.whl", hash = "sha256:7dc77424b68bb761364b202e55397b00e3863044719f7eb4a5f41d1fa2a5c4bd"},
 ]
 datasette-vega = [
     {file = "datasette_vega-0.6.2-py3-none-any.whl", hash = "sha256:6aca6a40f0b244d6d05548bfff94a99f0ef96bd5b89ade241f0d389f7a01a063"},
