@@ -800,7 +800,7 @@ test = ["pytest", "black", "hypothesis"]
 
 [[package]]
 name = "sqlmodel"
-version = "0.0.5"
+version = "0.0.6"
 description = "SQLModel, SQL databases in Python, designed for simplicity, compatibility, and robustness."
 category = "main"
 optional = false
@@ -906,7 +906,7 @@ dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "62c4697369aad9ab3d11c75f038ea10c7c961998eec289754f5b9b2149802c54"
+content-hash = "0311ce538354ee0b0bd7902e1dd85af32c1477bf10b73ff2c63f54b041cf6583"
 
 [metadata.files]
 aiofiles = [
@@ -1424,8 +1424,8 @@ sqlite-utils = [
     {file = "sqlite_utils-3.19-py3-none-any.whl", hash = "sha256:6d7ff0d030f0cc1f47415621f3cbcda9d8ccc5c8c274191ae6d023be9db0454c"},
 ]
 sqlmodel = [
-    {file = "sqlmodel-0.0.5-py3-none-any.whl", hash = "sha256:bcf083c53b2a94d044ae09d62322401bde5d5b669e8173a0e2a43932b03d99d6"},
-    {file = "sqlmodel-0.0.5.tar.gz", hash = "sha256:72c7ca0f0bbabcba9d03eb707b70761684f8f68e693ea58a89e4238f4d4faf0f"},
+    {file = "sqlmodel-0.0.6-py3-none-any.whl", hash = "sha256:c5fd8719e09da348cd32ce2a5b6a44f289d3029fa8f1c9818229b6f34f1201b4"},
+    {file = "sqlmodel-0.0.6.tar.gz", hash = "sha256:3b4f966b9671b24d85529d274e6c4dbc7753b468e35d2d6a40bd75cad1f66813"},
 ]
 stone = [
     {file = "stone-3.2.1-py2-none-any.whl", hash = "sha256:2a50866528f60cc7cedd010def733e8ae9d581d17f967278a08059bffaea3c57"},
