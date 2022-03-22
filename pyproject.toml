@@ -17,7 +17,7 @@ dropbox = "^11.28.0"
 alembic = "^1.7.6"
 
 [tool.poetry.dev-dependencies]
-pytest = "^7.1.0"
+pytest = "^7.1.1"
 pytest-asyncio = "^0.18.2"
 datasette-vega = "^0.6.2"
 datasette-graphql = "^2.0"
