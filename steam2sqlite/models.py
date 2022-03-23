@@ -1,26 +1,8 @@
 from datetime import date, datetime
-from functools import wraps
 from typing import Optional  # to be removed once Pydantic supports Union operator
 from typing import List
 
 from sqlmodel import Field, Relationship, SQLModel
-
-
-def set_default_index(func):
-    """Decorator to set default index for SQLModel
-    Can be removed when https://github.com/tiangolo/sqlmodel/pull/11 is fixed
-    """
-
-    @wraps(func)
-    def inner(*args, index=False, **kwargs):
-        return func(*args, index=index, **kwargs)
-
-    return inner
-
-
-# monkey patch field with default index=False
-# as long as we always call Field this works
-Field = set_default_index(Field)
 
 
 class CategorySteamAppLink(SQLModel, table=True):
