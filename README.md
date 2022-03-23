@@ -6,15 +6,15 @@ Public [Steam](https://store.steampowered.com/) app and achievement data in a sq
 
 ## Quick links
 
-The database and deployments are updated automatically through gitub actions.
+The database and deployments are updated automatically through GitHub actions.
 
 | | |
 |-|-|
 |SQLite3 File|[database.db ⬇️](https://www.dropbox.com/s/i47qt3chrp9lr9e/database.db?dl=1) |
-|[Datasette deployment](https://datasette.io/)|<https://steam-to-sqlite.vercel.app/>|
+|[Datasette](https://datasette.io/) deployment|<https://steam-to-sqlite.vercel.app/>|
 |GraphQL interface|<https://steam-to-sqlite.vercel.app/graphql>|
 
-To preview the database schema, you can view [models.py](/steam2sqlite/models.py), which contains a [SQLModel](https://sqlmodel.tiangolo.com/) representation.
+To preview the database schema, you can view [models.py](/steam2sqlite/models.py), which contains the [SQLModel](https://sqlmodel.tiangolo.com/) representation.
 
 ## Install
 
@@ -58,11 +58,12 @@ Examine generated file in `migrations/versions`. Pay attention to table/column r
 
 ## Deploy to Vercel
 
-The deployment runs automatically with [github actions](/.github/workflows/main.yml). To manually deploy:
+The deployment runs automatically with [GitHub actions](/.github/workflows/main.yml). To manually deploy:
 
 1. install [Vercel CLI](https://vercel.com/cli)
 2. `vercel login`
 3. Deploy:
+
     ```sh
     datasette publish vercel database.db \
     --install datasette-graphql \
