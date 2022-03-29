@@ -22,7 +22,8 @@ To install the project locally:
 
 1. Ensure you have Python >= 3.10. [pyenv](https://github.com/pyenv/pyenv) recommended
 2. install [poetry](https://python-poetry.org/) >= 1.1.11
-3. `poetry install`
+3. `poetry env use -- $(which python)`
+4. `poetry install`
 
 ## Run
 
