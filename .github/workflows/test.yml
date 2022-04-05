@@ -21,7 +21,9 @@ jobs:
           cache: "poetry"
 
       - name: Install dependencies
-        run: poetry install --no-interaction
+        run: |
+          poetry env use "3.10"
+          poetry install --no-interaction
 
       - name: test
         run: |
