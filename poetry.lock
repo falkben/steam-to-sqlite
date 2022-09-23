@@ -214,7 +214,7 @@ test = ["pytest (>=5.2.2,<7.2.0)", "pytest-xdist (>=2.2.1,<2.6)", "pytest-asynci
 
 [[package]]
 name = "datasette-graphql"
-version = "2.0.2"
+version = "2.1.1"
 description = "Datasette plugin providing an automatic GraphQL API for your SQLite databases"
 category = "dev"
 optional = false
@@ -907,7 +907,7 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "91719c000920abe055c44f993a59485fc05b51bf27daa1a4889f783aa55b1b96"
+content-hash = "999e05f95691c58998d6f12260dcc2b8fda08d069de122c770890ee6104c336a"
 
 [metadata.files]
 aiofiles = [
@@ -1034,8 +1034,8 @@ datasette = [
     {file = "datasette-0.61.1.tar.gz", hash = "sha256:060ed8737c5fc6d83e6ab35b84d91f9c0e39e3caf7d794106e39b4bef9b559eb"},
 ]
 datasette-graphql = [
-    {file = "datasette-graphql-2.0.2.tar.gz", hash = "sha256:36f31af63baf599506ec5326e49db1dfdc71af05835acabe3d86bea8dea616e8"},
-    {file = "datasette_graphql-2.0.2-py3-none-any.whl", hash = "sha256:7872bf45e97212ac2dd040075e27cbe2517563198ce3d216f0899fc902d41c82"},
+    {file = "datasette-graphql-2.1.1.tar.gz", hash = "sha256:ecfdc5950ee8bf4e0c1efdf0d31cceb26ea35ae38193a6cea1534df8ce3f7a78"},
+    {file = "datasette_graphql-2.1.1-py3-none-any.whl", hash = "sha256:94cb60e09919b55c5d9456d4c7ec1fad8fb595e9ca34a42dfb53a182bc232487"},
 ]
 datasette-publish-vercel = [
     {file = "datasette-publish-vercel-0.13.tar.gz", hash = "sha256:3e8825729d4d5288a4414ffa9629655638a87a99c545755b4410e92977f0d04f"},
