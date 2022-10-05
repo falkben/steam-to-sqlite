@@ -21,11 +21,40 @@ To preview the database schema, you can view [models.py](/steam2sqlite/models.py
 To install the project locally:
 
 1. Ensure you have Python >= 3.10. [pyenv](https://github.com/pyenv/pyenv) recommended
-2. install [poetry](https://python-poetry.org/) >= 1.1.11
-3. `poetry env use -- $(which python)`
-4. `poetry install`
+2. Create and activate a virtual environment: `python -m venv .venv && . .venv/bin/activate`
+3. Install:
+   - `pip install -r requirements.txt`
+   - With dev. dependencies: `pip install -r requirements.txt -r dev-requirements.txt`
+4. Install package: `pip install -e .` or w/ dev dependencies `pip install -e ".[dev]"`
+
+## Manage dependencies
+
+1. install/upgrade pip-tools: `pip install pip-tools -U` or globally with [pipx](https://github.com/pypa/pipx): `pipx install pip-tools`
+2. Create lock file with:
+   - `pip-compile -o requirements.txt pyproject.toml --quiet`
+   - `pip-compile --extra dev -o dev-requirements.txt pyproject.toml --quiet`
+3. Upgrade a package: `pip-compile -o requirements.txt pyproject.toml --quiet --upgrade-package PACKAGE` (and also for dev-requirements.txt)
+4. Upgrade all packages with `pip-compile -o requirements.txt pyproject.toml --quiet --upgrade`
+
+More here: <https://github.com/jazzband/pip-tools/>
 
 ## Run
+
+Download a copy of the database and save locally to `database.db`
+
+To verify installation:
+
+```bash
+python steam2sqlite/main.py --help
+usage: main.py [-h] [-l [LIMIT]]
+
+options:
+  -h, --help            show this help message and exit
+  -l [LIMIT], --limit [LIMIT]
+                        limit runtime (minutes)
+```
+
+To run:
 
 ```sh
 python steam2sqlite/main.py
@@ -36,10 +65,10 @@ Due to rate limits on the public Steam api, the program will take several days t
 Limit the runtime in minutes with the `-l` or `--limit` argument:
 
 ```sh
-python steam2sqlite/main.py --limit 10
+python steam2sqlite/main.py --limit 1
 ```
 
-Will run for 10 minutes and then (hopefully) exit cleanly with a database partially updated.
+Will run for 1 minutes and then (hopefully) exit cleanly with a database partially updated.
 
 ## Migrations
 
