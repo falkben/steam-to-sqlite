@@ -23,7 +23,7 @@ dependencies = [
     "python-dotenv",
     "loguru",
     "datasette",
-    "datasette-publish-vercel",
+    "datasette-publish-fly",
     "dropbox",
     "alembic",
 ]
