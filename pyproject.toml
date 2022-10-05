@@ -1,32 +1,42 @@
-[tool.poetry]
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
 name = "steam2sqlite"
 version = "0.1.0"
-description = ""
-authors = ["Ben Falk <falk.ben@gmail.com>"]
+authors = [
+  { name="Ben Falk", email="falk.ben@gmail.com" },
+]
+description = "Public Steam app and achievement data in a sqlite database"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "sqlmodel",
+    "httpx",
+    "uvloop",
+    "python-dotenv",
+    "loguru",
+    "datasette",
+    "datasette-publish-vercel",
+    "dropbox",
+    "alembic",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-sqlmodel = ">=0.0.6"
-httpx = ">=0.22.0"
-uvloop = ">=0.16.0"
-python-dotenv = ">=0.19.2"
-loguru = ">=0.6.0"
-datasette = ">=0.60"
-datasette-publish-vercel = ">=0.13"
-dropbox = ">=11.28.0"
-alembic = ">=1.7.6"
-
-[tool.poetry.dev-dependencies]
-pytest = "^7.1.1"
-pytest-asyncio = "^0.18.2"
-datasette-vega = "^0.6.2"
-datasette-graphql = "^2.1"
-black = "^22.1"
-pytest-cov = "^3.0.0"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "datasette-vega",
+    "datasette-graphql",
+    "black",
+    "pytest-cov",
+]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto" # https://github.com/pytest-dev/pytest-asyncio#auto-mode
