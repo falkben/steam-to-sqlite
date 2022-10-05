@@ -26,12 +26,11 @@ jobs:
           pip install -r requirements.txt
           pip install .
 
-      # todo: limiting to 1 minute runtime until we get deployments working again
       - name: run the script
         run: |
           wget -qO database.db https://www.dropbox.com/s/i47qt3chrp9lr9e/database.db?dl=1
           alembic upgrade head
-          python steam2sqlite/main.py --limit 1
+          python steam2sqlite/main.py --limit 45
         shell: bash
 
       - name: upload to dropbox
@@ -47,12 +46,14 @@ jobs:
           name: database.db
           path: database.db
 
-      - name: Deploy Datasette using Vercel
+      - name: Get flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy Datasette using Fly
         env:
-          NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         run: |-
-          datasette publish vercel database.db \
-            --token $NOW_TOKEN \
+          datasette publish fly database.db \
             --install datasette-graphql --install datasette-vega \
-            --project steam-to-sqlite \
+            --app steam-to-sqlite \
             --metadata datasette-data/metadata.json

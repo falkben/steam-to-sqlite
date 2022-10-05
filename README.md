@@ -11,8 +11,8 @@ The database and deployments are updated automatically through GitHub actions.
 | | |
 |-|-|
 |SQLite3 File|[database.db ⬇️](https://www.dropbox.com/s/i47qt3chrp9lr9e/database.db?dl=1) |
-|[Datasette](https://datasette.io/) deployment|<https://steam-to-sqlite.vercel.app/>|
-|GraphQL interface|<https://steam-to-sqlite.vercel.app/graphql>|
+|[Datasette](https://datasette.io/) deployment|<https://steam-to-sqlite.fly.dev/>|
+|GraphQL interface|<https://steam-to-sqlite.fly.dev/graphql>|
 
 To preview the database schema, you can view [models.py](/steam2sqlite/models.py), which contains the [SQLModel](https://sqlmodel.tiangolo.com/) representation.
 
@@ -86,16 +86,17 @@ alembic revision --autogenerate -m "MESSAGE"
 
 Examine generated file in `migrations/versions`. Pay attention to table/column renames (they will be dropped/created in migration file).
 
-## Deploy to Vercel
+## Deploy to Fly
 
 The deployment runs automatically with [GitHub actions](/.github/workflows/main.yml). To manually deploy:
 
-1. install [Vercel CLI](https://vercel.com/cli)
-2. `vercel login`
+1. install [flyctl](https://fly.io/docs/getting-started/installing-flyctl/)
+2. `flyctl auth login`
 3. Deploy:
 
     ```sh
-    datasette publish vercel database.db \
-    --install datasette-graphql \
-    --project steam-to-sqlite`
+    datasette publish fly database.db \
+      --install datasette-graphql --install datasette-vega \
+      --app steam-to-sqlite \
+      --metadata datasette-data/metadata.json
     ```
