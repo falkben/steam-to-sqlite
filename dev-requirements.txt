@@ -108,7 +108,7 @@ packaging==21.3
     # via pytest
 pathspec==0.10.1
     # via black
-pint==0.19.2
+pint==0.20.1
     # via datasette
 platformdirs==2.5.2
     # via black
