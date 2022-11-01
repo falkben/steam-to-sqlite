@@ -160,7 +160,7 @@ sqlalchemy==1.4.41
     # via
     #   alembic
     #   sqlmodel
-sqlalchemy2-stubs==0.0.2a27
+sqlalchemy2-stubs==0.0.2a29
     # via sqlmodel
 sqlite-fts4==1.0.3
     # via sqlite-utils
