@@ -11,5 +11,5 @@ APPID_URL = "https://store.steampowered.com/api/appdetails/?appids={}&l=english"
 ACHIEVEMENT_URL = "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={}&format=json"
 
 
-# ! do not go over DAILY_API_LIMIT, curently not used
+#! do not go over DAILY_API_LIMIT, currently not used
 # DAILY_API_LIMIT = 100_000
