@@ -46,7 +46,7 @@ datasette==0.63
     #   datasette-publish-fly
     #   datasette-vega
     #   steam2sqlite (pyproject.toml)
-datasette-graphql==2.1.1
+datasette-graphql==2.1.2
     # via steam2sqlite (pyproject.toml)
 datasette-publish-fly==1.2
     # via steam2sqlite (pyproject.toml)
