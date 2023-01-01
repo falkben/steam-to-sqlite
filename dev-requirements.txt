@@ -40,7 +40,7 @@ click-default-group-wheel==1.2.2
     #   sqlite-utils
 coverage[toml]==6.5.0
     # via pytest-cov
-datasette==0.63
+datasette==0.63.3
     # via
     #   datasette-graphql
     #   datasette-publish-fly

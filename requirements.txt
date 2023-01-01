@@ -28,7 +28,7 @@ click==8.1.3
     #   uvicorn
 click-default-group-wheel==1.2.2
     # via datasette
-datasette==0.63
+datasette==0.63.3
     # via
     #   datasette-publish-fly
     #   steam2sqlite (pyproject.toml)
