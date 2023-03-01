@@ -83,7 +83,7 @@ pydantic==1.10.4
     # via sqlmodel
 python-dotenv==0.21.1
     # via steam2sqlite (pyproject.toml)
-python-multipart==0.0.5
+python-multipart==0.0.6
     # via asgi-csrf
 pyyaml==6.0
     # via datasette
