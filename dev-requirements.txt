@@ -4,7 +4,7 @@
 #
 #    pip-compile --extra=dev --output-file=dev-requirements.txt pyproject.toml
 #
-aiofiles==22.1.0
+aiofiles==23.1.0
     # via datasette
 alembic==1.9.2
     # via steam2sqlite (pyproject.toml)
