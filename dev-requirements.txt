@@ -6,7 +6,7 @@
 #
 aiofiles==22.1.0
     # via datasette
-alembic==1.9.2
+alembic==1.9.4
     # via steam2sqlite (pyproject.toml)
 aniso8601==9.0.1
     # via graphene
