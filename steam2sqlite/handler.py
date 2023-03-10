@@ -30,7 +30,6 @@ def get_or_create(session, model, **kwargs):
 
 
 def update_or_create(session, model, filterargs, **kwargs):
-
     try:
         instance = session.exec(select(model).filter_by(**filterargs)).one_or_none()
     except sqlalchemy.exc.MultipleResultsFound:
@@ -51,7 +50,6 @@ def update_or_create(session, model, filterargs, **kwargs):
 def attach_achievements_to_app(
     session: Session, app_achievements_dict: list[dict], app: SteamApp
 ):
-
     for achievement_dict in app_achievements_dict:
         achievement_args = achievement_dict | {"steam_app": app}  # joining dicts
         update_or_create(
@@ -78,7 +76,6 @@ def clear_and_store_achievements(
 
 
 def get_apps_achievements(apps: list[SteamApp]) -> list[tuple[SteamApp, list[dict]]]:
-
     urls = [ACHIEVEMENT_URL.format(app.appid) for app in apps]
     responses = asyncio.run(navigator.make_requests(urls))
 
@@ -122,7 +119,6 @@ def store_apps_achievements(
 
 
 def load_app_into_db(session: Session, data: dict) -> SteamApp:
-
     genres_data = data.get("genres") or []
     if genres_data:
         # deduplicate
@@ -196,7 +192,6 @@ def load_app_into_db(session: Session, data: dict) -> SteamApp:
 
 
 def import_single_app(session: Session, item: dict) -> SteamApp:
-
     appid = list(item.keys())[0]
     if item[appid]["success"] is False:
         raise DataParsingError(int(appid), reason="Response from api: success=False")
@@ -241,7 +236,6 @@ def record_appid_error(
 def get_apps_data(
     session: Session, steam_appids_names: dict[int, str], appids: list[int]
 ) -> list[dict]:
-
     urls = [APPID_URL.format(appid) for appid in appids if appid is not None]
     responses = asyncio.run(navigator.make_requests(urls))
 
