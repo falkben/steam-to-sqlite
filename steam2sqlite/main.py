@@ -32,7 +32,7 @@ sqlite_file_name = "database.db"
 SQLITE_URL = f"sqlite:///{sqlite_file_name}"
 
 
-async def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
+async def get_appids_from_steam(local_file: str | None = None) -> dict[int, str]:
     if local_file:
         logger.info(f"Loading appids from local file: {local_file}")
         with open(local_file) as steam_appids_fp:
@@ -52,7 +52,6 @@ async def get_appids_from_steam(local_file: str = None) -> dict[int, str]:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-
     parser = ArgumentParser()
     parser.add_argument(
         "-l",
@@ -77,7 +76,6 @@ def main(argv: Sequence[str] | None = None) -> int:
     steam_appids_names = asyncio.run(get_appids_from_steam(APPIDS_FILE))
 
     with Session(engine) as session:
-
         # query db for all appids we already have, sort by last_modified
         db_appids_updated = get_appids_from_db(session)
 
@@ -96,17 +94,19 @@ def main(argv: Sequence[str] | None = None) -> int:
         appids_missing_and_older = list(missing_appids) + db_appids
 
         # remove any appids that have been flagged as errors from previous runs
-        error_appids = get_error_appids(session)
+        error_appids_set = set(get_error_appids(session))
+        appids_without_errors = [
+            appid for appid in appids_missing_and_older if appid not in error_appids_set
+        ]
+
+        # remove any appids that are not in steam anymore (apps that get removed?)
         appids_to_process = [
-            appid
-            for appid in appids_missing_and_older
-            if appid not in set(error_appids)
+            appid for appid in appids_without_errors if appid in steam_appids_names
         ]
 
         logger.info("Loading app data from Steam API and saving to db")
 
         for appids in utils.grouper(appids_to_process, BATCH_SIZE, fillvalue=None):
-
             apps_data = get_apps_data(session, steam_appids_names, appids)
             apps = store_apps_data(session, steam_appids_names, apps_data)
 
