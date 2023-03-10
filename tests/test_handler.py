@@ -2,6 +2,7 @@ import json
 
 import pytest
 from sqlmodel import Session, create_engine
+
 from steam2sqlite import handler, models
 
 steam_appids_names = {620: "Portal 2", 659: "Portal 2 - Pre-order"}
@@ -79,7 +80,6 @@ def test_app_with_duplicated_appid(session):
 
 
 def test_ingest_item_twice(session: Session):
-
     appid = "620"
     app_data = get_apps_data([appid])[0]
 
@@ -207,7 +207,6 @@ def test_duplicate_acheievemnts_on_app(
 
 
 def test_update_column_updated(session: Session, portal_app: models.SteamApp):
-
     # assert our initial data
     assert portal_app.is_free is False
 
@@ -236,7 +235,6 @@ def test_price_present(session: Session, portal_app: models.SteamApp):
 
 
 def test_price_update(session: Session, portal_app: models.SteamApp):
-
     appid = str(portal_app.appid)
     app_data = get_apps_data([appid])[0]
 

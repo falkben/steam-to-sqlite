@@ -22,7 +22,7 @@ async def get(
         resp = await client.get(url, headers=headers)
         resp.raise_for_status()
     except (httpx.HTTPError, ssl.SSLError) as e:
-        if wait_time > 2 ** 6:
+        if wait_time > 2**6:
             logger.exception(f"Response never succeeded on url {url}")
             raise NavigatorError(url=url) from e
         logger.error(f"Error in response, trying again in: {wait_time}s")
@@ -39,7 +39,6 @@ async def make_requests(urls: list[str]) -> list[httpx.Response]:
     async with httpx.AsyncClient(
         headers={"accept": "application/json"}, timeout=10, limits=limits
     ) as client:
-
         tasks = [get(client, url) for url in urls]
         responses = await asyncio.gather(*tasks, return_exceptions=True)
 
