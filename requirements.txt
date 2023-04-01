@@ -118,7 +118,7 @@ typing-extensions==4.5.0
     #   sqlalchemy2-stubs
 urllib3==1.26.14
     # via requests
-uvicorn==0.21.0
+uvicorn==0.21.1
     # via datasette
 uvloop==0.17.0
     # via steam2sqlite (pyproject.toml)
