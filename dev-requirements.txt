@@ -54,7 +54,7 @@ datasette-vega==0.6.2
     # via steam2sqlite (pyproject.toml)
 dropbox==11.36.0
     # via steam2sqlite (pyproject.toml)
-graphene==3.2.1
+graphene==3.2.2
     # via datasette-graphql
 graphql-core==3.2.3
     # via
