@@ -79,7 +79,7 @@ pluggy==1.0.0
     # via datasette
 ply==3.11
     # via stone
-pydantic==1.10.6
+pydantic==1.10.7
     # via sqlmodel
 python-dotenv==1.0.0
     # via steam2sqlite (pyproject.toml)
@@ -116,9 +116,9 @@ typing-extensions==4.5.0
     #   janus
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==1.26.14
+urllib3==1.26.15
     # via requests
-uvicorn==0.21.0
+uvicorn==0.21.1
     # via datasette
 uvloop==0.17.0
     # via steam2sqlite (pyproject.toml)
