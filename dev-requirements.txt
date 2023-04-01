@@ -18,7 +18,7 @@ asgiref==3.6.0
     # via datasette
 attrs==22.2.0
     # via pytest
-black==23.1.0
+black==23.3.0
     # via steam2sqlite (pyproject.toml)
 certifi==2022.12.7
     # via
