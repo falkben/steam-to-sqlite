@@ -6,7 +6,7 @@
 #
 aiofiles==23.1.0
     # via datasette
-alembic==1.10.2
+alembic==1.10.4
     # via steam2sqlite (pyproject.toml)
 anyio==3.6.2
     # via httpcore
