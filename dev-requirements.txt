@@ -6,7 +6,7 @@
 #
 aiofiles==23.1.0
     # via datasette
-alembic==1.10.2
+alembic==1.10.4
     # via steam2sqlite (pyproject.toml)
 aniso8601==9.0.1
     # via graphene
@@ -16,8 +16,6 @@ asgi-csrf==0.9
     # via datasette
 asgiref==3.6.0
     # via datasette
-attrs==22.2.0
-    # via pytest
 black==23.3.0
     # via steam2sqlite (pyproject.toml)
 certifi==2022.12.7
@@ -38,9 +36,9 @@ click-default-group-wheel==1.2.2
     # via
     #   datasette
     #   sqlite-utils
-coverage[toml]==7.2.2
+coverage[toml]==7.2.5
     # via pytest-cov
-datasette==0.64.2
+datasette==0.64.3
     # via
     #   datasette-graphql
     #   datasette-publish-fly
@@ -69,19 +67,19 @@ h11==0.14.0
     # via
     #   httpcore
     #   uvicorn
-httpcore==0.16.3
+httpcore==0.17.0
     # via httpx
-httpx==0.23.3
+httpx==0.24.0
     # via
     #   datasette
     #   steam2sqlite (pyproject.toml)
-hupper==1.11
+hupper==1.12
     # via datasette
 idna==3.4
     # via
     #   anyio
+    #   httpx
     #   requests
-    #   rfc3986
 iniconfig==2.0.0
     # via pytest
 itsdangerous==2.1.2
@@ -92,7 +90,7 @@ janus==1.0.0
     # via datasette
 jinja2==3.1.2
     # via datasette
-loguru==0.6.0
+loguru==0.7.0
     # via steam2sqlite (pyproject.toml)
 mako==1.2.4
     # via alembic
@@ -104,15 +102,15 @@ mergedeep==1.3.4
     # via datasette
 mypy-extensions==1.0.0
     # via black
-packaging==23.0
+packaging==23.1
     # via
     #   black
     #   pytest
 pathspec==0.11.1
     # via black
-pint==0.20.1
+pint==0.21
     # via datasette
-platformdirs==3.2.0
+platformdirs==3.5.0
     # via black
 pluggy==1.0.0
     # via
@@ -122,7 +120,7 @@ ply==3.11
     # via stone
 pydantic==1.10.7
     # via sqlmodel
-pytest==7.2.2
+pytest==7.3.1
     # via
     #   pytest-asyncio
     #   pytest-cov
@@ -139,10 +137,8 @@ python-multipart==0.0.6
     # via asgi-csrf
 pyyaml==6.0
     # via datasette
-requests==2.28.2
+requests==2.29.0
     # via dropbox
-rfc3986[idna2008]==1.5.0
-    # via httpx
 six==1.16.0
     # via
     #   dropbox
@@ -157,7 +153,7 @@ sqlalchemy==1.4.41
     # via
     #   alembic
     #   sqlmodel
-sqlalchemy2-stubs==0.0.2a32
+sqlalchemy2-stubs==0.0.2a34
     # via sqlmodel
 sqlite-fts4==1.0.3
     # via sqlite-utils
@@ -177,7 +173,11 @@ typing-extensions==4.5.0
     #   sqlalchemy2-stubs
 urllib3==1.26.15
     # via requests
-uvicorn==0.21.1
+uvicorn==0.22.0
     # via datasette
 uvloop==0.17.0
     # via steam2sqlite (pyproject.toml)
+
+# The following packages are considered to be unsafe in a requirements file:
+# pip
+# setuptools
