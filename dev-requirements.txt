@@ -18,7 +18,7 @@ asgiref==3.6.0
     # via datasette
 black==23.3.0
     # via steam2sqlite (pyproject.toml)
-certifi==2022.12.7
+certifi==2023.5.7
     # via
     #   httpcore
     #   httpx
@@ -137,7 +137,7 @@ python-multipart==0.0.6
     # via asgi-csrf
 pyyaml==6.0
     # via datasette
-requests==2.29.0
+requests==2.30.0
     # via dropbox
 six==1.16.0
     # via
@@ -171,7 +171,7 @@ typing-extensions==4.5.0
     #   janus
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==1.26.15
+urllib3==2.0.2
     # via requests
 uvicorn==0.22.0
     # via datasette
