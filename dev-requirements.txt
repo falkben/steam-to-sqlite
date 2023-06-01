@@ -137,7 +137,7 @@ python-multipart==0.0.6
     # via asgi-csrf
 pyyaml==6.0
     # via datasette
-requests==2.30.0
+requests==2.31.0
     # via dropbox
 six==1.16.0
     # via
