@@ -108,7 +108,7 @@ sqlmodel==0.0.8
     # via steam2sqlite (pyproject.toml)
 stone==3.3.1
     # via dropbox
-typing-extensions==4.6.3
+typing-extensions==4.7.0
     # via
     #   alembic
     #   janus
