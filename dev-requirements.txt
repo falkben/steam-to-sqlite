@@ -50,7 +50,7 @@ datasette-publish-fly==1.3
     # via steam2sqlite (pyproject.toml)
 datasette-vega==0.6.2
     # via steam2sqlite (pyproject.toml)
-dropbox==11.36.0
+dropbox==11.36.2
     # via steam2sqlite (pyproject.toml)
 graphene==3.2.2
     # via datasette-graphql
@@ -94,7 +94,7 @@ loguru==0.7.0
     # via steam2sqlite (pyproject.toml)
 mako==1.2.4
     # via alembic
-markupsafe==2.1.2
+markupsafe==2.1.3
     # via
     #   jinja2
     #   mako
@@ -110,17 +110,17 @@ pathspec==0.11.1
     # via black
 pint==0.22
     # via datasette
-platformdirs==3.5.1
+platformdirs==3.8.0
     # via black
-pluggy==1.0.0
+pluggy==1.2.0
     # via
     #   datasette
     #   pytest
 ply==3.11
     # via stone
-pydantic==1.10.8
+pydantic==1.10.11
     # via sqlmodel
-pytest==7.3.1
+pytest==7.4.0
     # via
     #   pytest-asyncio
     #   pytest-cov
@@ -157,7 +157,7 @@ sqlalchemy2-stubs==0.0.2a34
     # via sqlmodel
 sqlite-fts4==1.0.3
     # via sqlite-utils
-sqlite-utils==3.32.1
+sqlite-utils==3.33
     # via datasette-graphql
 sqlmodel==0.0.8
     # via steam2sqlite (pyproject.toml)
@@ -165,14 +165,14 @@ stone==3.3.1
     # via dropbox
 tabulate==0.9.0
     # via sqlite-utils
-typing-extensions==4.6.3
+typing-extensions==4.7.1
     # via
     #   alembic
     #   janus
     #   pint
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==2.0.2
+urllib3==2.0.3
     # via requests
 uvicorn==0.22.0
     # via datasette
