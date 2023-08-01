@@ -10,7 +10,7 @@ alembic==1.11.1
     # via steam2sqlite (pyproject.toml)
 aniso8601==9.0.1
     # via graphene
-anyio==3.7.0
+anyio==3.7.1
     # via httpcore
 asgi-csrf==0.9
     # via datasette
