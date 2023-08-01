@@ -106,7 +106,7 @@ packaging==23.1
     # via
     #   black
     #   pytest
-pathspec==0.11.1
+pathspec==0.11.2
     # via black
 pint==0.22
     # via datasette
