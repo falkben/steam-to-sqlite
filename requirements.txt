@@ -6,22 +6,22 @@
 #
 aiofiles==23.1.0
     # via datasette
-alembic==1.11.1
+alembic==1.11.2
     # via steam2sqlite (pyproject.toml)
-anyio==3.7.0
+anyio==3.7.1
     # via httpcore
 asgi-csrf==0.9
     # via datasette
 asgiref==3.7.2
     # via datasette
-certifi==2023.5.7
+certifi==2023.7.22
     # via
     #   httpcore
     #   httpx
     #   requests
-charset-normalizer==3.1.0
+charset-normalizer==3.2.0
     # via requests
-click==8.1.3
+click==8.1.6
     # via
     #   click-default-group-wheel
     #   datasette
@@ -42,7 +42,7 @@ h11==0.14.0
     # via
     #   httpcore
     #   uvicorn
-httpcore==0.17.2
+httpcore==0.17.3
     # via httpx
 httpx==0.24.1
     # via
@@ -79,13 +79,13 @@ pluggy==1.2.0
     # via datasette
 ply==3.11
     # via stone
-pydantic==1.10.11
+pydantic==1.10.12
     # via sqlmodel
 python-dotenv==1.0.0
     # via steam2sqlite (pyproject.toml)
 python-multipart==0.0.6
     # via asgi-csrf
-pyyaml==6.0
+pyyaml==6.0.1
     # via datasette
 requests==2.31.0
     # via dropbox
@@ -102,7 +102,7 @@ sqlalchemy==1.4.41
     # via
     #   alembic
     #   sqlmodel
-sqlalchemy2-stubs==0.0.2a34
+sqlalchemy2-stubs==0.0.2a35
     # via sqlmodel
 sqlmodel==0.0.8
     # via steam2sqlite (pyproject.toml)
@@ -115,9 +115,9 @@ typing-extensions==4.7.1
     #   pint
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==2.0.3
+urllib3==2.0.4
     # via requests
-uvicorn==0.22.0
+uvicorn==0.23.2
     # via datasette
 uvloop==0.17.0
     # via steam2sqlite (pyproject.toml)
