@@ -158,7 +158,7 @@ sqlalchemy2-stubs==0.0.2a35
     # via sqlmodel
 sqlite-fts4==1.0.3
     # via sqlite-utils
-sqlite-utils==3.34
+sqlite-utils==3.35
     # via datasette-graphql
 sqlmodel==0.0.8
     # via steam2sqlite (pyproject.toml)
