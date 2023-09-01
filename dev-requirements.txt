@@ -112,7 +112,7 @@ pint==0.22
     # via datasette
 platformdirs==3.10.0
     # via black
-pluggy==1.2.0
+pluggy==1.3.0
     # via
     #   datasette
     #   pytest
