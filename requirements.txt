@@ -4,11 +4,11 @@
 #
 #    pip-compile --output-file=requirements.txt pyproject.toml
 #
-aiofiles==23.1.0
+aiofiles==23.2.1
     # via datasette
-alembic==1.11.2
+alembic==1.12.0
     # via steam2sqlite (pyproject.toml)
-anyio==3.7.1
+anyio==4.0.0
     # via httpcore
 asgi-csrf==0.9
     # via datasette
@@ -21,7 +21,7 @@ certifi==2023.7.22
     #   requests
 charset-normalizer==3.2.0
     # via requests
-click==8.1.6
+click==8.1.7
     # via
     #   click-default-group-wheel
     #   datasette
@@ -32,7 +32,7 @@ datasette==0.64.3
     # via
     #   datasette-publish-fly
     #   steam2sqlite (pyproject.toml)
-datasette-publish-fly==1.3
+datasette-publish-fly==1.3.1
     # via steam2sqlite (pyproject.toml)
 dropbox==11.36.2
     # via steam2sqlite (pyproject.toml)
@@ -63,7 +63,7 @@ janus==1.0.0
     # via datasette
 jinja2==3.1.2
     # via datasette
-loguru==0.7.0
+loguru==0.7.1
     # via steam2sqlite (pyproject.toml)
 mako==1.2.4
     # via alembic
@@ -75,7 +75,7 @@ mergedeep==1.3.4
     # via datasette
 pint==0.22
     # via datasette
-pluggy==1.2.0
+pluggy==1.3.0
     # via datasette
 ply==3.11
     # via stone
