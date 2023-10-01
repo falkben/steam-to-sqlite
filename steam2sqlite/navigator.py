@@ -19,8 +19,7 @@ async def get(
     headers: dict[str, str] | None = None,
 ) -> httpx.Response:
     try:
-        resp = await client.get(url, headers=headers)
-        resp.raise_for_status()
+        resp = (await client.get(url, headers=headers)).raise_for_status()
     except (httpx.HTTPError, ssl.SSLError) as e:
         if wait_time > 2**6:
             logger.exception(f"Response never succeeded on url {url}")
