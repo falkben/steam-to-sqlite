@@ -16,29 +16,31 @@ asgi-csrf==0.9
     # via datasette
 asgiref==3.7.2
     # via datasette
-black==23.7.0
+black==23.9.1
     # via steam2sqlite (pyproject.toml)
 certifi==2023.7.22
     # via
     #   httpcore
     #   httpx
     #   requests
-charset-normalizer==3.2.0
+charset-normalizer==3.3.0
     # via requests
 click==8.1.7
     # via
     #   black
-    #   click-default-group-wheel
+    #   click-default-group
     #   datasette
     #   sqlite-utils
     #   uvicorn
-click-default-group-wheel==1.2.2
+click-default-group==1.2.4
     # via
-    #   datasette
+    #   click-default-group-wheel
     #   sqlite-utils
-coverage[toml]==7.3.0
+click-default-group-wheel==1.2.3
+    # via datasette
+coverage[toml]==7.3.1
     # via pytest-cov
-datasette==0.64.3
+datasette==0.64.4
     # via
     #   datasette-graphql
     #   datasette-publish-fly
@@ -67,9 +69,9 @@ h11==0.14.0
     # via
     #   httpcore
     #   uvicorn
-httpcore==0.17.3
+httpcore==0.18.0
     # via httpx
-httpx==0.24.1
+httpx==0.25.0
     # via
     #   datasette
     #   steam2sqlite (pyproject.toml)
@@ -90,7 +92,7 @@ janus==1.0.0
     # via datasette
 jinja2==3.1.2
     # via datasette
-loguru==0.7.1
+loguru==0.7.2
     # via steam2sqlite (pyproject.toml)
 mako==1.2.4
     # via alembic
@@ -102,7 +104,7 @@ mergedeep==1.3.4
     # via datasette
 mypy-extensions==1.0.0
     # via black
-packaging==23.1
+packaging==23.2
     # via
     #   black
     #   pytest
@@ -119,9 +121,9 @@ pluggy==1.3.0
     #   sqlite-utils
 ply==3.11
     # via stone
-pydantic==1.10.12
+pydantic==1.10.13
     # via sqlmodel
-pytest==7.4.1
+pytest==7.4.2
     # via
     #   pytest-asyncio
     #   pytest-cov
@@ -158,7 +160,7 @@ sqlalchemy2-stubs==0.0.2a35
     # via sqlmodel
 sqlite-fts4==1.0.3
     # via sqlite-utils
-sqlite-utils==3.35
+sqlite-utils==3.35.1
     # via datasette-graphql
 sqlmodel==0.0.8
     # via steam2sqlite (pyproject.toml)
@@ -166,14 +168,14 @@ stone==3.3.1
     # via dropbox
 tabulate==0.9.0
     # via sqlite-utils
-typing-extensions==4.7.1
+typing-extensions==4.8.0
     # via
     #   alembic
     #   janus
     #   pint
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==2.0.4
+urllib3==2.0.5
     # via requests
 uvicorn==0.23.2
     # via datasette

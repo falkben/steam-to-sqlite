@@ -17,4 +17,4 @@ async def test_urls():
 
     for resp in responses:
         assert not isinstance(resp, NavigatorError)
-        assert resp.raise_for_status() is None
+        resp.raise_for_status()

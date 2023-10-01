@@ -87,8 +87,7 @@ def get_apps_achievements(apps: list[SteamApp]) -> list[tuple[SteamApp, list[dic
             continue
 
         try:
-            resp.raise_for_status()
-            data = resp.json()
+            data = resp.raise_for_status().json()
         except (httpx.HTTPError, json.JSONDecodeError):
             logger.error(f"Error getting achievements for appid: {app.appid}")
             continue
@@ -248,8 +247,7 @@ def get_apps_data(
             continue
 
         try:
-            resp.raise_for_status()
-            item = resp.json()
+            item = resp.raise_for_status().json()
             apps_data.append(item)
         except (httpx.HTTPError, json.JSONDecodeError) as e:
             logger.error(f"Http error with appid: {appid}")
