@@ -32,7 +32,7 @@ click==8.1.7
     #   datasette
     #   sqlite-utils
     #   uvicorn
-click-default-group-wheel==1.2.2
+click-default-group-wheel==1.2.3
     # via
     #   datasette
     #   sqlite-utils
