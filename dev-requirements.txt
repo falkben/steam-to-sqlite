@@ -16,7 +16,7 @@ asgi-csrf==0.9
     # via datasette
 asgiref==3.7.2
     # via datasette
-black==23.9.1
+black==23.10.1
     # via steam2sqlite (pyproject.toml)
 certifi==2023.7.22
     # via
