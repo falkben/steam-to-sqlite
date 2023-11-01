@@ -123,7 +123,7 @@ ply==3.11
     # via stone
 pydantic==1.10.13
     # via sqlmodel
-pytest==7.4.2
+pytest==7.4.3
     # via
     #   pytest-asyncio
     #   pytest-cov
