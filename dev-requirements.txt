@@ -63,7 +63,7 @@ graphql-core==3.2.3
     #   graphql-relay
 graphql-relay==3.2.0
     # via graphene
-greenlet==3.0.0
+greenlet==3.0.1
     # via sqlalchemy
 h11==0.14.0
     # via
