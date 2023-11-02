@@ -6,7 +6,7 @@
 #
 aiofiles==23.2.1
     # via datasette
-alembic==1.12.0
+alembic==1.12.1
     # via steam2sqlite (pyproject.toml)
 aniso8601==9.0.1
     # via graphene
@@ -16,14 +16,14 @@ asgi-csrf==0.9
     # via datasette
 asgiref==3.7.2
     # via datasette
-black==23.9.1
+black==23.10.1
     # via steam2sqlite (pyproject.toml)
 certifi==2023.7.22
     # via
     #   httpcore
     #   httpx
     #   requests
-charset-normalizer==3.3.0
+charset-normalizer==3.3.2
     # via requests
 click==8.1.7
     # via
@@ -34,13 +34,13 @@ click==8.1.7
     #   uvicorn
 click-default-group==1.2.4
     # via
-    #   click-default-group-wheel
+    #   datasette
     #   sqlite-utils
-click-default-group-wheel==1.2.3
-    # via datasette
 coverage[toml]==7.3.2
-    # via pytest-cov
-datasette==0.64.4
+    # via
+    #   coverage
+    #   pytest-cov
+datasette==0.64.5
     # via
     #   datasette-graphql
     #   datasette-publish-fly
@@ -63,7 +63,7 @@ graphql-core==3.2.3
     #   graphql-relay
 graphql-relay==3.2.0
     # via graphene
-greenlet==3.0.0
+greenlet==3.0.1
     # via sqlalchemy
 h11==0.14.0
     # via
@@ -123,7 +123,7 @@ ply==3.11
     # via stone
 pydantic==1.10.13
     # via sqlmodel
-pytest==7.4.2
+pytest==7.4.3
     # via
     #   pytest-asyncio
     #   pytest-cov
@@ -152,17 +152,17 @@ sniffio==1.3.0
     #   anyio
     #   httpcore
     #   httpx
-sqlalchemy==1.4.41
+sqlalchemy==1.4.50
     # via
     #   alembic
     #   sqlmodel
-sqlalchemy2-stubs==0.0.2a35
+sqlalchemy2-stubs==0.0.2a36
     # via sqlmodel
 sqlite-fts4==1.0.3
     # via sqlite-utils
 sqlite-utils==3.35.1
     # via datasette-graphql
-sqlmodel==0.0.8
+sqlmodel==0.0.11
     # via steam2sqlite (pyproject.toml)
 stone==3.3.1
     # via dropbox
@@ -175,11 +175,11 @@ typing-extensions==4.8.0
     #   pint
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==2.0.6
+urllib3==2.0.7
     # via requests
 uvicorn==0.23.2
     # via datasette
-uvloop==0.17.0
+uvloop==0.19.0
     # via steam2sqlite (pyproject.toml)
 
 # The following packages are considered to be unsafe in a requirements file:
