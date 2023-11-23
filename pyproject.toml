@@ -34,7 +34,7 @@ dev = [
     "pytest-asyncio",
     "datasette-vega",
     "datasette-graphql",
-    "black",
+    "ruff",
     "pytest-cov",
 ]
 

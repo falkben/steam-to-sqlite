@@ -58,21 +58,21 @@ To install the project locally:
 
    ```sh
    pip-compile -o requirements.txt pyproject.toml --quiet && \
-   pip-compile --extra dev -o dev-requirements.txt pyproject.toml --quiet
+   pip-compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet
    ```
 
 3. Upgrade a package:
 
    ```sh
    pip-compile -o requirements.txt pyproject.toml --quiet --upgrade-package PACKAGE && \
-   pip-compile --extra dev -o dev-requirements.txt pyproject.toml --quiet
+   pip-compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet
    ```
 
 4. Upgrade all packages with:
 
    ```sh
    pip-compile -o requirements.txt pyproject.toml --quiet --upgrade && \
-   pip-compile --extra dev -o dev-requirements.txt pyproject.toml --quiet --upgrade
+   pip-compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet --upgrade
    ```
 
 More here: <https://github.com/jazzband/pip-tools/>
