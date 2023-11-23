@@ -1,7 +1,7 @@
 import json
 
 import pytest
-from sqlmodel import Session, create_engine
+from sqlmodel import Session, create_engine, select
 
 from steam2sqlite import handler, models
 
@@ -96,24 +96,20 @@ def test_ingest_item_twice(session: Session):
     assert app == app_double
 
     #  app is only in db once
-    apps = (
-        session.query(models.SteamApp).filter(models.SteamApp.appid == app.appid).all()
-    )
+    apps = session.exec(
+        select(models.SteamApp).filter(models.SteamApp.appid == app.appid)
+    ).all()
     assert len(apps) == 1
 
     # genres
-    genres = (
-        session.query(models.Genre)
-        .filter(models.Genre.steam_apps.any(appid=appid))
-        .all()
-    )
+    genres = session.exec(
+        select(models.Genre).filter(models.Genre.steam_apps.any(appid=appid))
+    ).all()
     assert len(genres) == len(app.genres)
 
-    achievements = (
-        session.query(models.Achievement)
-        .filter(models.Achievement.steam_app == app)
-        .all()
-    )
+    achievements = session.exec(
+        select(models.Achievement).filter(models.Achievement.steam_app == app)
+    ).all()
     assert len(achievements) == app.achievements_total
 
 
@@ -154,7 +150,7 @@ def test_updates_on_diff_achievement_data(
     assert modified_achievement.percent == 100
 
 
-def test_duplicate_acheievemnts_on_app(
+def test_duplicate_achievements_on_app(
     session: Session, portal_app: models.SteamApp, portal_achievements
 ):
     """App with duplicated achievements
