@@ -5,9 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "steam2sqlite"
 version = "0.1.0"
-authors = [
-  { name="Ben Falk", email="falk.ben@gmail.com" },
-]
+authors = [{ name = "Ben Falk", email = "falk.ben@gmail.com" }]
 description = "Public Steam app and achievement data in a sqlite database"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -40,3 +38,6 @@ dev = [
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto" # https://github.com/pytest-dev/pytest-asyncio#auto-mode
+
+[tool.ruff]
+extend-exclude = ["migrations"]
