@@ -8,13 +8,13 @@ aiofiles==23.2.1
     # via datasette
 alembic==1.13.1
     # via steam2sqlite (pyproject.toml)
-anyio==4.2.0
+anyio==4.3.0
     # via httpx
 asgi-csrf==0.9
     # via datasette
 asgiref==3.7.2
     # via datasette
-certifi==2023.11.17
+certifi==2024.2.2
     # via
     #   httpcore
     #   httpx
@@ -42,13 +42,13 @@ h11==0.14.0
     # via
     #   httpcore
     #   uvicorn
-httpcore==1.0.2
+httpcore==1.0.4
     # via httpx
-httpx==0.26.0
+httpx==0.27.0
     # via
     #   datasette
     #   steam2sqlite (pyproject.toml)
-hupper==1.12
+hupper==1.12.1
     # via datasette
 idna==3.6
     # via
@@ -61,13 +61,13 @@ itsdangerous==2.1.2
     #   datasette
 janus==1.0.0
     # via datasette
-jinja2==3.1.2
+jinja2==3.1.3
     # via datasette
 loguru==0.7.2
     # via steam2sqlite (pyproject.toml)
-mako==1.3.0
+mako==1.3.2
     # via alembic
-markupsafe==2.1.3
+markupsafe==2.1.5
     # via
     #   jinja2
     #   mako
@@ -75,15 +75,15 @@ mergedeep==1.3.4
     # via datasette
 pint==0.23
     # via datasette
-pluggy==1.3.0
+pluggy==1.4.0
     # via datasette
 ply==3.11
     # via stone
-pydantic==1.10.13
+pydantic==1.10.14
     # via sqlmodel
-python-dotenv==1.0.0
+python-dotenv==1.0.1
     # via steam2sqlite (pyproject.toml)
-python-multipart==0.0.6
+python-multipart==0.0.9
     # via asgi-csrf
 pyyaml==6.0.1
     # via datasette
@@ -97,11 +97,11 @@ sniffio==1.3.0
     # via
     #   anyio
     #   httpx
-sqlalchemy==1.4.50
+sqlalchemy==1.4.51
     # via
     #   alembic
     #   sqlmodel
-sqlalchemy2-stubs==0.0.2a37
+sqlalchemy2-stubs==0.0.2a38
     # via sqlmodel
 sqlmodel==0.0.11
     # via steam2sqlite (pyproject.toml)
@@ -114,9 +114,9 @@ typing-extensions==4.9.0
     #   pint
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==2.1.0
+urllib3==2.2.1
     # via requests
-uvicorn==0.25.0
+uvicorn==0.27.1
     # via datasette
 uvloop==0.19.0
     # via steam2sqlite (pyproject.toml)
