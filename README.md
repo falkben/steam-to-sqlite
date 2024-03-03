@@ -53,29 +53,29 @@ To install the project locally:
 
 ## Manage dependencies
 
-1. install/upgrade pip-tools: `pip install pip-tools -U` or globally with [pipx](https://github.com/pypa/pipx): `pipx install pip-tools`
+1. install/upgrade uv: `pipx install uv`
 2. Create lock files with:
 
    ```sh
-   pip-compile -o requirements.txt pyproject.toml --quiet && \
-   pip-compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet
+   uv pip compile -o requirements.txt pyproject.toml --quiet && \
+   uv pip compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet
    ```
 
 3. Upgrade a package:
 
    ```sh
-   pip-compile -o requirements.txt pyproject.toml --quiet --upgrade-package PACKAGE && \
-   pip-compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet
+   uv pip compile -o requirements.txt pyproject.toml --quiet --upgrade-package PACKAGE && \
+   uv pip compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet
    ```
 
 4. Upgrade all packages with:
 
    ```sh
-   pip-compile -o requirements.txt pyproject.toml --quiet --upgrade && \
-   pip-compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet --upgrade
+   uv pip compile -o requirements.txt pyproject.toml --quiet --upgrade && \
+   uv pip compile --extra dev -c requirements.txt -o dev-requirements.txt pyproject.toml --quiet --upgrade
    ```
 
-More here: <https://github.com/jazzband/pip-tools/>
+More here: <https://github.com/astral-sh/uv>
 
 ## Run
 
