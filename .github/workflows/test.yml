@@ -9,10 +9,10 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
@@ -30,6 +30,6 @@ jobs:
           APPIDS_FILE: test_data/app_list_limited.json
 
       - name: "Upload coverage to Codecov"
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: false
