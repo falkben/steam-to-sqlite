@@ -24,6 +24,8 @@ dependencies = [
     "datasette-publish-fly",
     "dropbox",
     "alembic",
+    "pydantic<2",
+    "sqlalchemy<2",
 ]
 
 [project.optional-dependencies]

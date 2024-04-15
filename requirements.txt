@@ -7,7 +7,7 @@ anyio==4.3.0
     # via httpx
 asgi-csrf==0.9
     # via datasette
-asgiref==3.7.2
+asgiref==3.8.1
     # via datasette
 certifi==2024.2.2
     # via
@@ -33,13 +33,13 @@ h11==0.14.0
     # via
     #   httpcore
     #   uvicorn
-httpcore==1.0.4
+httpcore==1.0.5
     # via httpx
 httpx==0.27.0
     # via datasette
 hupper==1.12.1
     # via datasette
-idna==3.6
+idna==3.7
     # via
     #   anyio
     #   httpx
@@ -53,7 +53,7 @@ janus==1.0.0
 jinja2==3.1.3
     # via datasette
 loguru==0.7.2
-mako==1.3.2
+mako==1.3.3
     # via alembic
 markupsafe==2.1.5
     # via
@@ -69,7 +69,7 @@ pluggy==1.4.0
     # via datasette
 ply==3.11
     # via stone
-pydantic==1.10.14
+pydantic==1.10.15
     # via sqlmodel
 python-dotenv==1.0.1
 python-multipart==0.0.9
@@ -78,26 +78,26 @@ pyyaml==6.0.1
     # via datasette
 requests==2.31.0
     # via dropbox
-setuptools==69.1.1
+setuptools==69.5.1
     # via datasette
 six==1.16.0
     # via
     #   dropbox
     #   stone
-sniffio==1.3.0
+sniffio==1.3.1
     # via
     #   anyio
     #   httpx
-sqlalchemy==1.4.51
+sqlalchemy==1.4.52
     # via
     #   alembic
     #   sqlmodel
 sqlalchemy2-stubs==0.0.2a38
     # via sqlmodel
 sqlmodel==0.0.11
-stone==3.3.1
+stone==3.3.3
     # via dropbox
-typing-extensions==4.9.0
+typing-extensions==4.11.0
     # via
     #   alembic
     #   janus
@@ -106,6 +106,6 @@ typing-extensions==4.9.0
     #   sqlalchemy2-stubs
 urllib3==2.2.1
     # via requests
-uvicorn==0.27.1
+uvicorn==0.29.0
     # via datasette
 uvloop==0.19.0
