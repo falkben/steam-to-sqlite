@@ -14,6 +14,10 @@ anyio==4.4.0
     # via
     #   -c requirements.txt
     #   httpx
+appdirs==1.4.4
+    # via
+    #   -c requirements.txt
+    #   pint
 asgi-csrf==0.9
     # via
     #   -c requirements.txt
@@ -65,6 +69,14 @@ dropbox==12.0.2
     # via
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)
+flexcache==0.3
+    # via
+    #   -c requirements.txt
+    #   pint
+flexparser==0.3.1
+    # via
+    #   -c requirements.txt
+    #   pint
 graphene==3.3
     # via datasette-graphql
 graphql-core==3.2.3
@@ -136,7 +148,7 @@ mergedeep==1.3.4
     #   datasette
 packaging==24.0
     # via pytest
-pint==0.23
+pint==0.24
     # via
     #   -c requirements.txt
     #   datasette
@@ -186,7 +198,7 @@ requests==2.32.3
     # via
     #   -c requirements.txt
     #   dropbox
-ruff==0.4.7
+ruff==0.4.8
     # via steam2sqlite (pyproject.toml)
 setuptools==70.0.0
     # via
@@ -227,10 +239,12 @@ stone==3.3.1
     #   dropbox
 tabulate==0.9.0
     # via sqlite-utils
-typing-extensions==4.12.1
+typing-extensions==4.12.2
     # via
     #   -c requirements.txt
     #   alembic
+    #   flexcache
+    #   flexparser
     #   janus
     #   pint
     #   pydantic

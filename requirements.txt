@@ -6,6 +6,8 @@ alembic==1.13.1
     # via steam2sqlite (pyproject.toml)
 anyio==4.4.0
     # via httpx
+appdirs==1.4.4
+    # via pint
 asgi-csrf==0.9
     # via datasette
 asgiref==3.8.1
@@ -32,6 +34,10 @@ datasette-publish-fly==1.3.1
     # via steam2sqlite (pyproject.toml)
 dropbox==12.0.2
     # via steam2sqlite (pyproject.toml)
+flexcache==0.3
+    # via pint
+flexparser==0.3.1
+    # via pint
 greenlet==3.0.3
     # via sqlalchemy
 h11==0.14.0
@@ -69,7 +75,7 @@ markupsafe==2.1.5
     #   mako
 mergedeep==1.3.4
     # via datasette
-pint==0.23
+pint==0.24
     # via datasette
 pip==24.0
     # via datasette
@@ -110,9 +116,11 @@ sqlmodel==0.0.11
     # via steam2sqlite (pyproject.toml)
 stone==3.3.1
     # via dropbox
-typing-extensions==4.12.1
+typing-extensions==4.12.2
     # via
     #   alembic
+    #   flexcache
+    #   flexparser
     #   janus
     #   pint
     #   pydantic
