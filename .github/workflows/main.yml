@@ -56,4 +56,5 @@ jobs:
           datasette publish fly database.db \
             --install datasette-graphql --install datasette-vega \
             --app steam-to-sqlite \
-            --metadata datasette-data/metadata.json
+            --metadata datasette-data/metadata.json \
+            --setting sql_time_limit_ms 3500
