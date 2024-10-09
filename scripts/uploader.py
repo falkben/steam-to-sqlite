@@ -7,8 +7,8 @@ import datetime
 import os
 import time
 from argparse import ArgumentParser
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Sequence
 
 import dropbox
 from dotenv import load_dotenv
