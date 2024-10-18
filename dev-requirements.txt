@@ -10,7 +10,7 @@ alembic==1.13.3
     #   steam2sqlite (pyproject.toml)
 aniso8601==9.0.1
     # via graphene
-anyio==4.6.0
+anyio==4.6.2.post1
     # via
     #   -c requirements.txt
     #   httpx
@@ -28,7 +28,7 @@ certifi==2024.8.30
     #   httpcore
     #   httpx
     #   requests
-charset-normalizer==3.3.2
+charset-normalizer==3.4.0
     # via
     #   -c requirements.txt
     #   requests
@@ -44,7 +44,7 @@ click-default-group==1.2.4
     #   -c requirements.txt
     #   datasette
     #   sqlite-utils
-coverage==7.6.1
+coverage==7.6.3
     # via pytest-cov
 datasette==0.65
     # via
@@ -75,7 +75,7 @@ flexparser==0.3.1
     #   datasette
 graphene==3.3
     # via datasette-graphql
-graphql-core==3.2.4
+graphql-core==3.2.5
     # via
     #   datasette-graphql
     #   graphene
@@ -194,9 +194,9 @@ requests==2.32.3
     # via
     #   -c requirements.txt
     #   dropbox
-ruff==0.6.9
+ruff==0.7.0
     # via steam2sqlite (pyproject.toml)
-setuptools==75.1.0
+setuptools==75.2.0
     # via
     #   -c requirements.txt
     #   datasette
@@ -249,11 +249,11 @@ urllib3==2.2.3
     # via
     #   -c requirements.txt
     #   requests
-uvicorn==0.31.0
+uvicorn==0.32.0
     # via
     #   -c requirements.txt
     #   datasette
-uvloop==0.20.0
+uvloop==0.21.0
     # via
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)

@@ -1,6 +1,7 @@
 import time
 
 import pytest
+
 from steam2sqlite import utils
 
 

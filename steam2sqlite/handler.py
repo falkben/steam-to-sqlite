@@ -22,11 +22,10 @@ def get_or_create(session, model, **kwargs):
     instance = session.query(model).filter_by(**kwargs).first()
     if instance:
         return instance
-    else:
-        instance = model(**kwargs)
-        session.add(instance)
-        session.flush()
-        return instance
+    instance = model(**kwargs)
+    session.add(instance)
+    session.flush()
+    return instance
 
 
 def update_or_create(session, model, filterargs, **kwargs):
@@ -152,7 +151,7 @@ def load_app_into_db(session: Session, data: dict) -> SteamApp:
             if release_date_str:
                 release_date = datetime.strptime(release_date_str, "%b %d, %Y").date()
         except ValueError:
-            # todo: log this error
+            # TODO: log this error
             pass
 
     initial_price = current_price = None
@@ -224,9 +223,7 @@ def get_error_appids(session: Session) -> list[int]:
 def record_appid_error(
     session, appid: int, name: str | None = None, reason: str | None = None
 ):
-    get_or_create(
-        session, AppidError, **{"appid": appid, "name": name, "reason": reason}
-    )
+    get_or_create(session, AppidError, appid=appid, name=name, reason=reason)
     session.commit()
 
 
@@ -239,7 +236,7 @@ def get_apps_data(
     responses = asyncio.run(navigator.make_requests(urls))
 
     apps_data = []
-    for appid, resp in zip(appids, responses):
+    for appid, resp in zip(appids, responses, strict=False):
         # make_requests inserts exceptions into the responses list
         if isinstance(resp, navigator.NavigatorError):
             logger.error(f"Error getting app data for {appid}")
