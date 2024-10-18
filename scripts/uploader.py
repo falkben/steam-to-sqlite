@@ -51,7 +51,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument(
         "--token",
         default=TOKEN,
-        help="Access token " "(see https://www.dropbox.com/developers/apps)",
+        help="Access token (see https://www.dropbox.com/developers/apps)",
     )
     args = parser.parse_args(argv)
 

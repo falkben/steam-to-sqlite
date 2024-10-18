@@ -4,7 +4,7 @@ from itertools import zip_longest
 
 
 def grouper(iterable, n, fillvalue=None):
-    "Collect data into non-overlapping fixed-length chunks or blocks"
+    """Collect data into non-overlapping fixed-length chunks or blocks"""
     # https://docs.python.org/3/library/itertools.html#itertools-recipes
     # grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx
     args = [iter(iterable)] * n

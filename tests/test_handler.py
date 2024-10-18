@@ -19,8 +19,7 @@ def session():
 
 def get_apps_data(appids: list[str]):
     """'mocks' the handler.get_apps_data function"""
-
-    # todo: actually mock the handler function replacing the url requests w/ static data
+    # TODO: actually mock the handler function replacing the url requests w/ static data
 
     apps_data = []
     for appid in appids:
@@ -33,8 +32,7 @@ def get_apps_achievements(
     apps: list[models.SteamApp],
 ) -> list[tuple[models.SteamApp, list[dict]]]:
     """'mocks' handler.get_apps_achievements function"""
-
-    # todo: actually mock the handler function replacing the url requests w/ static data
+    # TODO: actually mock the handler function replacing the url requests w/ static data
 
     apps_achievements_data = []
     for app in apps:
@@ -60,11 +58,10 @@ def portal_achievements(session, portal_app):
 
 
 def test_app_with_duplicated_appid(session):
-    """portal 2 is listed more than once with different appids (620, 659)
+    """Portal 2 is listed more than once with different appids (620, 659)
     However the preorder (659) has an internal appid of 620
     We want to assert that we don't ingest dup items
     """
-
     dup_appid = "659"
     dup_app_data = get_apps_data([dup_appid])[0]
 
@@ -114,8 +111,7 @@ def test_ingest_item_twice(session: Session):
 
 
 def test_updates_on_diff_app_data(session: Session, portal_app: models.SteamApp):
-    """assert updates on new app data"""
-
+    """Assert updates on new app data"""
     appid = "620"
     app_data = get_apps_data([appid])[0]
 
@@ -131,7 +127,7 @@ def test_updates_on_diff_app_data(session: Session, portal_app: models.SteamApp)
 def test_updates_on_diff_achievement_data(
     session: Session, portal_app: models.SteamApp, portal_achievements
 ):
-    """assert updates on diff achievement data"""
+    """Assert updates on diff achievement data"""
     apps_achievements_data = get_apps_achievements([portal_app])
     portal_achievements_data = apps_achievements_data[0]
     modified_achievement_name = portal_achievements_data[1][0]["name"]
@@ -156,7 +152,6 @@ def test_duplicate_achievements_on_app(
     """App with duplicated achievements
     assert clear out achievements with updates
     """
-
     # duplicate the first achievement
     first_achievement = portal_app.achievements[0]
     a = models.Achievement(

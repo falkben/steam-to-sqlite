@@ -33,7 +33,6 @@ async def get(
 
 async def make_requests(urls: list[str]) -> list[httpx.Response]:
     """List of urls to a list of responses using asyncio"""
-
     limits = httpx.Limits(max_connections=10, max_keepalive_connections=5)
     async with httpx.AsyncClient(
         headers={"accept": "application/json"}, timeout=10, limits=limits
