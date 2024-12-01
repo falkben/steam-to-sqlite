@@ -2,11 +2,11 @@
 #    uv pip compile -o requirements.txt pyproject.toml
 aiofiles==24.1.0
     # via datasette
-alembic==1.13.3
+alembic==1.14.0
     # via steam2sqlite (pyproject.toml)
 anyio==4.6.2.post1
     # via httpx
-asgi-csrf==0.10
+asgi-csrf==0.11
     # via datasette
 asgiref==3.8.1
     # via datasette
@@ -24,7 +24,7 @@ click==8.1.7
     #   uvicorn
 click-default-group==1.2.4
     # via datasette
-datasette==0.65
+datasette==0.65.1
     # via
     #   steam2sqlite (pyproject.toml)
     #   datasette-publish-fly
@@ -34,7 +34,7 @@ dropbox==12.0.2
     # via steam2sqlite (pyproject.toml)
 flexcache==0.3
     # via datasette
-flexparser==0.3.1
+flexparser==0.4
     # via datasette
 greenlet==3.1.1
     # via sqlalchemy
@@ -42,9 +42,9 @@ h11==0.14.0
     # via
     #   httpcore
     #   uvicorn
-httpcore==1.0.6
+httpcore==1.0.7
     # via httpx
-httpx==0.27.2
+httpx==0.28.0
     # via
     #   steam2sqlite (pyproject.toml)
     #   datasette
@@ -59,21 +59,21 @@ itsdangerous==2.2.0
     # via
     #   asgi-csrf
     #   datasette
-janus==1.0.0
+janus==1.1.0
     # via datasette
 jinja2==3.1.4
     # via datasette
 loguru==0.7.2
     # via steam2sqlite (pyproject.toml)
-mako==1.3.5
+mako==1.3.6
     # via alembic
-markupsafe==3.0.1
+markupsafe==3.0.2
     # via
     #   jinja2
     #   mako
 mergedeep==1.3.4
     # via datasette
-pip==24.2
+pip==24.3.1
     # via datasette
 platformdirs==4.3.6
     # via datasette
@@ -81,28 +81,26 @@ pluggy==1.5.0
     # via datasette
 ply==3.11
     # via stone
-pydantic==1.10.18
+pydantic==1.10.19
     # via
     #   steam2sqlite (pyproject.toml)
     #   sqlmodel
 python-dotenv==1.0.1
     # via steam2sqlite (pyproject.toml)
-python-multipart==0.0.12
+python-multipart==0.0.19
     # via asgi-csrf
 pyyaml==6.0.2
     # via datasette
 requests==2.32.3
     # via dropbox
-setuptools==75.2.0
+setuptools==75.6.0
     # via datasette
 six==1.16.0
     # via
     #   dropbox
     #   stone
 sniffio==1.3.1
-    # via
-    #   anyio
-    #   httpx
+    # via anyio
 sqlalchemy==1.4.54
     # via
     #   steam2sqlite (pyproject.toml)
@@ -120,12 +118,11 @@ typing-extensions==4.12.2
     #   datasette
     #   flexcache
     #   flexparser
-    #   janus
     #   pydantic
     #   sqlalchemy2-stubs
 urllib3==2.2.3
     # via requests
-uvicorn==0.32.0
+uvicorn==0.32.1
     # via datasette
 uvloop==0.21.0
     # via steam2sqlite (pyproject.toml)
