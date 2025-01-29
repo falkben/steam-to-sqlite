@@ -4,11 +4,11 @@ aiofiles==24.1.0
     # via
     #   -c requirements.txt
     #   datasette
-alembic==1.14.0
+alembic==1.14.1
     # via
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)
-anyio==4.6.2.post1
+anyio==4.8.0
     # via
     #   -c requirements.txt
     #   httpx
@@ -20,17 +20,17 @@ asgiref==3.8.1
     # via
     #   -c requirements.txt
     #   datasette
-certifi==2024.8.30
+certifi==2024.12.14
     # via
     #   -c requirements.txt
     #   httpcore
     #   httpx
     #   requests
-charset-normalizer==3.4.0
+charset-normalizer==3.4.1
     # via
     #   -c requirements.txt
     #   requests
-click==8.1.7
+click==8.1.8
     # via
     #   -c requirements.txt
     #   click-default-group
@@ -42,7 +42,7 @@ click-default-group==1.2.4
     #   -c requirements.txt
     #   datasette
     #   sqlite-utils
-coverage==7.6.8
+coverage==7.6.10
     # via pytest-cov
 datasette==0.65.1
     # via
@@ -73,7 +73,7 @@ flexparser==0.4
     #   datasette
 graphene==3.4.3
     # via datasette-graphql
-graphql-core==3.2.5
+graphql-core==3.2.6
     # via
     #   datasette-graphql
     #   graphene
@@ -93,7 +93,7 @@ httpcore==1.0.7
     # via
     #   -c requirements.txt
     #   httpx
-httpx==0.28.0
+httpx==0.28.1
     # via
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)
@@ -115,19 +115,19 @@ itsdangerous==2.2.0
     #   -c requirements.txt
     #   asgi-csrf
     #   datasette
-janus==1.1.0
+janus==2.0.0
     # via
     #   -c requirements.txt
     #   datasette
-jinja2==3.1.4
+jinja2==3.1.5
     # via
     #   -c requirements.txt
     #   datasette
-loguru==0.7.2
+loguru==0.7.3
     # via
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)
-mako==1.3.6
+mako==1.3.8
     # via
     #   -c requirements.txt
     #   alembic
@@ -142,7 +142,7 @@ mergedeep==1.3.4
     #   datasette
 packaging==24.2
     # via pytest
-pip==24.3.1
+pip==25.0
     # via
     #   -c requirements.txt
     #   datasette
@@ -160,7 +160,7 @@ ply==3.11
     # via
     #   -c requirements.txt
     #   stone
-pydantic==1.10.19
+pydantic==1.10.21
     # via
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)
@@ -170,7 +170,7 @@ pytest==8.3.4
     #   steam2sqlite (pyproject.toml)
     #   pytest-asyncio
     #   pytest-cov
-pytest-asyncio==0.24.0
+pytest-asyncio==0.25.3
     # via steam2sqlite (pyproject.toml)
 pytest-cov==6.0.0
     # via steam2sqlite (pyproject.toml)
@@ -182,7 +182,7 @@ python-dotenv==1.0.1
     # via
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)
-python-multipart==0.0.19
+python-multipart==0.0.20
     # via
     #   -c requirements.txt
     #   asgi-csrf
@@ -194,13 +194,13 @@ requests==2.32.3
     # via
     #   -c requirements.txt
     #   dropbox
-ruff==0.8.1
+ruff==0.9.3
     # via steam2sqlite (pyproject.toml)
-setuptools==75.6.0
+setuptools==75.8.0
     # via
     #   -c requirements.txt
     #   datasette
-six==1.16.0
+six==1.17.0
     # via
     #   -c requirements.txt
     #   dropbox
@@ -238,17 +238,18 @@ typing-extensions==4.12.2
     # via
     #   -c requirements.txt
     #   alembic
+    #   anyio
     #   datasette
     #   flexcache
     #   flexparser
     #   graphene
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==2.2.3
+urllib3==2.3.0
     # via
     #   -c requirements.txt
     #   requests
-uvicorn==0.32.1
+uvicorn==0.34.0
     # via
     #   -c requirements.txt
     #   datasette
