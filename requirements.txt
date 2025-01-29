@@ -2,22 +2,22 @@
 #    uv pip compile -o requirements.txt pyproject.toml
 aiofiles==24.1.0
     # via datasette
-alembic==1.14.0
+alembic==1.14.1
     # via steam2sqlite (pyproject.toml)
-anyio==4.6.2.post1
+anyio==4.8.0
     # via httpx
 asgi-csrf==0.11
     # via datasette
 asgiref==3.8.1
     # via datasette
-certifi==2024.8.30
+certifi==2024.12.14
     # via
     #   httpcore
     #   httpx
     #   requests
-charset-normalizer==3.4.0
+charset-normalizer==3.4.1
     # via requests
-click==8.1.7
+click==8.1.8
     # via
     #   click-default-group
     #   datasette
@@ -44,7 +44,7 @@ h11==0.14.0
     #   uvicorn
 httpcore==1.0.7
     # via httpx
-httpx==0.28.0
+httpx==0.28.1
     # via
     #   steam2sqlite (pyproject.toml)
     #   datasette
@@ -59,13 +59,13 @@ itsdangerous==2.2.0
     # via
     #   asgi-csrf
     #   datasette
-janus==1.1.0
+janus==2.0.0
     # via datasette
-jinja2==3.1.4
+jinja2==3.1.5
     # via datasette
-loguru==0.7.2
+loguru==0.7.3
     # via steam2sqlite (pyproject.toml)
-mako==1.3.6
+mako==1.3.8
     # via alembic
 markupsafe==3.0.2
     # via
@@ -73,7 +73,7 @@ markupsafe==3.0.2
     #   mako
 mergedeep==1.3.4
     # via datasette
-pip==24.3.1
+pip==25.0
     # via datasette
 platformdirs==4.3.6
     # via datasette
@@ -81,21 +81,21 @@ pluggy==1.5.0
     # via datasette
 ply==3.11
     # via stone
-pydantic==1.10.19
+pydantic==1.10.21
     # via
     #   steam2sqlite (pyproject.toml)
     #   sqlmodel
 python-dotenv==1.0.1
     # via steam2sqlite (pyproject.toml)
-python-multipart==0.0.19
+python-multipart==0.0.20
     # via asgi-csrf
 pyyaml==6.0.2
     # via datasette
 requests==2.32.3
     # via dropbox
-setuptools==75.6.0
+setuptools==75.8.0
     # via datasette
-six==1.16.0
+six==1.17.0
     # via
     #   dropbox
     #   stone
@@ -115,14 +115,15 @@ stone==3.3.1
 typing-extensions==4.12.2
     # via
     #   alembic
+    #   anyio
     #   datasette
     #   flexcache
     #   flexparser
     #   pydantic
     #   sqlalchemy2-stubs
-urllib3==2.2.3
+urllib3==2.3.0
     # via requests
-uvicorn==0.32.1
+uvicorn==0.34.0
     # via datasette
 uvloop==0.21.0
     # via steam2sqlite (pyproject.toml)
