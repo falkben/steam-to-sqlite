@@ -28,7 +28,7 @@ dependencies = [
     "sqlalchemy<2",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "pytest",
     "pytest-asyncio",
@@ -39,7 +39,8 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-asyncio_mode = "auto" # https://github.com/pytest-dev/pytest-asyncio#auto-mode
+asyncio_mode = "auto"                           # https://github.com/pytest-dev/pytest-asyncio#auto-mode
+asyncio_default_fixture_loop_scope = "function"
 
 [tool.ruff]
 extend-exclude = ["migrations"]
