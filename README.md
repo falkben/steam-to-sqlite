@@ -58,21 +58,21 @@ To install the project locally:
 
    ```sh
    uv pip compile -o requirements.txt pyproject.toml --quiet && \
-   uv pip compile --group dev -o dev-requirements.txt pyproject.toml --quiet
+   uv pip compile --group dev -o dev-requirements.txt -c requirements.txt pyproject.toml --quiet
    ```
 
 3. Upgrade a package:
 
    ```sh
    uv pip compile -o requirements.txt pyproject.toml --quiet --upgrade-package PACKAGE && \
-   uv pip compile --group dev -o dev-requirements.txt pyproject.toml --quiet
+   uv pip compile --group dev -o dev-requirements.txt -c requirements.txt pyproject.toml --quiet
    ```
 
 4. Upgrade all packages with:
 
    ```sh
    uv pip compile -o requirements.txt pyproject.toml --quiet --upgrade && \
-   uv pip compile --group dev -o dev-requirements.txt pyproject.toml --quiet --upgrade
+   uv pip compile --group dev -o dev-requirements.txt -c requirements.txt pyproject.toml --quiet --upgrade
    ```
 
 More here: <https://github.com/astral-sh/uv>
