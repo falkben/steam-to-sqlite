@@ -15,9 +15,9 @@ certifi==2025.4.26
     #   httpcore
     #   httpx
     #   requests
-charset-normalizer==3.4.1
+charset-normalizer==3.4.2
     # via requests
-click==8.1.8
+click==8.2.1
     # via
     #   click-default-group
     #   datasette
@@ -36,7 +36,7 @@ flexcache==0.3
     # via datasette
 flexparser==0.4
     # via datasette
-greenlet==3.2.1
+greenlet==3.2.2
     # via sqlalchemy
 h11==0.16.0
     # via
@@ -73,11 +73,11 @@ markupsafe==3.0.2
     #   mako
 mergedeep==1.3.4
     # via datasette
-pip==25.1
+pip==25.1.1
     # via datasette
-platformdirs==4.3.7
+platformdirs==4.3.8
     # via datasette
-pluggy==1.5.0
+pluggy==1.6.0
     # via datasette
 ply==3.11
     # via stone
@@ -93,7 +93,7 @@ pyyaml==6.0.2
     # via datasette
 requests==2.32.3
     # via dropbox
-setuptools==80.0.0
+setuptools==80.8.0
     # via datasette
 six==1.17.0
     # via
