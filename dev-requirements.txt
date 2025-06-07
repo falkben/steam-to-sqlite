@@ -4,7 +4,7 @@ aiofiles==24.1.0
     # via
     #   -c requirements.txt
     #   datasette
-alembic==1.15.2
+alembic==1.16.1
     # via
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)
@@ -42,7 +42,7 @@ click-default-group==1.2.4
     #   -c requirements.txt
     #   datasette
     #   sqlite-utils
-coverage==7.8.0
+coverage==7.8.2
     # via pytest-cov
 datasette==0.65.1
     # via
@@ -80,7 +80,7 @@ graphql-core==3.2.6
     #   graphql-relay
 graphql-relay==3.2.0
     # via graphene
-greenlet==3.2.2
+greenlet==3.2.3
     # via
     #   -c requirements.txt
     #   sqlalchemy
@@ -165,12 +165,14 @@ pydantic==1.10.22
     #   -c requirements.txt
     #   steam2sqlite (pyproject.toml)
     #   sqlmodel
-pytest==8.3.5
+pygments==2.19.1
+    # via pytest
+pytest==8.4.0
     # via
     #   steam2sqlite (pyproject.toml:dev)
     #   pytest-asyncio
     #   pytest-cov
-pytest-asyncio==0.26.0
+pytest-asyncio==1.0.0
     # via steam2sqlite (pyproject.toml:dev)
 pytest-cov==6.1.1
     # via steam2sqlite (pyproject.toml:dev)
@@ -194,9 +196,9 @@ requests==2.32.3
     # via
     #   -c requirements.txt
     #   dropbox
-ruff==0.11.10
+ruff==0.11.13
     # via steam2sqlite (pyproject.toml:dev)
-setuptools==80.8.0
+setuptools==80.9.0
     # via
     #   -c requirements.txt
     #   datasette
@@ -234,7 +236,7 @@ stone==3.3.1
     #   dropbox
 tabulate==0.9.0
     # via sqlite-utils
-typing-extensions==4.13.2
+typing-extensions==4.14.0
     # via
     #   -c requirements.txt
     #   alembic
@@ -249,7 +251,7 @@ urllib3==2.4.0
     # via
     #   -c requirements.txt
     #   requests
-uvicorn==0.34.2
+uvicorn==0.34.3
     # via
     #   -c requirements.txt
     #   datasette

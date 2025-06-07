@@ -7,6 +7,9 @@ on:
   # Allows running this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  UV_SYSTEM_PYTHON: 1
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -15,16 +18,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "requirements**.txt"
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: "pip"
 
       - name: Install
         run: |
-          pip install -r requirements.txt
-          pip install .
+          uv pip install -r requirements.txt .
 
       - name: run the script
         run: |

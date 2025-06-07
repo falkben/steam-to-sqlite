@@ -3,6 +3,9 @@ name: Test steam-to-sqlite
 on:
   push:
 
+env:
+  UV_SYSTEM_PYTHON: 1
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -11,15 +14,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "requirements**.txt"
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: "pip"
 
       - name: Install dependencies
         run: |
-          pip install -e . -r dev-requirements.txt
+          uv pip install . -r requirements.txt -r dev-requirements.txt
 
       - name: test
         run: |
